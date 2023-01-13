@@ -17,7 +17,7 @@ You can install the development version of hcdb from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
+credentials::set_github_pat()
 devtools::install_github("palesl/hcdb")
 ```
 
