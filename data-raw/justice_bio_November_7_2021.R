@@ -1,6 +1,6 @@
 ## code to prepare `justice_bio_November_7_2021` dataset goes here
 # input from shared folder and storage in Raw ####
-
+library(readxl)
 justice_bio <- read_excel("~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_November_7_2021.xlsx",
                                           skip = 2)
 
@@ -51,7 +51,7 @@ justice_bio<-justice_bio|>
          priorJudicialService3StartDate = lubridate::ymd(priorJudicialService3StartDate),
          priorJudicialService3EndDate = lubridate::ymd(priorJudicialService3EndDate))
 
-
+justice_bio<-justice_bio |> dplyr::rename(justice=justiceID)
 # saving ####
 
 #save the processed data in raw data folder

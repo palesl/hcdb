@@ -5,7 +5,7 @@
 #' @format ## `justice_bio`
 #' A tibble with 23 rows and 155 columns:
 #' \describe{
-#'   \item{justiceID}{HCDB justice ID number}
+#'   \item{justice}{HCDB justice ID number}
 #'   \item{justiceName}{Justice names}
 #'   \item{dateNom}{Date of nomination}
 #'   ...
