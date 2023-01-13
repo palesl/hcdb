@@ -1,0 +1,14 @@
+#' justice decision data, 1995-2021
+#'
+#' Data from all justice decisions in all cases in the High Court of Australia, 1995-2021
+#'
+#' @format ## `justice_decision`
+#' A tibble with 12,964 rows and 328 columns:
+#' \describe{
+#'   \item{HCDBcaseId}{HCDB ID number}
+#'   \item{clrCite}{Case Law Research citation}
+#'   \item{aljrCite}{Australian Law Journal Reports citation}
+#'   ...
+#' }
+#' @source Robinson, Z., Leslie, P. (High Court Database)
+"justice_decision"
