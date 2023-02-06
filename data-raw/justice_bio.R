@@ -1,13 +1,13 @@
 ## code to prepare `justice_bio_November_7_2021` dataset goes here
 # input from shared folder and storage in Raw ####
 library(readxl)
-justice_bio <- read_excel("~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_November_7_2021.xlsx",
+justice_bio <- read_excel("~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_Feb_2023.xlsx",
                                           skip = 2)
 
 # save a copy of the excel file in data-raw
 
-file.copy(from="~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_November_7_2021.xlsx",
-          to="data-raw/justice_bio_November_7_2021.xlsx",
+file.copy(from="~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_Feb_2023.xlsx",
+          to="data-raw/justice_bio_Feb_2023.xlsx",
           overwrite = T)
 
 #cleaning justice decision data ####
@@ -17,7 +17,7 @@ file.copy(from="~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice
 library(dplyr)
 
 justiceID<- 55:33
-justiceName<-c('Steward', 'JGleeson','Edelman',
+justiceName<-c('JGleeson', 'Steward', 'Edelman',
                'Gordon','Nettle', 'Keane',
                'Gageler','Bell','French',
                'Kiefel','Crennan','Heydon',
