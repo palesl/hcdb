@@ -5,7 +5,10 @@ justice_bio <- read_excel("~/Dropbox/High Court Project/Data Files/CURRENT DATAS
                                           skip = 2)
 
 # save a copy of the excel file in data-raw
-save(justice_bio, file="data-raw/justice_bio_November_7_2021.rda")
+
+file.copy(from="~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_November_7_2021.xlsx",
+          to="data-raw/justice_bio_November_7_2021.xlsx",
+          overwrite = T)
 
 #cleaning justice decision data ####
 
