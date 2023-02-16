@@ -448,7 +448,8 @@ sll<-c(Adelaide=1,
        Hobart=5,
        Melbourne=6,
        Perth=7,
-       Sydney=8)
+       Sydney=8,
+       Uknown=999)
 
 unique(special_leave$specialLeaveLocation)|>sort()
 
@@ -462,13 +463,16 @@ slo<- c(`Special leave granted` = 1,
         `Special leave referred to full court` =2,
         `Appeal and special leave determined concurrently`=3,
         `Special leave refused`=4,
-        `Special leave refused with costs`=5)
+        `Special leave refused with costs`=5,
+        `Unknown`=999)
 
 unique(special_leave$specialLeaveOutcome)|>sort()
 
 val_labels(special_leave$specialLeaveOutcome)<- slo
 
 special_leave$specialLeaveOutcome
+
+
 
 # natural court special leave
 
