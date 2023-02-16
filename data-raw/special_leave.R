@@ -206,6 +206,10 @@ special_leave$caseSourceGeneral
 
 # case_source_specific
 
+special_leave$caseSourceSpecific[is.na(special_leave$caseSourceSpecific)]<-999
+
+
+
 case_source_specific <-matrix(c(1, 'Family Court of Australia—Single Judge',
                                 2, 'Federal Magistrates Court',
                                 3, 'Federal Circuit Court of Australia',
@@ -310,7 +314,7 @@ special_leave$caseSourceSpecific
 
 # case_source_state
 
-
+special_leave$caseSourceState[is.na(special_leave$caseSourceState)]<-999
 case_source_state <-matrix(c(1, 'Australia (federal actor)',
                              2, 'Australian Capital Territory',
                              3, 'New South Wales',
