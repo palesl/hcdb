@@ -417,7 +417,6 @@ val_labels(justice_bio$gender)<- varGender
 
 # 38.	Resignation Party	23
 
-resignationParty
 justice_bio$resignationParty|>unique()|>sort()
 
 val_labels(justice_bio$resignationParty)<- varPolParty
@@ -643,7 +642,7 @@ val_labels(justice_bio$thirdDegreeStatus)<- varDegreeStatus
 # 79.	Third Degree Year Started	35
 # 80.	Third Degree Year Completed	36
 # 81.	Name of Law School	36
-nameLawSchool
+
 justice_bio$nameLawSchool|>unique()|>sort()
 val_labels(justice_bio$nameLawSchool)<- varUni
 # 82.	Year of Law School	36
