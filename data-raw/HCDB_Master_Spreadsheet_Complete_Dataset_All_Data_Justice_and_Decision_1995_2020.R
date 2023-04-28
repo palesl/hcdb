@@ -7,12 +7,8 @@ justice_decision <- readxl::read_excel("~/Dropbox/High Court Project/Data Files/
 
 # save a copy of the excel file in data-raw
 file.copy(from = "~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/HCDB Master Spreadsheet, Complete Dataset (All Data, Justice and Decision), 1995-2020.xlsx",
-<<<<<<< HEAD:data-raw/justice_decision.R
           to="data-raw/HCDB Master Spreadsheet, Complete Dataset (All Data, Justice and Decision), 1995-2020.xlsx",
           overwrite=T)
-=======
-          to="data-raw/HCDB Master Spreadsheet, Complete Dataset (All Data, Justice and Decision), 1995-2020.xlsx")
->>>>>>> c764803392698bd743520acc6bbc9ef7343c00df:data-raw/HCDB_Master_Spreadsheet_Complete_Dataset_All_Data_Justice_and_Decision_1995_2020.R
 
 #cleaning justice decision data ####
 
