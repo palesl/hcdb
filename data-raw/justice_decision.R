@@ -39,6 +39,11 @@ table(justice_decision$HCDBcaseId, useNA="ifany")
 # 3.	Australian Law Journal Report Citation	14
 # 4.	Australian Law Report Citation	15
 # 5.	High Court Citation	16
+
+#correcting an error
+
+justice_decision$hcaCite[justice_decision$hcaCite=="[1991] HCA 66"]<-"[1999] HCA 66"
+
 # 6.	Case Number	17
 # 7.	Case Name	18
 # 8.	Multiple Matters	19

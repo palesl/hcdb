@@ -9,15 +9,12 @@
 The goal of hcdb is to provide an easy way to load in data from the
 Australian HCDB data project.
 
-One source, no messing around.
-
 ## Installation
 
 You can install the development version of hcdb from
 [GitHub](https://github.com/) with:
 
 ``` r
-credentials::set_github_pat()
 devtools::install_github("palesl/hcdb")
 ```
 
