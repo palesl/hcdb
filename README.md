@@ -27,3 +27,10 @@ library(hcdb)
 
 data<-justice_decision
 ```
+
+If you’d like coded categorical data as factors (for analysis), then:
+
+``` r
+ 
+data<-haven::as_factor(justice_decision, only_labelled=TRUE)
+```
