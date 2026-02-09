@@ -4,6 +4,7 @@
 # hcdb
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 The goal of hcdb is to provide an easy way to load in data from the
@@ -34,3 +35,6 @@ If you’d like coded categorical data as factors (for analysis), then:
  
 data<-haven::as_factor(justice_decision, only_labelled=TRUE)
 ```
+
+If you prefer the data in Stata, SPSS, or Excel formats, you can access
+it at [aushighcourtdatabase.org](https://aushighcourtdatabase.org).
