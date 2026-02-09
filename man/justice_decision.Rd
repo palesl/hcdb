@@ -7,7 +7,7 @@
 \format{
 \subsection{\code{justice_decision}}{
 
-A tibble with 12,726 rows and 328 columns:
+A tibble with 12,726 rows and 319 columns:
 \describe{
 \item{HCDBcaseId}{HCDB case ID number}
 \item{clrCite}{Case Law Research citation}

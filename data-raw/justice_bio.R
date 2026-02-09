@@ -1,14 +1,14 @@
 ## code to prepare `justice_bio_November_7_2021` dataset goes here
 # input from shared folder and storage in Raw ####
 library(readxl)
-justice_bio <- read_excel("~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_Feb_2023.xlsx",
+justice_bio <- read_excel("data-raw/justice_bio_Feb_2023.xlsx",
                                           skip = 2)
 
 # save a copy of the excel file in data-raw
 
-file.copy(from="~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_Feb_2023.xlsx",
-          to="data-raw/justice_bio_Feb_2023.xlsx",
-          overwrite = T)
+# file.copy(from="~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/justice_bio_Feb_2023.xlsx",
+#           to="data-raw/justice_bio_Feb_2023.xlsx",
+#           overwrite = T)
 
 #cleaning justice decision data ####
 
@@ -184,9 +184,9 @@ justice_bio$chiefAnnounce|>unique()|>sort()
 val_labels(justice_bio$chiefAnnounce)<- varChief
 
 # 9.	Chief Justice When Sworn In	11
-justice_bio$chiefSwornIn|>unique()|>sort()
+justice_bio$chiefSworn|>unique()|>sort()
 
-val_labels(justice_bio$chiefSwornIn)<- varChief
+val_labels(justice_bio$chiefSworn)<- varChief
 
 
 # 10.	Nominating Prime Minister	11
@@ -690,8 +690,8 @@ varGraduateDegree<-c(`Doctor of Philosophy` = 1,
                      `BCL` = 3,
                      `Other, law` = 4,
                      `Other, non-law` = 5)
-justice_bio$firstGraduateDegree|>unique()|>sort()
-val_labels(justice_bio$firstGraduateDegree)<- varGraduateDegree
+justice_bio$firstGradDegree|>unique()|>sort()
+val_labels(justice_bio$firstGradDegree)<- varGraduateDegree
 
 # 89.	First Graduate Degree Institution	38
 
@@ -705,76 +705,644 @@ varGradDegreeInst<-c(`Oxford` = 1,
 
 justice_bio$firstGradDegreeInstitution|>unique()|>sort()
 val_labels(justice_bio$firstGradDegreeInstitution)<- varGradDegreeInst
+
 # 90.	First Graduate Degree Status	38
 justice_bio$firstGradDegreeStatus|>unique()|>sort()
 val_labels(justice_bio$firstGradDegreeStatus)<- varDegreeStatus
 
-# 91.	Second Graduate Degree	39
-# 92.	Second Graduate Degree Institution	39
-# 93.	Second Graduate Degree Status	39
-# 94.	Third Graduate Degree	39s
-# 95.	Third Graduate Degree Institution	39
-# 96.	Third Graduate Degree Status	40
-# 97.	Last Year Attended Graduate Institution	40
-# Employment Background Variables	40
-# 98.	Position When Nominated	40
-# 99.	Position When Nominated Location	41
-# 100.	Nominated from Judiciary	41
-# 101.	Prior Judicial Service	41
-# 102.	Total Months Judicial Service	42
-# 103.	Number of Months State Court Service	42
-# 104.	Number of Months Federal Court Service	42
-# 105.	Number of Months Appellate Court Service	42
-# 106.	Number of Months Trial Court Service	43
-# 107.	Prior Judicial Service 1—General	43
-# 108.	Prior Judicial Service 1—Location	43
-# 109.	Prior Judicial Service 1—Specific	44
-# 110.	Prior Judicial Service 1—Year First Served	46
-# 111.	Prior Judicial Service 1—Year Last Served	46
-# 112.	Prior Judicial Service 1—Party Appointing	46
-# 113.	Prior Judicial Service 1—Person(s) Appointing	46
-# 114.	Prior Judicial Service 2—General	47
-# 115.	Prior Judicial Service 2—Location	47
-# 116.	Prior Judicial Service 2—Specific	47
-# 117.	Prior Judicial Service 2—Year First Served	49
-# 118.	Prior Judicial Service 2—Year Last Served	49
-# 119.	Prior Judicial Service 2—Party Appointing	50
-# 120.	Prior Judicial Service 2—Person(s) Appointing	50
-# 121.	Prior Judicial Service 3—General	50
-# 122.	Prior Judicial Service 3—Location	50
-# 123.	Prior Judicial Service 3—Specific	51
-# 124.	Prior Judicial Service 3—Year First Served	53
-# 125.	Prior Judicial Service 3—Year Last Served	53
-# 126.	Prior Judicial Service 3—Party Appointing	53
-# 127.	Prior Judicial Service 3—Person(s) Appointing	53
-# 128.	Admission to the Bar	53
-# 129.	Year of First Admission to the Bar	54
-# 130.	State in Which First Admitted to the Bar	54
-# 131.	Promotion to Senior Counsel	54
-# 132.	Year Promoted to Senior Counsel	55
-# 133.	High Court Appearances	55
-# 134.	Practice as Solicitor	55
-# 135.	Year First Practiced as Solicitor	55
-# 136.	Year Last Practiced as Solicitor	55
-# 137.	State Where First Admitted as Solicitor	56
-# 138.	Law Teaching	56
-# 139.	High Court Associateship	56
-# 140.	Year of High Court Associateship	56
-# 141.	Justice for High Court Associateship	57
-# 142.	Other Judicial Associateship	57
-# 143.	Other Judicial Associateship Court	57
-# 144.	Year of Other Judicial Associateship	57
-# 145.	Government Appointment Type	57
-# 146.	Government Appointment Party	58
-# 147.	Political Party Commonwealth	58
-# 148.	Known Political Identification	58
+
+# 91. Second Graduate Degree (secondGradDegree)
+justice_bio$secondGradDegree |> unique() |> sort()
+val_labels(justice_bio$secondGradDegree) <- varGraduateDegree
+
+# 92. Second Graduate Degree Institution (secondGradDegreeInstitution)
+justice_bio$secondGradDegreeInstitution |> unique() |> sort()
+val_labels(justice_bio$secondGradDegreeInstitution) <- varGradDegreeInst
+
+# 93. Second Graduate Degree Status (secondGradDegreeStatus)
+justice_bio$secondGradDegreeStatus |> unique() |> sort()
+val_labels(justice_bio$secondGradDegreeStatus) <- varDegreeStatus
+
+# 94. Third Graduate Degree (thirdGradDegree)
+justice_bio$thirdGradDegree |> unique() |> sort()
+val_labels(justice_bio$thirdGradDegree) <- varGraduateDegree
+
+# 95. Third Graduate Degree Institution (thirdGradDegreeInstitution)
+justice_bio$thirdGradDegreeInstitution |> unique() |> sort()
+val_labels(justice_bio$thirdGradDegreeInstitution) <- varGradDegreeInst
+
+# 96. Third Graduate Degree Status (thirdGradDegreeStatus)
+justice_bio$thirdGradDegreeStatus |> unique() |> sort()
+val_labels(justice_bio$thirdGradDegreeStatus) <- varDegreeStatus
+
+# 97. Last Year Attended Graduate Institution (lastYearAttendedGrad) - numeric, no labels
+
+# Employment Background Variables
+
+# 98. Position When Nominated (postitionWhenNom - note the typo in actual data!)
+varPositionNominated <- c(`Chief Justice of Federal Court of Australia` = 1,
+                          `Justice of Federal Court of Australia` = 2,
+                          `Chief Justice of state supreme court/court of appeals` = 3,
+                          `Justice of state supreme court/court of appeals` = 4,
+                          `Commonwealth Solicitor General` = 5,
+                          `State solicitor general` = 6,
+                          `Barrister` = 7,
+                          `Solicitor` = 8,
+                          `Other` = 9)
+
+justice_bio$postitionWhenNom |> unique() |> sort()
+val_labels(justice_bio$postitionWhenNom) <- varPositionNominated
+
+# 99. Position When Nominated Location (positionNomLocation)
+varPositionNomLocation <- c(`Australian Capital Territory` = 1,
+                            `New South Wales` = 2,
+                            `Northern Territory` = 3,
+                            `Queensland` = 4,
+                            `South Australia` = 5,
+                            `Tasmania` = 6,
+                            `Victoria` = 7,
+                            `Western Australia` = 8,
+                            `Federal (Cth SG only)` = 9)
+
+justice_bio$positionNomLocation |> unique() |> sort()
+val_labels(justice_bio$positionNomLocation) <- varPositionNomLocation
+
+# 100. Nominated from Judiciary (nomFromJudiciary)
+varYesNo <- c(`Yes` = 1,
+              `No` = 2)
+
+justice_bio$nomFromJudiciary |> unique() |> sort()
+val_labels(justice_bio$nomFromJudiciary) <- varYesNo
+
+# 101. Prior Judicial Service (priorJudicialService)
+justice_bio$priorJudicialService |> unique() |> sort()
+val_labels(justice_bio$priorJudicialService) <- varYesNo
+
+# 102-106. Months variables - numeric, no labels
+# totalNumMonthsJudicialService
+# numMonthsStateCourtService
+# numMonthsFedCourtService (note: Fed not Federal)
+# numMonthsAppCourtService (note: App not Appellate)
+# numMonthsTrialCourtService
+
+# 107. Prior Judicial Service 1—General (PriorJudicialService1General - note capital P!)
+varPriorJudServiceGen <- c(`Federal court—trial level` = 1,
+                           `Federal court—appellate level (FCA)` = 2,
+                           `Family Court of Australia` = 3,
+                           `State supreme court—trial level` = 4,
+                           `State supreme court—appellate level` = 5,
+                           `State district court (county court)` = 6,
+                           `State local court (magistrates court)` = 7,
+                           `State speciality court` = 8)
+
+justice_bio$PriorJudicialService1General |> unique() |> sort()
+val_labels(justice_bio$PriorJudicialService1General) <- varPriorJudServiceGen
+
+# 108. Prior Judicial Service 1—Location (priorJudicialService1Location)
+varJudServiceLocation <- c(`Australia (federal actor)` = 1,
+                           `Australian Capital Territory` = 2,
+                           `New South Wales` = 3,
+                           `Northern Territory` = 4,
+                           `Queensland` = 5,
+                           `South Australia` = 6,
+                           `Tasmania` = 7,
+                           `Victoria` = 8,
+                           `Western Australia` = 9)
+
+justice_bio$priorJudicialService1Location |> unique() |> sort()
+val_labels(justice_bio$priorJudicialService1Location) <- varJudServiceLocation
+
+# 109. Prior Judicial Service 1—Specific (priorJudicialService1Specific)
+varPriorJudServiceSpecific <- c(
+  `Family Court of Australia` = 1,
+  `Federal Magistrates Court` = 2,
+  `Federal Circuit Court of Australia` = 3,
+  `Federal Court of Australia` = 5,
+  `Australian Industrial Court` = 6,
+  `Australia Military Court` = 7,
+  `Commonwealth Court of Conciliation and Arbitration` = 8,
+  `Commonwealth Industrial Court` = 9,
+  `Federal Court of Bankruptcy` = 10,
+  `Industrial Relations Court of Australia` = 11,
+  `Supreme Court of New South Wales—Common Law Division` = 12,
+  `Supreme Court of New South Wales—Equity Division` = 13,
+  `Supreme Court of New South Wales—Court of Appeal` = 14,
+  `Supreme Court of New South Wales—Court of Criminal Appeal` = 15,
+  `Land and Environment Court of New South Wales` = 16,
+  `District Court of New South Wales` = 17,
+  `Local Court of New South Wales` = 18,
+  `New South Wales Industrial Court` = 19,
+  `The Children's Court of New South Wales` = 20,
+  `New South Wales Dust Diseases Tribunal` = 21,
+  `Drug Court of New South Wales` = 22,
+  `New South Wales Chief Industrial Magistrate's Court` = 23,
+  `New South Wales Coroner's Court` = 24,
+  `Supreme Court of Queensland—Court of Appeal` = 25,
+  `Supreme Court of Queensland—Trial Division (Criminal)` = 26,
+  `Supreme Court of Queensland—Trial Division (Civil)` = 27,
+  `Industrial Court of Queensland` = 28,
+  `Queensland Planning and Environment Court` = 29,
+  `Queensland Land Appeal Court` = 30,
+  `District Court of Queensland` = 31,
+  `Magistrates Court of Queensland` = 32,
+  `Queensland Children's Court` = 33,
+  `Queensland Mental Health Court` = 34,
+  `Queensland Murri Court` = 35,
+  `Queensland Domestic Violence Court` = 36,
+  `Queensland Drug and Alcohol Court` = 37,
+  `Queensland Coroner's Court` = 38,
+  `Supreme Court of Victoria—Court of Appeals` = 39,
+  `Supreme Court of Victoria—Trial Court Common Law Division` = 40,
+  `Supreme Court of Victoria—Trial Court Commercial Division` = 41,
+  `Supreme Court of Victoria—Trial Court Criminal Division` = 42,
+  `County Court of Victoria` = 43,
+  `Magistrates' Court of Victoria` = 44,
+  `Children's Court of Victoria` = 45,
+  `Victorian Coroner's Court` = 46,
+  `Supreme Court of South Australia—Trial Division` = 47,
+  `Supreme Court of South Australia—Criminal Appeal Division` = 48,
+  `Supreme Court of South Australia—Civil Appeal Division` = 49,
+  `District Court of South Australia` = 50,
+  `Magistrates Court of South Australia` = 51,
+  `Environment, Resources, and Development Court of South Australia` = 52,
+  `South Australia Industrial Relations Court` = 53,
+  `Wardens Court of South Australia` = 54,
+  `Youth Court of South Australia` = 55,
+  `South Australia Coroner's Court` = 56,
+  `Supreme Court of Western Australia—Court of Appeals` = 57,
+  `Supreme Court of Western Australia—General (Trial) Division` = 58,
+  `Family Court of Western Australia` = 59,
+  `District Court of Western Australia` = 60,
+  `Magistrates Court of Western Australia` = 61,
+  `Aboriginal Community Court of Western Australia` = 62,
+  `Children's Court of Western Australia` = 63,
+  `Drug Court of Western Australia` = 64,
+  `Geraldton Family Violence Court, Western Australia` = 65,
+  `Western Australia Coroner's Court` = 66,
+  `Supreme Court of Tasmania—Criminal Division` = 67,
+  `Supreme Court of Tasmania—Civil Division` = 68,
+  `Supreme Court of Tasmania—Court of Appeals` = 69,
+  `Magistrates Court of Tasmania` = 70,
+  `Tasmanian Coroner's Court` = 71,
+  `Supreme Court of the Northern Territory—Court of Appeal` = 72,
+  `Supreme Court of the Northern Territory—Court of Criminal Appeal` = 73,
+  `Supreme Court of the Northern Territory—Civil Trial` = 74,
+  `Supreme Court of the Northern Territory—Criminal Trial` = 75,
+  `Northern Territory Local Court (Magistrate's Court)` = 76,
+  `Coroner's Court of the Northern Territory` = 77,
+  `Supreme Court of the Australian Capital Territory` = 78,
+  `Supreme Court of the Australian Capital Territory—Court of Appeal` = 79,
+  `Magistrates Court of the Australian Capital Territory` = 80,
+  `Coroner's Court of the Australian Capital Territory` = 81,
+  `Supreme Court of Norfolk Island` = 82,
+  `Court of Petty Sessions for Norfolk Island` = 83,
+  `Nauru Supreme Court` = 84,
+  `Other` = 85,
+  `Family Court of Australia—Full Court` = 86
+)
+
+justice_bio$priorJudicialService1Specific |> unique() |> sort()
+val_labels(justice_bio$priorJudicialService1Specific) <- varPriorJudServiceSpecific
+
+# 110-116. Service 1 additional fields - years/parties (no labels for numeric/text fields)
+
+# 117. Prior Judicial Service 2—General (PriorJudicialService2General - capital P!)
+justice_bio$PriorJudicialService2General |> unique() |> sort()
+val_labels(justice_bio$PriorJudicialService2General) <- varPriorJudServiceGen
+
+# 118. Prior Judicial Service 2—Location (priorJudicialService2Location)
+justice_bio$priorJudicialService2Location |> unique() |> sort()
+val_labels(justice_bio$priorJudicialService2Location) <- varJudServiceLocation
+
+# 119. Prior Judicial Service 2—Specific (priorJudicialService2Specific)
+justice_bio$priorJudicialService2Specific |> unique() |> sort()
+val_labels(justice_bio$priorJudicialService2Specific) <- varPriorJudServiceSpecific
+
+# 120-125. Service 2 additional fields (no labels)
+
+# 126. Prior Judicial Service 3—General (PriorJudicialService3General - capital P!)
+justice_bio$PriorJudicialService3General |> unique() |> sort()
+val_labels(justice_bio$PriorJudicialService3General) <- varPriorJudServiceGen
+
+# 127. Prior Judicial Service 3—Location (priorJudicialService3Location)
+justice_bio$priorJudicialService3Location |> unique() |> sort()
+val_labels(justice_bio$priorJudicialService3Location) <- varJudServiceLocation
+
+# 128. Prior Judicial Service 3—Specific (priorJudicialService3Specific)
+justice_bio$priorJudicialService3Specific |> unique() |> sort()
+val_labels(justice_bio$priorJudicialService3Specific) <- varPriorJudServiceSpecific
+
+# 129-134. Service 3 additional fields (no labels)
+
+# 135. Admission to the Bar (barAdmission)
+justice_bio$barAdmission |> unique() |> sort()
+val_labels(justice_bio$barAdmission) <- varYesNo
+
+# 136. Year of First Admission to the Bar (barAdmissionYear) - numeric, no labels
+
+# 137. State in Which First Admitted to the Bar (barAdmissionState)
+varBarState <- c(`Australian Capital Territory` = 1,
+                 `New South Wales` = 2,
+                 `Northern Territory` = 3,
+                 `Queensland` = 4,
+                 `South Australia` = 5,
+                 `Tasmania` = 6,
+                 `Victoria` = 7,
+                 `Western Australia` = 8,
+                 `Overseas` = 9)
+
+justice_bio$barAdmissionState |> unique() |> sort()
+val_labels(justice_bio$barAdmissionState) <- varBarState
+
+# 138. Promotion to Senior Counsel (barPromotion)
+varBarPromotion <- c(`Yes, SC/QC` = 1,
+                     `No` = 2)
+
+justice_bio$barPromotion |> unique() |> sort()
+val_labels(justice_bio$barPromotion) <- varBarPromotion
+
+# 139. Year Promoted to Senior Counsel (barPromotionYear) - numeric, no labels
+
+# 140. High Court Appearances (hcaAppearances - note the 's' plural!)
+varHCAAppearance <- c(`No` = 1,
+                      `Yes—Infrequent (1-5 appearances)` = 2,
+                      `Yes—Moderate frequency (6-15 appearances)` = 3,
+                      `Yes—Frequent (more than 15 appearances)` = 4)
+
+justice_bio$hcaAppearances |> unique() |> sort()
+val_labels(justice_bio$hcaAppearances) <- varHCAAppearance
+
+# 141. Practice as Solicitor (solicitor)
+justice_bio$solicitor |> unique() |> sort()
+val_labels(justice_bio$solicitor) <- varYesNo
+
+# 142-143. Years (solicitorFirstYear, solicitorLastYear) - numeric, no labels
+
+# 144. State Where First Admitted as Solicitor (solicitorState)
+justice_bio$solicitorState |> unique() |> sort()
+val_labels(justice_bio$solicitorState) <- varBarState
+
+# 145. Law Teaching (teaching)
+varTeaching <- c(`Yes—Fulltime academic` = 1,
+                 `Yes—Adjunct/casual academic` = 2,
+                 `No` = 3)
+
+justice_bio$teaching |> unique() |> sort()
+val_labels(justice_bio$teaching) <- varTeaching
+
+# 146. High Court Associateship (hcaAssociate)
+justice_bio$hcaAssociate |> unique() |> sort()
+val_labels(justice_bio$hcaAssociate) <- varYesNo
+
+# 147. Year of High Court Associateship (hcaAssociateYear) - numeric, no labels
+
+# 148. Justice for High Court Associateship (hcaAssociateJustice)
+justice_bio$hcaAssociateJustice |> unique() |> sort()
+val_labels(justice_bio$hcaAssociateJustice) <- varJustice
+
+# 149. Other Judicial Associateship (otherAssociate - CORRECTED!)
+justice_bio$otherAssociate |> unique() |> sort()
+val_labels(justice_bio$otherAssociate) <- varYesNo
+
+# 150. Year of Other Judicial Associateship (otherAssociateYear) - numeric, no labels
+
+# 151. Government Appointment Type (govAppointmentType)
+varGovAppointmentType <- c(`Commonwealth Solicitor-General` = 1,
+                           `State Solicitor-General` = 2,
+                           `Commonwealth tribunal appointment` = 3,
+                           `Commonwealth commission (major)` = 4,
+                           `Not applicable` = 999)
+
+justice_bio$govAppointmentType |> unique() |> sort()
+val_labels(justice_bio$govAppointmentType) <- varGovAppointmentType
+
+# 152. Government Appointment Party (govAppointmentParty)
+varGovAppointParty <- c(`Liberal` = 1,
+                        `Labor` = 2,
+                        `Not applicable` = 999)
+
+justice_bio$govAppointmentParty |> unique() |> sort()
+val_labels(justice_bio$govAppointmentParty) <- varGovAppointParty
+
+# 153. Political Party Commonwealth (politicalPartyCth)
+justice_bio$politicalPartyCth |> unique() |> sort()
+val_labels(justice_bio$politicalPartyCth) <- varGovAppointParty
+
+# 154. Known Political Identification (politicalIdentification)
+justice_bio$politicalIdentification |> unique() |> sort()
+val_labels(justice_bio$politicalIdentification) <- varGovAppointParty
 
 
+# Add comprehensive variable labels
+justice_bio <- justice_bio |>
+  set_variable_labels(
+    # Identification Variables
+    justice = "Justice ID",
+    justiceName = "Justice name",
+    dateNom = "Date first nomination announced",
+    position = "Position to which first nominated to court",
+    dateSwearingIn = "Date of swearing in ceremony",
+    seatID = "Seat identification number",
+    homeRegistry = "Home registry",
+    justiceReplaced = "Justice who nominee replaced",
+    chiefAnnounce = "Chief Justice when nomination announced",
+    chiefSworn = "Chief Justice when sworn in",
+    nomPM = "Nominating Prime Minister",
+    nomPMParty = "Nominating Prime Minister party",
+    politicalPowerDateNom = "Political power on date of nomination",
+    PMSwearingIn = "Prime Minister on date of swearing in",
+    PMPartySwearingIn = "Prime Minister party on date of swearing in",
+    politicalPowerSwearingIn = "Political power on date of swearing in",
+    promotionDate = "Date of nomination of puisne justice to Chief Justice",
+    nomPMPromotion = "Nominating PM for Chief Justice from puisne",
+    nomPMPartyPromotion = "Nominating PM party for CJ from puisne",
+    politicalPowerPromotion = "Political power for CJ from puisne",
+    yearPromotion = "Year of appointment as Chief Justice from puisne",
+    dateSwearingInPromotion = "Date of swearing in as Chief Justice from puisne",
+    replacementCJPromotion = "Who puisne justice replaced as Chief Justice",
+    ideologyScore = "Ideology score",
+
+    # Personal Background Variables
+    nomYearBirth = "Year of birth",
+    nomDateBirth = "Exact date of birth",
+    placeBirthGen = "State or country of birth",
+    religionGeneral = "Religion—general",
+    religionSpecific = "Religion—specific",
+    race = "Nominee's race",
+    gender = "Nominee's gender",
+    yearDeath = "Year of death",
+    dateDeath = "Exact date of death",
+    ageDeath = "Age at date of death",
+    yearDeparture = "Year departed court",
+    dateDeparture = "Exact date of departure from court",
+    ageDateDeparture = "Age on date of departure",
+    reasonDeparture = "Reason for departing court",
+    resignationParty = "Resignation party",
+    PMDeparture = "Prime Minister on date of departure",
+    PMPartyDeparture = "PM party on date of departure",
+    politicalPowerRetirementAnnounce = "Political power on date retirement announced",
+    positionAfterDeparture1 = "Position held after departure 1",
+    positionAfterDepartureParty1 = "Party appointing to position after departure 1",
+    positionAfterDeparture2 = "Position held after departure 2",
+    positionAfterDepartureParty2 = "Party appointing to position after departure 2",
+    positionAfterDeparture3 = "Position held after departure 3",
+    positionAfterDepartureParty3 = "Party appointing to position after departure 3",
+    positionAfterDeparture4 = "Position held after departure 4",
+    positionAfterDepartureParty4 = "Party appointing to position after departure 4",
+    childhoodLocationGeneral = "Childhood location—general",
+    childhoodLocationSpecific = "Childhood location—specific",
+    childhoodSurrounds = "Childhood surrounds",
+
+    # Family Information
+    economicStatus = "Childhood economic status",
+    occupationFather = "Primary occupation of father",
+    politicalFather = "Political affiliation father",
+    occupationMother = "Primary occupation of mother",
+    politicalMother = "Political affiliation mother",
+    occupationSpouse = "Primary occupation of spouse",
+    politicalSpouse = "Political affiliation spouse",
+    numberMarriages = "Number of marriages",
+    dateMarriage = "Date of last marriage",
+    numberChildren = "Number of children",
+    numberDaughters = "Number of daughters",
+    numberSons = "Number of sons",
+
+    # Educational Background Variables
+    secondaryEducationType = "Type of secondary education",
+    firstDegree = "First degree",
+    firstDegreeInstitution = "First degree institution",
+    firstDegreeStatus = "First degree status",
+    firstDegreeYearStart = "First degree year started",
+    firstDegreeYearEnd = "First degree year completed",
+    secondDegree = "Second degree",
+    secondDegreeInstitution = "Second degree institution",
+    secondDegreeStatus = "Second degree status",
+    secondDegreeYearStart = "Second degree year started",  # CORRECTED!
+    secondDegreeYearEnd = "Second degree year completed",
+    thirdDegree = "Third degree",
+    thirdDegreeInstitution = "Third degree institution",
+    thirdDegreeStatus = "Third degree status",
+    thirdDegreeYearStart = "Third degree year started",
+    thirdDegreeYearEnd = "Third degree year completed",
+    nameLawSchool = "Name of law school",
+    lastYearLawSchool = "Year of law school",
+    academicHonoursMedal = "Academic honours medal",
+    academicHonoursFirstClass = "Academic honours first class honours",
+    academicHonoursOverseas = "Academic honours overseas scholarship",
+    overseasStudy = "Overseas study",
+    overseasStudyLocation = "Overseas study location",
+    firstGradDegree = "First graduate degree",  # CORRECTED!
+    firstGradDegreeInstitution = "First graduate degree institution",
+    firstGradDegreeStatus = "First graduate degree status",
+    secondGradDegree = "Second graduate degree",
+    secondGradDegreeInstitution = "Second graduate degree institution",
+    secondGradDegreeStatus = "Second graduate degree status",
+    thirdGradDegree = "Third graduate degree",
+    thirdGradDegreeInstitution = "Third graduate degree institution",
+    thirdGradDegreeStatus = "Third graduate degree status",
+    lastYearAttendedGrad = "Last year attended graduate institution",
+
+    # Employment Background Variables
+    postitionWhenNom = "Position when nominated",
+    positionNomLocation = "Position when nominated location",
+    nomFromJudiciary = "Nominated from judiciary",
+    priorJudicialService = "Prior judicial service",
+    totalNumMonthsJudicialService = "Total months judicial service",
+    numMonthsStateCourtService = "Number of months state court service",
+    numMonthsFedCourtService = "Number of months federal court service",
+    numMonthsAppCourtService = "Number of months appellate court service",
+    numMonthsTrialCourtService = "Number of months trial court service",
+    PriorJudicialService1General = "Prior judicial service 1—general",
+    priorJudicialService1Location = "Prior judicial service 1—location",
+    priorJudicialService1Specific = "Prior judicial service 1—specific",
+    priorJudicialService1StartDate = "Prior judicial service 1—start date",
+    priorJudicialService1EndDate = "Prior judicial service 1—end date",
+    numMonthsJudicialService1 = "Number of months judicial service 1",
+    priorJudicialService1FirstYear = "Prior judicial service 1—year first served",
+    priorJudicialService1LastYear = "Prior judicial service 1—year last served",
+    priorJudicialService1Party = "Prior judicial service 1—party appointing",
+    PriorJudicialService2General = "Prior judicial service 2—general",
+    priorJudicialService2Location = "Prior judicial service 2—location",
+    priorJudicialService2Specific = "Prior judicial service 2—specific",
+    priorJudicialService2StartDate = "Prior judicial service 2—start date",
+    priorJudicialService2EndDate = "Prior judicial service 2—end date",
+    numMonthsJudicialService2 = "Number of months judicial service 2",
+    priorJudicialService2FirstYear = "Prior judicial service 2—year first served",
+    priorJudicialService2LastYear = "Prior judicial service 2—year last served",
+    priorJudicialService2Party = "Prior judicial service 2—party appointing",
+    PriorJudicialService3General = "Prior judicial service 3—general",
+    priorJudicialService3Location = "Prior judicial service 3—location",
+    priorJudicialService3Specific = "Prior judicial service 3—specific",
+    priorJudicialService3FirstYear = "Prior judicial service 3—year first served",
+    priorJudicialService3LastYear = "Prior judicial service 3—year last served",
+    priorJudicialService3StartDate = "Prior judicial service 3—start date",
+    priorJudicialService3EndDate = "Prior judicial service 3—end date",
+    numMonthsJudicialService3 = "Number of months judicial service 3",
+    priorJudicialService3Party = "Prior judicial service 3—party appointing",
+    barAdmission = "Admission to the bar",
+    barAdmissionYear = "Year of first admission to the bar",
+    barAdmissionState = "State in which first admitted to the bar",
+    barPromotion = "Promotion to senior counsel",
+    barPromotionYear = "Year promoted to senior counsel",
+    hcaAppearances = "High Court appearances",
+    solicitor = "Practice as solicitor",
+    solicitorFirstYear = "Year first practiced as solicitor",
+    solicitorLastYear = "Year last practiced as solicitor",
+    solicitorState = "State where first admitted as solicitor",
+    teaching = "Law teaching",
+    hcaAssociate = "High Court associateship",
+    hcaAssociateYear = "Year of High Court associateship",
+    hcaAssociateJustice = "Justice for High Court associateship",
+    otherAssociate = "Other judicial associateship",  # CORRECTED!
+    otherAssociateYear = "Year of other judicial associateship",
+    govAppointmentType = "Government appointment type",
+    govAppointmentParty = "Government appointment party",
+    politicalPartyCth = "Political party Commonwealth",
+    politicalIdentification = "Known political identification",
+    Notes = "Notes"
+  )
+
+
+# checking to make sure everything is good:
+
+
+# Function to check if all values in a variable are within its label set
+check_labels <- function(data, var_name) {
+  # Get the variable
+  var <- data[[var_name]]
+
+  # Get the value labels
+  labels <- val_labels(var)
+
+  # If no labels, skip
+  if (is.null(labels) || length(labels) == 0) {
+    return(NULL)
+  }
+
+  # Get unique values in the data (excluding NA)
+  actual_values <- unique(var[!is.na(var)])
+
+  # Get expected values from labels
+  expected_values <- unname(labels)
+
+  # Find values that are not in the label set
+  unexpected <- actual_values[!actual_values %in% expected_values]
+
+  if (length(unexpected) > 0) {
+    return(data.frame(
+      variable = var_name,
+      unexpected_values = paste(unexpected, collapse = ", "),
+      expected_values = paste(expected_values, collapse = ", "),
+      stringsAsFactors = FALSE
+    ))
+  }
+
+  return(NULL)
+}
+
+# Get ONLY variables with VALUE labels (not just variable labels)
+all_vars <- names(justice_bio)
+labeled_vars <- character()
+
+for (var_name in all_vars) {
+  var <- justice_bio[[var_name]]
+  if (!is.null(val_labels(var)) && length(val_labels(var)) > 0) {
+    labeled_vars <- c(labeled_vars, var_name)
+  }
+}
+
+cat("\n=== Checking Value Labels ===\n")
+cat("Found", length(labeled_vars), "variables with value labels\n")
+cat("(Out of", length(all_vars), "total variables)\n\n")
+
+if (length(labeled_vars) == 0) {
+  cat("No variables with value labels found. Have you applied val_labels() yet?\n")
+} else {
+
+  # Check each labeled variable
+  problems <- lapply(labeled_vars, function(v) check_labels(justice_bio, v))
+  problems <- do.call(rbind, problems[!sapply(problems, is.null)])
+
+  if (is.null(problems) || nrow(problems) == 0) {
+    cat("✓ SUCCESS! All values are within expected ranges for all labeled variables.\n")
+  } else {
+    cat("✗ PROBLEMS FOUND!\n\n")
+    cat("The following variables have values outside their label sets:\n\n")
+
+    for (i in 1:nrow(problems)) {
+      cat("Variable:", problems$variable[i], "\n")
+      cat("  Unexpected values:", problems$unexpected_values[i], "\n")
+      cat("  Expected values:", problems$expected_values[i], "\n\n")
+    }
+
+    cat("\nTotal variables with problems:", nrow(problems), "\n")
+  }
+
+  # Also create a summary table
+  cat("\n=== Summary of All Value-Labeled Variables ===\n")
+  summary_table <- data.frame(
+    variable = character(),
+    n_labels = integer(),
+    n_unique_values = integer(),
+    all_labeled = character(),
+    stringsAsFactors = FALSE
+  )
+
+  for (var_name in labeled_vars) {
+    var <- justice_bio[[var_name]]
+    labels <- val_labels(var)
+    actual_values <- unique(var[!is.na(var)])
+    expected_values <- unname(labels)
+
+    all_within <- all(actual_values %in% expected_values)
+
+    summary_table <- rbind(summary_table, data.frame(
+      variable = var_name,
+      n_labels = length(labels),
+      n_unique_values = length(actual_values),
+      all_labeled = ifelse(all_within, "✓", "✗"),
+      stringsAsFactors = FALSE
+    ))
+  }
+
+  print(summary_table)
+}
 
 # saving ####
+library(haven)
+
+#save the processed data in raw data folder
+
+# Save as SPSS file (.sav)
+write_sav(justice_bio, "data-raw/justice_bio.sav")
+
+# Save as Stata file (.dta)
+write_dta(justice_bio, "data-raw/justice_bio.dta")
+
+
+# Get all variables with value labels
+all_vars <- names(justice_bio)
+labeled_vars <- character()
+
+for (var_name in all_vars) {
+  var <- justice_bio[[var_name]]
+  if (!is.null(val_labels(var)) && length(val_labels(var)) > 0) {
+    labeled_vars <- c(labeled_vars, var_name)
+  }
+}
+
+# Convert each to factor using the labels
+for (var_name in labeled_vars) {
+  justice_bio[[var_name]] <- to_factor(justice_bio[[var_name]])
+  cat("✓ Converted:", var_name, "\n")
+}
+
+
 
 #save the processed data in raw data folder
 save(justice_bio, file="data-raw/justice_bio.rda")
+write_excel_csv(justice_bio, file="data-raw/justice_bio.csv")
+writexl::write_xlsx(justice_bio, path="data-raw/justice_bio.xlsx")
 
 # save a copy of the raw data for the package
 usethis::use_data(justice_bio, overwrite = TRUE)

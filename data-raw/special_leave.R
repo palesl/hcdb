@@ -594,12 +594,139 @@ special_leave$dateLcDecision<-ymd(special_leave$dateLcDecision)
 
 special_leave$specialLeaveDate<-special_leave$specialLeaveDate |>as.Date()
 
+
+#Check to validate:
+
+# Function to check if all values in a variable are within its label set
+check_labels <- function(data, var_name) {
+  # Get the variable
+  var <- data[[var_name]]
+
+  # Get the value labels
+  labels <- val_labels(var)
+
+  # If no labels, skip
+  if (is.null(labels) || length(labels) == 0) {
+    return(NULL)
+  }
+
+  # Get unique values in the data (excluding NA)
+  actual_values <- unique(var[!is.na(var)])
+
+  # Get expected values from labels
+  expected_values <- unname(labels)
+
+  # Find values that are not in the label set
+  unexpected <- actual_values[!actual_values %in% expected_values]
+
+  if (length(unexpected) > 0) {
+    return(data.frame(
+      variable = var_name,
+      unexpected_values = paste(unexpected, collapse = ", "),
+      expected_values = paste(expected_values, collapse = ", "),
+      stringsAsFactors = FALSE
+    ))
+  }
+
+  return(NULL)
+}
+
+# Get ONLY variables with VALUE labels (not just variable labels)
+all_vars <- names(special_leave)
+labeled_vars <- character()
+
+for (var_name in all_vars) {
+  var <- special_leave[[var_name]]
+  if (!is.null(val_labels(var)) && length(val_labels(var)) > 0) {
+    labeled_vars <- c(labeled_vars, var_name)
+  }
+}
+
+cat("\n=== Checking Value Labels ===\n")
+cat("Found", length(labeled_vars), "variables with value labels\n")
+cat("(Out of", length(all_vars), "total variables)\n\n")
+
+if (length(labeled_vars) == 0) {
+  cat("No variables with value labels found. Have you applied val_labels() yet?\n")
+} else {
+
+  # Check each labeled variable
+  problems <- lapply(labeled_vars, function(v) check_labels(special_leave, v))
+  problems <- do.call(rbind, problems[!sapply(problems, is.null)])
+
+  if (is.null(problems) || nrow(problems) == 0) {
+    cat("✓ SUCCESS! All values are within expected ranges for all labeled variables.\n")
+  } else {
+    cat("✗ PROBLEMS FOUND!\n\n")
+    cat("The following variables have values outside their label sets:\n\n")
+
+    for (i in 1:nrow(problems)) {
+      cat("Variable:", problems$variable[i], "\n")
+      cat("  Unexpected values:", problems$unexpected_values[i], "\n")
+      cat("  Expected values:", problems$expected_values[i], "\n\n")
+    }
+
+    cat("\nTotal variables with problems:", nrow(problems), "\n")
+  }
+
+  # Also create a summary table
+  cat("\n=== Summary of All Value-Labeled Variables ===\n")
+  summary_table <- data.frame(
+    variable = character(),
+    n_labels = integer(),
+    n_unique_values = integer(),
+    all_labeled = character(),
+    stringsAsFactors = FALSE
+  )
+
+  for (var_name in labeled_vars) {
+    var <- special_leave[[var_name]]
+    labels <- val_labels(var)
+    actual_values <- unique(var[!is.na(var)])
+    expected_values <- unname(labels)
+
+    all_within <- all(actual_values %in% expected_values)
+
+    summary_table <- rbind(summary_table, data.frame(
+      variable = var_name,
+      n_labels = length(labels),
+      n_unique_values = length(actual_values),
+      all_labeled = ifelse(all_within, "✓", "✗"),
+      stringsAsFactors = FALSE
+    ))
+  }
+
+  print(summary_table)
+
+}
+
+
+
+
 # saving ####
 
 special_leave<-as_tibble(special_leave)
 
+
+all_vars <- names(special_leave)
+labeled_vars <- character()
+
+for (var_name in all_vars) {
+  var <- special_leave[[var_name]]
+  if (!is.null(val_labels(var)) && length(val_labels(var)) > 0) {
+    labeled_vars <- c(labeled_vars, var_name)
+  }
+}
+
+# Convert each to factor using the labels
+for (var_name in labeled_vars) {
+  special_leave[[var_name]] <- to_factor(special_leave[[var_name]])
+  cat("✓ Converted:", var_name, "\n")
+}
 #save the processed data in raw data folder
 save(special_leave, file="data-raw/special_leave.rda")
+readr::write_excel_csv(special_leave, file="data-raw/special_leave.csv")
+writexl::write_xlsx(special_leave, path="data-raw/special_leave.xlsx")
 
 # save a copy of the raw data for the package
 usethis::use_data(special_leave, overwrite = TRUE)

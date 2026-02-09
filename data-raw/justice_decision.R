@@ -1,10 +1,10 @@
 ## code to prepare `HCDB_Master_Spreadsheet_Complete_Dataset_All_Data_Justice_and_Decision_1995_2021` dataset goes here
 
 # save a copy of the excel file in data-raw
-file.copy(from = "~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/HCDB Master Spreadsheet, Complete Dataset (All Data, Justice and Decision), 1995-2020.xlsx",
-          to="data-raw/HCDB Master Spreadsheet, Complete Dataset (All Data, Justice and Decision), 1995-2020.xlsx",
-          overwrite=T)
-
+# file.copy(from = "~/Dropbox/High Court Project/Data Files/CURRENT DATASETS/HCDB Master Spreadsheet, Complete Dataset (All Data, Justice and Decision), 1995-2020.xlsx",
+#           to="data-raw/HCDB Master Spreadsheet, Complete Dataset (All Data, Justice and Decision), 1995-2020.xlsx",
+#           overwrite=T)
+#
 
 # input from shared folder and storage in Raw ####
 justice_decision <- readxl::read_excel("data-raw/HCDB Master Spreadsheet, Complete Dataset (All Data, Justice and Decision), 1995-2020.xlsx")
@@ -3275,10 +3275,135 @@ var_label(justice_decision)<- list(HCDBcaseId = "HCDB Case ID",
 
 
 
+# Function to check if all values in a variable are within its label set
+check_labels <- function(data, var_name) {
+  # Get the variable
+  var <- data[[var_name]]
+
+  # Get the value labels
+  labels <- val_labels(var)
+
+  # If no labels, skip
+  if (is.null(labels) || length(labels) == 0) {
+    return(NULL)
+  }
+
+  # Get unique values in the data (excluding NA)
+  actual_values <- unique(var[!is.na(var)])
+
+  # Get expected values from labels
+  expected_values <- unname(labels)
+
+  # Find values that are not in the label set
+  unexpected <- actual_values[!actual_values %in% expected_values]
+
+  if (length(unexpected) > 0) {
+    return(data.frame(
+      variable = var_name,
+      unexpected_values = paste(unexpected, collapse = ", "),
+      expected_values = paste(expected_values, collapse = ", "),
+      stringsAsFactors = FALSE
+    ))
+  }
+
+  return(NULL)
+}
+
+# Get ONLY variables with VALUE labels (not just variable labels)
+all_vars <- names(justice_decision)
+labeled_vars <- character()
+
+for (var_name in all_vars) {
+  var <- justice_decision[[var_name]]
+  if (!is.null(val_labels(var)) && length(val_labels(var)) > 0) {
+    labeled_vars <- c(labeled_vars, var_name)
+  }
+}
+
+cat("\n=== Checking Value Labels ===\n")
+cat("Found", length(labeled_vars), "variables with value labels\n")
+cat("(Out of", length(all_vars), "total variables)\n\n")
+
+if (length(labeled_vars) == 0) {
+  cat("No variables with value labels found. Have you applied val_labels() yet?\n")
+} else {
+
+  # Check each labeled variable
+  problems <- lapply(labeled_vars, function(v) check_labels(justice_decision, v))
+  problems <- do.call(rbind, problems[!sapply(problems, is.null)])
+
+  if (is.null(problems) || nrow(problems) == 0) {
+    cat("✓ SUCCESS! All values are within expected ranges for all labeled variables.\n")
+  } else {
+    cat("✗ PROBLEMS FOUND!\n\n")
+    cat("The following variables have values outside their label sets:\n\n")
+
+    for (i in 1:nrow(problems)) {
+      cat("Variable:", problems$variable[i], "\n")
+      cat("  Unexpected values:", problems$unexpected_values[i], "\n")
+      cat("  Expected values:", problems$expected_values[i], "\n\n")
+    }
+
+    cat("\nTotal variables with problems:", nrow(problems), "\n")
+  }
+
+  # Also create a summary table
+  cat("\n=== Summary of All Value-Labeled Variables ===\n")
+  summary_table <- data.frame(
+    variable = character(),
+    n_labels = integer(),
+    n_unique_values = integer(),
+    all_labeled = character(),
+    stringsAsFactors = FALSE
+  )
+
+  for (var_name in labeled_vars) {
+    var <- justice_decision[[var_name]]
+    labels <- val_labels(var)
+    actual_values <- unique(var[!is.na(var)])
+    expected_values <- unname(labels)
+
+    all_within <- all(actual_values %in% expected_values)
+
+    summary_table <- rbind(summary_table, data.frame(
+      variable = var_name,
+      n_labels = length(labels),
+      n_unique_values = length(actual_values),
+      all_labeled = ifelse(all_within, "✓", "✗"),
+      stringsAsFactors = FALSE
+    ))
+  }
+
+  print(summary_table)
+}
+
+
+
+
+
 #save the processed data in raw data folder
-save(justice_decision, file="data-raw/justice_decision.rda")
-haven::write_dta(justice_decision, path="data-raw/justice_decision.dta")
 haven::write_sav(justice_decision, path="data-raw/justice_decision.sav")
+haven::write_dta(justice_decision, path="data-raw/justice_decision.dta")
+
+
+
+all_vars <- names(justice_decision)
+labeled_vars <- character()
+
+for (var_name in all_vars) {
+  var <- justice_decision[[var_name]]
+  if (!is.null(val_labels(var)) && length(val_labels(var)) > 0) {
+    labeled_vars <- c(labeled_vars, var_name)
+  }
+}
+
+# Convert each to factor using the labels
+for (var_name in labeled_vars) {
+  justice_decision[[var_name]] <- to_factor(justice_decision[[var_name]])
+  cat("✓ Converted:", var_name, "\n")
+}
+
+save(justice_decision, file="data-raw/justice_decision.rda")
 writexl::write_xlsx(justice_decision, path="data-raw/justice_decision.xlsx")
 
 # save a copy of the raw data for the package

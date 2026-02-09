@@ -1,7 +1,5 @@
 #' Special Leave Data, 2003-2018
 #'
-#' Special Leave Data, 2003-2018
-#'
 #' @format ## `special_leave`
 #' A tibble: 8,412 × 48:
 #' \describe{
