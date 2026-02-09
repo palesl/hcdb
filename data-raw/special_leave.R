@@ -707,6 +707,11 @@ if (length(labeled_vars) == 0) {
 
 special_leave<-as_tibble(special_leave)
 
+haven::write_sav(special_leave, path="data-raw/special_leave.sav")
+haven::write_dta(special_leave, path="data-raw/special_leave.dta")
+
+
+
 
 all_vars <- names(special_leave)
 labeled_vars <- character()
