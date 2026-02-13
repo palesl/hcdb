@@ -3397,11 +3397,11 @@ for (var_name in all_vars) {
   }
 }
 
-# Convert each to factor using the labels
-for (var_name in labeled_vars) {
-  justice_decision[[var_name]] <- to_factor(justice_decision[[var_name]])
-  cat("✓ Converted:", var_name, "\n")
-}
+# # Convert each to factor using the labels
+# for (var_name in labeled_vars) {
+#   justice_decision[[var_name]] <- to_factor(justice_decision[[var_name]])
+#   cat("✓ Converted:", var_name, "\n")
+# }
 
 save(justice_decision, file="data-raw/justice_decision.rda")
 writexl::write_xlsx(justice_decision, path="data-raw/justice_decision.xlsx")

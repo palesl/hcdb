@@ -257,8 +257,8 @@ write_sav(advocate_case, "data-raw/advocate_case.sav")
 # Save as Stata file (.dta)
 write_dta(advocate_case, "data-raw/advocate_case.dta")
 
-advocate_case<-advocate_case %>%
-  mutate(across(c(RepGeneral, Title, Status1, Status2, Gender, Role), to_factor))
+# advocate_case<-advocate_case %>%
+#   mutate(across(c(RepGeneral, Title, Status1, Status2, Gender, Role), to_factor))
 
 # Save as R file (.rda)
 save(advocate_case, file="data-raw/advocate_case.rda")

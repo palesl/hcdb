@@ -724,10 +724,10 @@ for (var_name in all_vars) {
 }
 
 # Convert each to factor using the labels
-for (var_name in labeled_vars) {
-  special_leave[[var_name]] <- to_factor(special_leave[[var_name]])
-  cat("✓ Converted:", var_name, "\n")
-}
+# for (var_name in labeled_vars) {
+#   special_leave[[var_name]] <- to_factor(special_leave[[var_name]])
+#   cat("✓ Converted:", var_name, "\n")
+# }
 #save the processed data in raw data folder
 save(special_leave, file="data-raw/special_leave.rda")
 readr::write_excel_csv(special_leave, file="data-raw/special_leave.csv")

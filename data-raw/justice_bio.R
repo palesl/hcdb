@@ -1331,11 +1331,11 @@ for (var_name in all_vars) {
   }
 }
 
-# Convert each to factor using the labels
-for (var_name in labeled_vars) {
-  justice_bio[[var_name]] <- to_factor(justice_bio[[var_name]])
-  cat("✓ Converted:", var_name, "\n")
-}
+# # Convert each to factor using the labels
+# for (var_name in labeled_vars) {
+#   justice_bio[[var_name]] <- to_factor(justice_bio[[var_name]])
+#   cat("✓ Converted:", var_name, "\n")
+# }
 
 
 
