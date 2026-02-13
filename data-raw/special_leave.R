@@ -11,7 +11,9 @@ library(readxl)
 
 # opening from the raw folder
 
-special_leave <- read_excel("data-raw/Special Leave 2003-2018 [PAT THIS ONE].xlsx")
+special_leave <- read_excel("data-raw/Special Leave 2003-2018 [PAT THIS ONE].xlsx",
+                            guess_max = min(8000, Inf))
+
 
 #cleaning justice decision data ####
 
@@ -424,6 +426,13 @@ names<-bind_cols(justiceID=justiceID,
 names_vec <- names$justiceID
 names(names_vec)<-names$justiceName
 
+
+
+special_leave$justiceSpecialLeave1[special_leave$justiceSpecialLeave1=="51\r\n"&
+                                    !is.na(special_leave$justiceSpecialLeave1)]<-'51'
+
+special_leave$justiceSpecialLeave1<-as.numeric(special_leave$justiceSpecialLeave1)
+
 special_leave$justiceSpecialLeave1|>unique()|>sort()
 special_leave$justiceSpecialLeave2|>unique()|>sort()
 special_leave$justiceSpecialLeave3|>unique()|>sort()
@@ -466,7 +475,18 @@ slo<- c(`Special leave granted` = 1,
         `Special leave refused with costs`=5,
         `Unknown`=999)
 
+
+special_leave$specialLeaveOutcome[special_leave$specialLeaveOutcome=="5\r\n"&
+                                    !is.na(special_leave$specialLeaveOutcome)]<-'5'
+
+special_leave$specialLeaveOutcome[special_leave$specialLeaveOutcome=="1\r\n"&
+                                    !is.na(special_leave$specialLeaveOutcome)]<-'1'
+special_leave$specialLeaveOutcome[special_leave$specialLeaveOutcome=="999*"&
+                                    !is.na(special_leave$specialLeaveOutcome)]<-'999'
+
 unique(special_leave$specialLeaveOutcome)|>sort()
+
+special_leave$specialLeaveOutcome<-as.numeric(special_leave$specialLeaveOutcome)
 
 val_labels(special_leave$specialLeaveOutcome)<- slo
 
