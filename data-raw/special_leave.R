@@ -458,7 +458,7 @@ sll<-c(Adelaide=1,
        Melbourne=6,
        Perth=7,
        Sydney=8,
-       Uknown=999)
+       Unknown=999)
 
 unique(special_leave$specialLeaveLocation)|>sort()
 
