@@ -759,9 +759,15 @@ haven::write_sav(special_leave, path="data-raw/special_leave.sav")
 haven::write_dta(special_leave, path="data-raw/special_leave.dta")
 
 #save the processed data in raw data folder
-save(special_leave, file="data-raw/special_leave.rda")
+
+
 readr::write_excel_csv(special_leave, file="data-raw/special_leave.csv")
 writexl::write_xlsx(special_leave, path="data-raw/special_leave.xlsx")
+
+
+special_leave<-haven::as_factor(special_leave, only_labelled=TRUE)
+
+save(special_leave, file="data-raw/special_leave.rda")
 
 # save a copy of the raw data for the package
 usethis::use_data(special_leave, overwrite = TRUE)

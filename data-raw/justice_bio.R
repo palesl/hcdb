@@ -1320,29 +1320,15 @@ write_sav(justice_bio, "data-raw/justice_bio.sav")
 write_dta(justice_bio, "data-raw/justice_bio.dta")
 
 
-# Get all variables with value labels
-all_vars <- names(justice_bio)
-labeled_vars <- character()
-
-for (var_name in all_vars) {
-  var <- justice_bio[[var_name]]
-  if (!is.null(val_labels(var)) && length(val_labels(var)) > 0) {
-    labeled_vars <- c(labeled_vars, var_name)
-  }
-}
-
-# # Convert each to factor using the labels
-# for (var_name in labeled_vars) {
-#   justice_bio[[var_name]] <- to_factor(justice_bio[[var_name]])
-#   cat("✓ Converted:", var_name, "\n")
-# }
-
 
 
 #save the processed data in raw data folder
-save(justice_bio, file="data-raw/justice_bio.rda")
 write_excel_csv(justice_bio, file="data-raw/justice_bio.csv")
 writexl::write_xlsx(justice_bio, path="data-raw/justice_bio.xlsx")
+
+justice_bio<-haven::as_factor(justice_bio, only_labelled=TRUE)
+
+save(justice_bio, file="data-raw/justice_bio.rda")
 
 # save a copy of the raw data for the package
 usethis::use_data(justice_bio, overwrite = TRUE)

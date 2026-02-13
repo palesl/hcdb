@@ -3403,9 +3403,12 @@ for (var_name in all_vars) {
 #   cat("✓ Converted:", var_name, "\n")
 # }
 
-save(justice_decision, file="data-raw/justice_decision.rda")
 writexl::write_xlsx(justice_decision, path="data-raw/justice_decision.xlsx")
 
 # save a copy of the raw data for the package
+
+justice_decision<-haven::as_factor(justice_decision, only_labelled=TRUE)
+
 usethis::use_data(justice_decision, overwrite = TRUE)
+save(justice_decision, file="data-raw/justice_decision.rda")
 

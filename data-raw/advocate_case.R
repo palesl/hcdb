@@ -260,12 +260,16 @@ write_dta(advocate_case, "data-raw/advocate_case.dta")
 # advocate_case<-advocate_case %>%
 #   mutate(across(c(RepGeneral, Title, Status1, Status2, Gender, Role), to_factor))
 
-# Save as R file (.rda)
-save(advocate_case, file="data-raw/advocate_case.rda")
 
 # Save as excel file (.csv)
 write_excel_csv(advocate_case, file="data-raw/advocate_case.csv")
 writexl::write_xlsx(advocate_case, path="data-raw/advocate_case.xlsx")
+
+advocate_case<-haven::as_factor(advocate_case, only_labelled=TRUE)
+
+
+# Save as R file (.rda)
+save(advocate_case, file="data-raw/advocate_case.rda")
 
 # save a copy of the raw data for the package
 usethis::use_data(advocate_case, overwrite = TRUE)
