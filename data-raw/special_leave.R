@@ -5,9 +5,9 @@ library(readxl)
 
 # save a copy of the excel file in data-raw
 
-file.copy(from="/Users/u1040068/Dropbox/High Court Project/Special Leave DP22/Special Leave 2003-2018 [PAT THIS ONE].xlsx",
-          to="data-raw/Special Leave 2003-2018 [PAT THIS ONE].xlsx",
-          overwrite = T)
+# file.copy(from="/Users/u1040068/Dropbox/High Court Project/Special Leave DP22/Special Leave 2003-2018 [PAT THIS ONE].xlsx",
+#           to="data-raw/Special Leave 2003-2018 [PAT THIS ONE].xlsx",
+#           overwrite = T)
 
 # opening from the raw folder
 
@@ -700,7 +700,55 @@ if (length(labeled_vars) == 0) {
 
 }
 
-
+special_leave<-special_leave|>
+  set_variable_labels(HCSLDBId = "HCDB Special Leave unique identification number",
+                      caseName = "Case name",
+                      caseNumber = "High Court assigned case/docket number",
+                      specialLeaveCite = "Special leave citation (HCATrans or HCASL)",
+                      multipleMatters = "Whether case relates to multiple matters (1=single, 2=multiple)",
+                      numMultipleMatters = "Total number of matters decided together",
+                      multipleMatterHCSLDBID1 = "Multiple matters HCSLDB ID 1",
+                      multipleMatterHCSLDBID2 = "Multiple matters HCSLDB ID 2",
+                      multipleMatterHCSLDBID3 = "Multiple matters HCSLDB ID 3",
+                      multipleMatterHCSLDBID4 = "Multiple matters HCSLDB ID 4",
+                      multipleMatterHCSLDBID5 = "Multiple matters HCSLDB ID 5",
+                      multipleMatterHCSLDBID6 = "Multiple matters HCSLDB ID 6",
+                      multipleMatterHCSLDBID7 = "Multiple matters HCSLDB ID 7",
+                      multipleMatterHCSLDBID8 = "Multiple matters HCSLDB ID 8",
+                      numberAppellants = "Number of appellants (1=1, 2=2, 3=3+)",
+                      numberRespondents = "Number of respondents (1=1, 2=2, 3=3+)",
+                      caseType = "Case type (1=Immigration, 2=Criminal, 3=Civil)",
+                      primaryIssueArea = "Primary issue area code",
+                      primaryIssueSubArea = "Primary issue sub-area code",
+                      secondaryIssueArea = "Secondary issue area code",
+                      secondaryIssueSubArea = "Secondary issue sub-area code",
+                      jurisdictionGeneral = "Manner Court takes jurisdiction - general",
+                      jurisdictionSpecific = "Manner Court takes jurisdiction - specific",
+                      sourceCite = "Medium neutral citation for lower court decision",
+                      caseSourceGeneral = "Source of case - general court level",
+                      caseSourceSpecific = "Source of case - specific court",
+                      caseSourceState = "Source of case - state/territory",
+                      dateLcDecision = "Date of lower court decision (YYYYMMDD)",
+                      lcDisposition = "Lower court disposition",
+                      lcDissent = "Lower court dissent (1=No, 2=Yes)",
+                      lcPanelSize = "Lower court panel size",
+                      lcDissentNum = "Number of lower court dissents",
+                      specialLeaveMethod = "Special leave method (1=Oral, 2=Papers)",
+                      numJusticesSL = "Number of justices on special leave panel",
+                      justiceSpecialLeave1 = "Justice granting special leave 1",
+                      justiceSpecialLeave2 = "Justice granting special leave 2",
+                      justiceSpecialLeave3 = "Justice granting special leave 3",
+                      specialLeaveLocation = "Special leave hearing location/registry",
+                      specialLeaveDate = "Date of special leave decision (YYYYMMDD)",
+                      specialLeaveOutcome = "Special leave outcome",
+                      HCDBID = "HCDB ID (if granted)",
+                      naturalCourtSpecialLeave = "Natural court at special leave",
+                      termSL = "Term of court at special leave",
+                      chiefSL = "Chief Justice at special leave",
+                      pmSL = "Prime Minister on date of decision",
+                      politicalPowerSL = "Political power on date of SL decision",
+                      oralArgumentLink = "Link to oral argument transcript",
+                      Notes = "Notes")
 
 
 # saving ####
