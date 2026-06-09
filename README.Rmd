@@ -48,6 +48,10 @@ data<-haven::as_factor(justice_decision, only_labelled=TRUE)
 ```
 If you prefer the data in Stata, SPSS, or Excel formats, you can access at [aushighcourtdatabase.org](https://aushighcourtdatabase.org).
 
+## Documentation/Codebooks
+
+You can find these in the `docs` folder. They are also rendered as vignettes in the package.
+
 ## Citation
 
 If you use this package, please cite:
