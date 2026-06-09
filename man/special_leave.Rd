@@ -25,4 +25,12 @@ special_leave
 \description{
 Special Leave Data, 2003-2018
 }
+\references{
+Leslie, P., Robinson, Z., Smyth, R., & Jacobi, T. (2026). Supporting comparative
+studies of judicial behavior: Introducing the Australian High Court Database. \emph{Journal of
+Law & Empirical Analysis}, \emph{3}(1), 251–263. \doi{10.1177/2755323X261438254}
+}
+\seealso{
+Full variable documentation: \code{vignette("special_leave_codebook", package = "hcdb")}
+}
 \keyword{datasets}

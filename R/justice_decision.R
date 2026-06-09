@@ -11,4 +11,9 @@
 #'   ...
 #' }
 #' @source Robinson, Z., Leslie, P. (High Court Database)
+#' @references Leslie, P., Robinson, Z., Smyth, R., & Jacobi, T. (2026). Supporting comparative
+#'   studies of judicial behavior: Introducing the Australian High Court Database. *Journal of
+#'   Law & Empirical Analysis*, *3*(1), 251–263. \doi{10.1177/2755323X261438254}
+#' @seealso Full variable documentation: `vignette("justice_decision_codebook", package = "hcdb")`,
+#'   `vignette("justice_decision_core_codebook", package = "hcdb")`
 "justice_decision"

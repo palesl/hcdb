@@ -1,0 +1,3781 @@
+---
+title: "Justice Biography Codebook"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Justice Biography Codebook}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+**HCDB Justices Biographical Codebook (justice_bio)**
+
+**Introduction**
+
+This document reflects the coding rules for the High Court Justice
+Biographical Database. This codebook was specifically and deliberatively
+modelled off the U.S. Supreme Court Justices Database Code Book in order
+to facilitate comparative judicial politics research, as well as provide
+a robust dataset for Australian researchers interested in engaging with
+the empirical study of judicial politics.
+
+This first iteration of the database extends from justices serving on
+the Court on January 1, 1986 to those serving on the Court on December
+31, 2017.
+
+The unit of analysis is the justice; sometimes referred to as the
+nominee in the codebook (terms used interchangeably). Only those
+justices who were sworn in as a justice or chief justice of the High
+Court are included in the dataset. A handful of justices appear twice by
+virtue of being nominated as a puisne justice and later as chief
+justice.
+
+Note:
+
+-   Some information might be difficult to locate. If it is impossible
+    to locate the information, this is coded 888.
+
+-   Some variables will be inapplicable to a particular justice. Where
+    the variable in inapplicable, this is coded 999.
+
+**Contents**
+
+Identification Variables
+
+1\. Justice ID
+
+2\. Justice Name
+
+3\. Date First Nomination Announced
+
+4\. Position to which First Nominated to Court
+
+5\. Date of Swearing In Ceremony
+
+6\. Home Registry
+
+7\. Seat Identification Number
+
+8\. Justice who Nominee Replaced
+
+9\. Chief Justice When Nomination Announced
+
+10\. Chief Justice When Sworn In
+
+11\. Nominating Prime Minister
+
+12\. Nominating Prime Minister Party
+
+13\. Political Power on Date of Nomination
+
+14\. Prime Minister on Date of Swearing In
+
+15\. Prime Minister Party on Date of Swearing In
+
+16\. Political Power on Date of Swearing In Ceremony
+
+17\. Date of Nomination of Sitting Puisne Justice to Chief Justice
+
+18\. Nominating Prime Minister to Chief Justice from Puisne Justice
+
+19\. Nominating Prime Minister Party for Chief Justice from Puisne
+Justice
+
+20\. Political Power Variable for Chief Justice from Puisne Justice on
+Date of Nomination
+
+21\. Year of Appointment as Chief Justice from Puisne Justice
+
+22\. Date of Swearing In Ceremony as Chief Justice from Puisne Justice
+
+23\. Who Puisne Justice Replaced as Chief Justice
+
+24\. Ideology Score
+
+Personal Background Variables
+
+25\. Year of Birth
+
+26\. Exact Date of Birth
+
+27\. State or Country of Birth
+
+28\. Religion---General
+
+29\. Religion---Specific
+
+30\. Nominee's Race
+
+31\. Nominee's Gender
+
+32\. Year of Death
+
+33\. Exact Date of Death
+
+34\. Age at Date of Death
+
+35\. Year Departed Court
+
+36\. Exact Date of Departure from Court
+
+37\. Age on Date of Departure
+
+38\. Reason for Departing Court
+
+39\. Resignation Party
+
+40\. Prime Minister on Date of Departure
+
+41\. Prime Minister Party on Date of Departure
+
+42\. Political Power on Date Retirement Announced
+
+43\. Position Held by Justice After Departure from Court 1
+
+44\. Party Appointing to Position Held by Justice After Departure from
+Court 1
+
+45\. Position Held by Justice After Departure from Court 2
+
+46\. Party Appointing to Position Held by Justice After Departure from
+Court 2
+
+47\. Position Held by Justice After Departure from Court 3
+
+48\. Party Appointing to Position Held by Justice After Departure from
+Court 3
+
+49\. Position Held by Justice After Departure from Court 4
+
+50\. Party Appointing to Position Held by Justice After Departure from
+Court 4
+
+51\. Childhood Location---General (Country or State)
+
+52\. Childhood Location---Specific (City or Town)
+
+53\. Childhood Surrounds
+
+Family Information
+
+54\. Childhood Economic Status
+
+55\. Primary Occupation of Father
+
+56\. Political Affiliation Father
+
+57\. Primary Occupation of Mother
+
+58\. Political Affiliation Mother
+
+59\. Primary Occupation of Spouse
+
+60\. Political Affiliation Spouse
+
+61\. Number of Marriages
+
+62\. Date of Last Marriage
+
+63\. Number of Children
+
+Educational Background Variables
+
+66\. Type of Secondary Education
+
+67\. First Degree
+
+68\. First Degree Institution
+
+69\. First Degree Status
+
+70\. First Degree Year Started
+
+71\. First Degree Year Completed
+
+72\. Second Degree
+
+73\. Second Degree Institution
+
+74\. Second Degree Status
+
+75\. Second Degree Year Started
+
+76\. Second Degree Year Completed
+
+77\. Third Degree
+
+78\. Third Degree Institution
+
+79\. Third Degree Status
+
+80\. Third Degree Year Started
+
+81\. Third Degree Year Completed
+
+82\. Name of Law School
+
+83\. Year of Law School
+
+84\. Academic Honours Medal
+
+85\. Academic Honours First Class Honours
+
+86\. Academic Honours Overseas Scholarship
+
+87\. Overseas Study
+
+88\. Overseas Study Location
+
+89\. First Graduate Degree
+
+90\. First Graduate Degree Institution
+
+91\. First Graduate Degree Status
+
+92\. Second Graduate Degree
+
+93\. Second Graduate Degree Institution
+
+94\. Second Graduate Degree Status
+
+95\. Third Graduate Degree
+
+96\. Third Graduate Degree Institution
+
+97\. Third Graduate Degree Status
+
+98\. Last Year Attended Graduate Institution
+
+Employment Background Variables
+
+99\. Position When Nominated
+
+100\. Position When Nominated Location
+
+101\. Nominated from Judiciary
+
+102\. Prior Judicial Service
+
+103\. Total Months Judicial Service
+
+104\. Number of Months State Court Service
+
+105\. Number of Months Federal Court Service
+
+106\. Number of Months Appellate Court Service
+
+107\. Number of Months Trial Court Service
+
+108\. Prior Judicial Service 1---General
+
+109\. Prior Judicial Service 1---Location
+
+110\. Prior Judicial Service 1---Specific
+
+111\. Prior Judicial Service 1---Start Date
+
+112\. Prior Judicial Service 1---End Date
+
+113\. Prior Judicial Service 1---Months Served
+
+114\. Prior Judicial Service 1---Year First Served
+
+115\. Prior Judicial Service 1---Year Last Served
+
+116\. Prior Judicial Service 1---Party Appointing
+
+117\. Prior Judicial Service 2---General
+
+118\. Prior Judicial Service 2---Location
+
+119\. Prior Judicial Service 2---Specific
+
+120\. Prior Judicial Service 2---Start Date
+
+121\. Prior Judicial Service 2---End Date
+
+122\. Prior Judicial Service 2---Months Served
+
+123\. Prior Judicial Service 2---Year First Served
+
+124\. Prior Judicial Service 2---Year Last Served
+
+125\. Prior Judicial Service 2---Party Appointing
+
+126\. Prior Judicial Service 3---General
+
+127\. Prior Judicial Service 3---Location
+
+128\. Prior Judicial Service 3---Specific
+
+129\. Prior Judicial Service 3---Start Date
+
+130\. Prior Judicial Service 3---End Date
+
+131\. Prior Judicial Service 3---Months Served
+
+132\. Prior Judicial Service 3---Year First Served
+
+133\. Prior Judicial Service 3---Year Last Served
+
+134\. Prior Judicial Service 3---Party Appointing
+
+135\. Admission to the Bar
+
+136\. Year of First Admission to the Bar
+
+137\. State in Which First Admitted to the Bar
+
+138\. Promotion to Senior Counsel
+
+139\. Year Promoted to Senior Counsel
+
+140\. High Court Appearances
+
+141\. Practice as Solicitor
+
+142\. Year First Practiced as Solicitor
+
+143\. Year Last Practiced as Solicitor
+
+144\. State Where First Admitted as Solicitor
+
+145\. Law Teaching
+
+146\. High Court Associateship
+
+147\. Year of High Court Associateship
+
+148\. Justice for High Court Associateship
+
+149\. Other Judicial Associateship
+
+150\. Year of Other Judicial Associateship
+
+151\. Government Appointment Type
+
+152\. Government Appointment Party
+
+153\. Political Party Commonwealth
+
+154\. Known Political Identification
+
+155\. Notes
+
+Identification Variables
+
+1.  Justice ID
+
+Variable Label: justiceID
+
+This variable provides a unique identification number for each of the
+justices. This replicates the variable of the same label in the HCDB.
+The decision was made to include only justices who were sworn in as
+justices of the HCA, rather than including those who were nominated and
+not sworn in.
+
+> **Values:**
+>
+> 01 Griffith02 Barton03 O\'Connor04 Isaacs05 Higgins06 Duffy07 Powers08
+> Piddington09 Rich10 Knox11 Starke12 Dixon13 Evatt14 McTiernan15
+> Latham16 Williams17 Webb18 Fullagar19 Kitto20 Taylor21 Menzies22
+> Windeyer23 Owen24 Barwick25 Walsh26 Gibbs27 Stephen28 Mason29 Jacobs30
+> Murphy31 Aickin32 Wilson33 Brennan34 Deane35 Dawson36 Toohey37
+> Gaudron38 McHugh39 Gummow40 Kirby41 Hayne42 Callinan43 MGleeson44
+> Heydon45 Crennan46 Kiefel47 French48 Bell49 Gageler50 Keane51 Nettle52
+> Gordon53 Edelman
+>
+> 54 Steward
+>
+> 55 JGleeson
+
+\--*End Content for Variable Justice ID\--*
+
+2.  Justice Name
+
+Variable Label: justiceName
+
+This variable provides a unique name for each justice using a last name
+convention with first initials for disambiguation. See variable Justice
+ID for the full list of names.
+
+\--*End Content for Variable Justice Name\--*
+
+3.  Date First Nomination Announced
+
+Variable Label: dateNom
+
+This variable contains the year, month, and day that the first
+nomination of the justice was announced. A justice will only have two
+nominations if she/he was first nominated as a puisne judge and
+subsequently as chief justice. Coders should hard code the date in a
+8-digit format as YEAR MONTH DAY. For example, if a judge's first
+nomination to the Court was announced on 7 May 2015, it will be recorded
+as 20150507.
+
+\--*End Content for Variable Date First Nomination Announced\--*
+
+4.  Position to which First Nominated to Court
+
+Variable Label: position
+
+This variable captures the position for which the nominee was first
+nominated to the Court.
+
+Values:
+
+> 1 Chief Justice
+>
+> 2 Puisne Justice
+
+*\--End Content for Variable Position to which First Nominated to
+Court\--*
+
+5.  Date of Swearing In Ceremony
+
+Variable Label: dateSwearingIn
+
+This variable identifies the exact date the judge was sworn in to
+his/her position on the Court. The information is below.
+
+  ------------------------------------------------------------------------
+  Nominee Code  Nominee                           Date of Swearing In
+  ------------- --------------------------------- ------------------------
+  01            Sir Samuel Griffith               05101903
+
+  02            Sir Edmund Barton                 05101903
+
+  03            Richard O\'Connor                 05101903
+
+  04            Sir Isaac Isaacs                  12101903
+
+  05            H. B. Higgins                     13101903
+
+  06            Sir Frank Gavan Duffy             11021913
+
+  07            Sir Charles Powers                05031913
+
+  08            Albert Piddington                 06031913
+
+  09            Sir George Rich                   05041913
+
+  10            Sir Adrian Knox                   18101919
+
+  11            Sir Hayden Starke                 05021920
+
+  12            Sir Owen Dixon                    04021929
+
+  13            H. V. Evatt                       19121930
+
+  14            Sir Edward McTiernan              20121930
+
+  15            Sir John Latham                   11101935
+
+  16            Sir Dudley Williams               15101940
+
+  17            Sir William Webb                  16051946
+
+  18            Sir Wilfred Fullagar              08021950
+
+  19            Sir Frank Kitto                   10051950
+
+  20            Sir Alan Taylor                   03091952
+
+  21            Sir Douglas Menzies               12061958
+
+  22            Sir Victor Windeyer               08091958
+
+  23            Sir William Owen                  22091961
+
+  24            Sir Garfield Barwick              27041964
+
+  25            Sir Cyril Walsh                   20091969
+
+  26            Sir Harry Gibbs                   04081970
+
+  27            Sir Ninian Stephen                01031972
+
+  28            Sir Anthony Mason                 07081972
+
+  29            Sir Kenneth Jacobs                08021974
+
+  30            Lionel Murphy                     10021975
+
+  31            Sir Keith Aickin                  20091976
+
+  32            Sir Ronald Wilson                 21051979
+
+  33            Sir Gerard Brennan                12021981
+
+  34            Sir William Deane                 25061982
+
+  35            Sir Daryl Dawson                  30071982
+
+  36            John Toohey                       06021987
+
+  37            Mary Gaudron                      06021987
+
+  38            Michael McHugh                    14021989
+
+  39            William Gummow                    21041995
+
+  40            Michael Kirby                     06021996
+
+  41            Kenneth Hayne                     22091997
+
+  42            Ian Callinan                      03021998
+
+  43            Murray Gleeson                    22051998
+
+  44            Dyson Heydon                      01022003
+
+  45            Susan Crennan                     01112005
+
+  46            Susan Kiefel                      04092007
+
+  47            Robert French                     01092008
+
+  48            Virginia Bell                     03022009
+
+  49            Stephen Gageler                   09102012
+
+  50            Patrick Keane                     05032013
+
+  51            Geoffrey Nettle                   03022015
+
+  52            Michelle Gordon                   09062015
+
+  53            James Edelman                     30012017
+  ------------------------------------------------------------------------
+
+\--*End Content for Variable Date of Swearing In Ceremony\--*
+
+6.  Home Registry
+
+Variable Label: homeRegistry
+
+Variable denotes the registry where the justice works/sits when not in
+Canberra.
+
+**Values**:
+
+> 1 Adelaide
+>
+> 2 Brisbane
+>
+> 3 Canberra
+>
+> 4 Darwin
+>
+> 5 Hobart
+>
+> 6 Melbourne
+>
+> 7 Perth
+>
+> 8 Sydney
+
+\--*End Content for Variable Home Registry\--*
+
+7.  Seat Identification Number
+
+Variable Label: SeatID
+
+Seat number refers to the number of seats on the Court and who has
+occupied the seat at any given time. Wikipedia (I know...) has this
+information in graphic form:
+<https://en.wikipedia.org/wiki/List_of_Justices_of_the_High_Court_of_Australia>
+
+**Values**:
+
+> 01 First Seat
+>
+> 02 Second Seat
+>
+> 03 Third Seat
+>
+> 04 Fourth Seat
+>
+> 05 Fifth Seat
+>
+> 06 Sixth Seat
+>
+> 07 Seventh Seat
+
+\--*End Content for Variable Seat Identification Number\--*
+
+8.  Justice who Nominee Replaced
+
+Variable Label: justiceReplaced
+
+This variable identifies the justice whom the nominee replaced.
+
+**Values:**
+
+> 01 Griffith02 Barton03 O\'Connor04 Isaacs05 Higgins06 Duffy07 Powers08
+> Piddington09 Rich10 Knox11 Starke12 Dixon13 Evatt14 McTiernan15
+> Latham16 Williams17 Webb18 Fullagar19 Kitto20 Taylor21 Menzies22
+> Windeyer23 Owen24 Barwick25 Walsh26 Gibbs27 Stephen28 Mason29 Jacobs30
+> Murphy31 Aickin32 Wilson33 Brennan34 Deane35 Dawson36 Toohey37
+> Gaudron38 McHugh39 Gummow40 Kirby41 Hayne42 Callinan43 Gleeson44
+> Heydon45 Crennan46 Kiefel47 French48 Bell49 Gageler50 Keane51 Nettle52
+> Gordon53 Edelman
+
+\--*End Content for Variable Justice ID Who Nominee Replaced\--*
+
+9.  Chief Justice When Nomination Announced
+
+Variable Label: chiefAnnounce
+
+This variable identifies the Chief Justice of the Court when the nominee
+was appointed, where appointment is defined as the date of the swearing
+in ceremony. The Chief Justice is to be identified by their Chief
+Justice ID specified below, not their Justice ID.
+
+Values:
+
+> 1 Griffith
+>
+> 2 Knox
+>
+> 3 Isaacs
+>
+> 4 Duffy
+>
+> 5 Latham
+>
+> 6 Dixon
+>
+> 7 Barwick
+>
+> 8 Gibbs
+>
+> 9 Mason
+>
+> 10 Brennan
+>
+> 11 Gleeson
+>
+> 12 French
+>
+> 13 Kiefel
+
+\--*End Content for Variable Chief Justice When Nomination Announced\--*
+
+10. Chief Justice When Sworn In
+
+Variable Label: chiefSworn
+
+This variable identifies the Chief Justice of the Court when the nominee
+was sworn in. Where the nominee is to the position of Chief Justice,
+coders should code the nominee by Chief Justice ID (below). Where the
+nominee is sworn in alongside a new Chief Justice (e.g. Edelman with
+Keifel), the code for the new Chief Justice should be entered.
+
+Values:
+
+> 1 Griffith
+>
+> 2 Knox
+>
+> 3 Isaacs
+>
+> 4 Duffy
+>
+> 5 Latham
+>
+> 6 Dixon
+>
+> 7 Barwick
+>
+> 8 Gibbs
+>
+> 9 Mason
+>
+> 10 Brennan
+>
+> 11 Gleeson
+>
+> 12 French
+>
+> 13 Kiefel
+
+\--*End Content for Variable Chief Justice When Sworn In\--*
+
+11. Nominating Prime Minister
+
+Variable Label: nomPM
+
+This variable indicates the Prime Minister on the date the nominee was
+announced.
+
+**Values:**
+
+> 1 Barton (01.01.1901 -- 24.09.1903)
+>
+> 2 Deakin1 (24.09.1903 -- 27.04.1904)
+>
+> 3 Watson (27.04.1904 -- 17.08.1904)
+>
+> 4 Reid (18.08.1904 -- 05.07.1905)
+>
+> 5 Deakin 2 (05.07.1905 -- 13.11.1908)
+>
+> 6 Fisher 1 (13.11.1908 -- 02.06.19090
+>
+> 7 Deakin 3 (02.06.1909 -- 29.04.1910)
+>
+> 8 Fisher 2 (29.04.1910 -- 24.06.1913)
+>
+> 9 Cook (24.06.1913 -- 17.09.1914)
+>
+> 10 Fisher 3 (17.09.1914 -- 27.10.1915)
+>
+> 11 Hughes (27.10.1915 -- 09.02.1923)
+>
+> 12 Bruce (09.02.1923 -- 22.10.1929)
+>
+> 13 Scullin (22.10.1929 -- 06.01.1932)
+>
+> 14 Lyons (06.01.1932 -- 07.04.1939)
+>
+> 15 Page (07.04.1939 -- 26.04.1939)
+>
+> 16 Menzies 1 (26.04.1939 -- 29.08.194)
+>
+> 17 Fadden (29.08.1941 -- 07.10.1941)
+>
+> 18 Curtin (07.10.1941 -- 05.07.1945)
+>
+> 19 Forde (06.07.1945 -- 13.07.1945)
+>
+> 20 Chifley (13.07.1945 -- 19.12.1949)
+>
+> 21 Menzies 2 (19.12.1949 -- 26.01.1966)
+>
+> 22 Holt (26.01.1966 -- 19.12.1967)
+>
+> 23 McEwen (19.12.1967 -- 10.01.1968)
+>
+> 24 Gorton (10.01.1968 -- 10.03.1971)
+>
+> 25 McMahon(10.03.1971 -- 05.12.1972)
+>
+> 26 Whitlam (05.12.1972 -- 11.11.1975)
+>
+> 27 Fraser (11.11.1975 -- 11.03.1983)
+>
+> 28 Hawke (11.03.1983 -- 20.12.1991)
+>
+> 29 Keating (20.12.1991 -- 11.03.1996)
+>
+> 30 Howard (11.03.1996 -- 3.12.2007)
+>
+> 31 Rudd 1 (03.12.2007 -- 24.06.2010)
+>
+> 32 Gillard (24.06.2010 -- 27.06.2013)
+>
+> 33 Rudd 2 (27.06.2013 -- 18.09.2013)
+>
+> 34 Abbott (18.09.2013 -- 15.09.2015)
+>
+> 35 Turnbull (15.09.2015 -- present)
+>
+> 36 Morrison
+
+\--*End Content for Variable Nominating Prime Minister\--*
+
+12. Nominating Prime Minister Party
+
+Variable Label: nomPMParty
+
+This variable identifies the political party of the Prime Minister on
+the date the nomination was announced.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+3 Country
+
+4 United Australia
+
+5 Nationalist
+
+6 Protectionist
+
+7 Commonwealth Liberal
+
+8 Free Trade
+
+\--*End Content for Variable Nominating Prime Minister Party\--*
+
+13. Political Power on Date of Nomination
+
+Variable Label: politicalPowerDateNom
+
+This variable indicates the controlling political party in both the
+House of Representatives and the Senate on the date the nomination was
+announced.
+
+**Values:**
+
+1 Coalition House/Coalition Senate
+
+2 Coalition House/Not Coalition Senate
+
+3 Labour House/Labour Senate
+
+4 Labour House/Not Labour Senate
+
+5 Neither/Neither
+
+  ------------------------------------------------------------------------
+                             **Party in Control**  
+  -------------------------- --------------------- -----------------------
+  **Election**               **House**             **Senate**
+
+                                                   
+
+  Dec 1, 1984                Labour                Not Labour
+
+  July 11, 1987              Labour                Not Labour
+
+  Mar 24, 1990               Labour                Not Labour
+
+  Mar 13, 1993               Labour                Not Labour
+
+  Oct 3, 1998                Coalition             Not Coalition
+
+  Nov 10, 2001               Coalition             Not Coalition
+
+  Oct 9, 2004                Coalition             Coalition
+
+  Nov 24, 2007               Labour                Not Labour
+
+  Aug 21, 2010               Neither               Neither
+
+  Sept 7, 2013               Coalition             Neither
+
+  July 2, 2016               Coalition             Neither
+  ------------------------------------------------------------------------
+
+\--
+
+*End Content for Variable Political Power on Date of Nomination---*
+
+14. Prime Minister on Date of Swearing In
+
+Variable Label: PMSwearingIn
+
+This variable indicates the Prime Minister on the date the nominee was
+sworn in. It is likely this is the same as the Prime Minister on the
+date the nomination was announced, but this variable is included just in
+case.
+
+**Values:**
+
+> 1 Barton (01.01.1901 -- 24.09.1903)
+>
+> 2 Deakin1 (24.09.1903 -- 27.04.1904)
+>
+> 3 Watson (27.04.1904 -- 17.08.1904)
+>
+> 4 Reid (18.08.1904 -- 05.07.1905)
+>
+> 5 Deakin 2 (05.07.1905 -- 13.11.1908)
+>
+> 6 Fisher 1 (13.11.1908 -- 02.06.19090
+>
+> 7 Deakin 3 (02.06.1909 -- 29.04.1910)
+>
+> 8 Fisher 2 (29.04.1910 -- 24.06.1913)
+>
+> 9 Cook (24.06.1913 -- 17.09.1914)
+>
+> 10 Fisher 3 (17.09.1914 -- 27.10.1915)
+>
+> 11 Hughes (27.10.1915 -- 09.02.1923)
+>
+> 12 Bruce (09.02.1923 -- 22.10.1929)
+>
+> 13 Scullin (22.10.1929 -- 06.01.1932)
+>
+> 14 Lyons (06.01.1932 -- 07.04.1939)
+>
+> 15 Page (07.04.1939 -- 26.04.1939)
+>
+> 16 Menzies 1 (26.04.1939 -- 29.08.194)
+>
+> 17 Fadden (29.08.1941 -- 07.10.1941)
+>
+> 18 Curtin (07.10.1941 -- 05.07.1945)
+>
+> 19 Forde (06.07.1945 -- 13.07.1945)
+>
+> 20 Chifley (13.07.1945 -- 19.12.1949)
+>
+> 21 Menzies 2 (19.12.1949 -- 26.01.1966)
+>
+> 22 Holt (26.01.1966 -- 19.12.1967)
+>
+> 23 McEwen (19.12.1967 -- 10.01.1968)
+>
+> 24 Gorton (10.01.1968 -- 10.03.1971)
+>
+> 25 McMahon(10.03.1971 -- 05.12.1972)
+>
+> 26 Whitlam (05.12.1972 -- 11.11.1975)
+>
+> 27 Fraser (11.11.1975 -- 11.03.1983)
+>
+> 28 Hawke (11.03.1983 -- 20.12.1991)
+>
+> 29 Keating (20.12.1991 -- 11.03.1996)
+>
+> 30 Howard (11.03.1996 -- 3.12.2007)
+>
+> 31 Rudd 1 (03.12.2007 -- 24.06.2010)
+>
+> 32 Gillard (24.06.2010 -- 27.06.2013)
+>
+> 33 Rudd 2 (27.06.2013 -- 18.09.2013)
+>
+> 34 Abbott (18.09.2013 -- 15.09.2015)
+>
+> 35 Turnbull (15.09.2015 -- present)
+
+\--*End Content for Variable Prime Minister on Date of Swearing In\--*
+
+15. Prime Minister Party on Date of Swearing
+    In
+
+Variable Label: PMPartySwearingIn
+
+This variable indicates the Prime Minister's party on the date the
+nominee was sworn in. It is likely this is the same as the Prime
+Minister on the date the nomination was announced, but this variable is
+included just in case.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+3 Country
+
+4 United Australia
+
+5 Nationalist
+
+6 Protectionist
+
+7 Commonwealth Liberal
+
+8 Free Trade
+
+\--*End Content for Variable Prime Minister Party on Date of Swearing
+In\--*
+
+16. Political Power on Date of Swearing In
+    Ceremony
+
+Variable Label: politicalPowerSwearingIn
+
+This variable indicates the controlling political party in both the
+House of Representatives and the Senate on the date of the High Court
+decision. It is likely this is the same as on the date the nomination
+was announced, but this variable is included just in case.
+
+Values:
+
+1 Coalition House/Coalition Senate
+
+2 Coalition House/Not Coalition Senate
+
+3 Labour House/Labour Senate
+
+4 Labour House/Not Labour Senate
+
+5 Neither/Neither
+
++-------------------------+---------------------+----------------------+
+|                         | > **Party in        |                      |
+|                         | > Control**         |                      |
++=========================+=====================+======================+
+| > **Election**          | > **House**         | > **Senate**         |
++-------------------------+---------------------+----------------------+
+|                         |                     |                      |
++-------------------------+---------------------+----------------------+
+| > Dec 1, 1984           | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > July 11, 1987         | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Mar 24, 1990          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Mar 13, 1993          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Oct 3, 1998           | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Nov 10, 2001          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Oct 9, 2004           | > Coalition         | > Coalition          |
++-------------------------+---------------------+----------------------+
+| > Nov 24, 2007          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Aug 21, 2010          | > Neither           | > Neither            |
++-------------------------+---------------------+----------------------+
+| > Sept 7, 2013          | > Coalition         | > Neither            |
++-------------------------+---------------------+----------------------+
+| > July 2, 2016          | > Coalition         | > Neither            |
++-------------------------+---------------------+----------------------+
+
+\--*End Content for Variable Political Power on Date of Swearing In
+Ceremony\--*
+
+17. Date of Nomination of Sitting Puisne
+    Justice to Chief Justice
+
+Variable Label: promotionDate
+
+This variable notes the date that a sitting puisne justice was nominated
+(announcement date) to the position of Chief Justice. This variable is
+designed to capture information about a second nomination of the same
+justice and will be applicable in a limited number of cases.
+
+\--*End Content for Variable Date of Nomination of Sitting Puisne
+Justice to Chief Justice\--*
+
+18. Nominating Prime Minister to Chief Justice
+    from Puisne Justice
+
+Variable Label: nomPMPromotion
+
+This variable indicates the Prime Minister on the date of the nomination
+from puisne justice to Chief Justice. This variable is designed to
+capture information about a second nomination of the same justice and
+will be applicable in a limited number of cases.
+
+**Values:**
+
+1 Barton (01.01.1901 -- 24.09.1903)
+
+> 2 Deakin1 (24.09.1903 -- 27.04.1904)
+>
+> 3 Watson (27.04.1904 -- 17.08.1904)
+>
+> 4 Reid (18.08.1904 -- 05.07.1905)
+>
+> 5 Deakin 2 (05.07.1905 -- 13.11.1908)
+>
+> 6 Fisher 1 (13.11.1908 -- 02.06.19090
+>
+> 7 Deakin 3 (02.06.1909 -- 29.04.1910)
+>
+> 8 Fisher 2 (29.04.1910 -- 24.06.1913)
+>
+> 9 Cook (24.06.1913 -- 17.09.1914)
+>
+> 10 Fisher 3 (17.09.1914 -- 27.10.1915)
+>
+> 11 Hughes (27.10.1915 -- 09.02.1923)
+>
+> 12 Bruce (09.02.1923 -- 22.10.1929)
+>
+> 13 Scullin (22.10.1929 -- 06.01.1932)
+>
+> 14 Lyons (06.01.1932 -- 07.04.1939)
+>
+> 15 Page (07.04.1939 -- 26.04.1939)
+>
+> 16 Menzies 1 (26.04.1939 -- 29.08.194)
+>
+> 17 Fadden (29.08.1941 -- 07.10.1941)
+>
+> 18 Curtin (07.10.1941 -- 05.07.1945)
+>
+> 19 Forde (06.07.1945 -- 13.07.1945)
+>
+> 20 Chifley (13.07.1945 -- 19.12.1949)
+>
+> 21 Menzies 2 (19.12.1949 -- 26.01.1966)
+>
+> 22 Holt (26.01.1966 -- 19.12.1967)
+>
+> 23 McEwen (19.12.1967 -- 10.01.1968)
+>
+> 24 Gorton (10.01.1968 -- 10.03.1971)
+>
+> 25 McMahon(10.03.1971 -- 05.12.1972)
+>
+> 26 Whitlam (05.12.1972 -- 11.11.1975)
+>
+> 27 Fraser (11.11.1975 -- 11.03.1983)
+>
+> 28 Hawke (11.03.1983 -- 20.12.1991)
+>
+> 29 Keating (20.12.1991 -- 11.03.1996)
+>
+> 30 Howard (11.03.1996 -- 3.12.2007)
+>
+> 31 Rudd 1 (03.12.2007 -- 24.06.2010)
+>
+> 32 Gillard (24.06.2010 -- 27.06.2013)
+>
+> 33 Rudd 2 (27.06.2013 -- 18.09.2013)
+>
+> 34 Abbott (18.09.2013 -- 15.09.2015)
+>
+> 35 Turnbull (15.09.2015 -- present)
+
+\--*End Content for Variable Nominating Prime Minister to Chief Justice
+from Puisne Justice\--*
+
+19. Nominating Prime Minister Party for Chief
+    Justice from Puisne Justice
+
+Variable Label: nomPMPartyPromotion
+
+This variable is designed to capture information about a second
+nomination of the same justice and will be applicable in a limited
+number of cases.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+3 Country
+
+4 United Australia
+
+5 Nationalist
+
+6 Protectionist
+
+7 Commonwealth Liberal
+
+8 Free Trade
+
+*\--End Content for Variable Nominating Prime Minister Party for Chief
+Justice from Puisne Justice \--*
+
+20. Political Power Variable for Chief Justice
+    from Puisne Justice on Date of Nomination
+
+Variable Label: politicalPowerPromotion
+
+This variable indicates the controlling political party in both the
+House of Representatives and the Senate on the date of the nomination.
+This variable is designed to capture information about a second
+nomination of the same justice and will be applicable in a limited
+number of cases.
+
+**Values:**
+
+1 Coalition House/Coalition Senate
+
+2 Coalition House/Not Coalition Senate
+
+3 Labour House/Labour Senate
+
+4 Labour House/Not Labour Senate
+
+5 Neither/Neither
+
++-------------------------+---------------------+----------------------+
+|                         | > **Party in        |                      |
+|                         | > Control**         |                      |
++=========================+=====================+======================+
+| > **Election**          | > **House**         | > **Senate**         |
++-------------------------+---------------------+----------------------+
+| > Dec 1, 1984           | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > July 11, 1987         | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Mar 24, 1990          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Mar 13, 1993          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Oct 3, 1998           | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Nov 10, 2001          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Oct 9, 2004           | > Coalition         | > Coalition          |
++-------------------------+---------------------+----------------------+
+| > Nov 24, 2007          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Aug 21, 2010          | > Neither           | > Neither            |
++-------------------------+---------------------+----------------------+
+| > Sept 7, 2013          | > Coalition         | > Neither            |
++-------------------------+---------------------+----------------------+
+| > July 2, 2016          | > Coalition         | > Neither            |
++-------------------------+---------------------+----------------------+
+
+\--*End Content for Variable Political Power for Chief Justice from
+Puisne Justice on Date of Nomination\--*
+
+21. Year of Appointment as Chief Justice from
+    Puisne Justice
+
+Variable Label: yearPromotion
+
+Enter year the nominee was promoted to chief justice.
+
+\--*End Content for Variable Year of Appointment as Chief Justice\--*
+
+22. Date of Swearing In Ceremony as Chief
+    Justice from Puisne Justice
+
+Variable Label: dateSwearingInPromotion
+
+This variable identifies the exact date the judge was sworn in to the
+position of chief justice.
+
+\--*End Content for Variable Date of Swearing In Ceremony as Chief
+Justice\--*
+
+23. Who Puisne Justice Replaced as Chief
+    Justice
+
+Variable Label: replacementCJPromotion
+
+This variable identifies who the nominee for Chief Justice position
+replaced as Chief Justice. The Chief Justice whom the nominee replaced
+is to be identified by their Chief Justice ID specified below.
+
+Values:
+
+> 1 Griffith
+>
+> 2 Knox
+>
+> 3 Isaacs
+>
+> 4 Duffy
+>
+> 5 Latham
+>
+> 6 Dixon
+>
+> 7 Barwick
+>
+> 8 Gibbs
+>
+> 9 Mason
+>
+> 10 Brennan
+>
+> 11 Gleeson
+>
+> 12 French
+>
+> 13 Kiefel
+
+*\--End Content for Variable who Puisne Justice Replaced as Chief
+Justice\--*
+
+24. Ideology Score
+
+Variable Label: ideologyScore
+
+\--*End Content for Variable Ideology Score\--*
+
+Personal Background Variables
+
+25. Year of Birth
+
+Variable Label: nomYearBirth
+
+Enter the justice's year of birth.
+
+\--*End Content for Variable Year of Birth\--*
+
+26. Exact Date of Birth
+
+Variable Label: nomDateBirth
+
+This variable contains the justice's date of birth. Coders should hard
+code the date in a 8-digit format. For example, if a judge was born on 7
+May 2015, it will be recorded as 07052015.
+
+\--*End Content for Variable Exact Date of Birth\--*
+
+27. State or Country of Birth
+
+Variable Label: placeBirthGen
+
+This variable identifies the state of birth for Australian born
+justices, or the country of birth for justices born overseas. Codes are
+available for all states. If the justice is not born in Australia, hard
+code the name of the country and the coding will be modified later.
+
+Values:
+
+> 1 Australian Capital Territory
+>
+> 2 New South Wales
+>
+> 3 Northern Territory
+>
+> 4 Queensland
+>
+> 5 South Australia
+>
+> 6 Tasmania
+>
+> 7 Victoria
+>
+> 8 Western Australia
+>
+> 9 Overseas, Canada
+>
+> 10 Overseas, UK
+>
+> 11 Overseas, USA
+
+\--*End Content for Variable State or Country of Birth\--*
+
+28. Religion---General
+
+Variable Label: religionGeneral
+
+This variable captures whether the justice identifies as Christian or
+not.
+
+Values:
+
+1 Yes
+
+2 No
+
+\--*End Content for Variable Religion---General\--*
+
+29. Religion---Specific
+
+Variable Label: religionSpecific
+
+Coders should code the religion of the justice with as much specificity
+as possible. Classifications were drawn from the ABS codes for religion.
+
+Values:
+
++-----------------------------------------------------------------------+
+| > 1 Christian---Anglican                                              |
+| >                                                                     |
+| > 2 Christian---Baptist                                               |
++=======================================================================+
+| > 3 Christian---Brethren                                              |
++-----------------------------------------------------------------------+
+| > 4 Christian---Catholic                                              |
++-----------------------------------------------------------------------+
+| > 5 Christian---Churches of Christ                                    |
++-----------------------------------------------------------------------+
+| > 6 Christian---Jehovah's Witnesses                                   |
++-----------------------------------------------------------------------+
+| > 7 Christian---Latter-day Saints                                     |
++-----------------------------------------------------------------------+
+| > 8 Christian---Lutheran                                              |
++-----------------------------------------------------------------------+
+| > 9 Christian---Oriental Orthodox                                     |
++-----------------------------------------------------------------------+
+| > 10 Christian---Assyrian Apostolic                                   |
++-----------------------------------------------------------------------+
+| > 11 Christian---Eastern Orthodox                                     |
++-----------------------------------------------------------------------+
+| > 12 Christian---Presbyterian and Reformed                            |
++-----------------------------------------------------------------------+
+| > 13 Christian---Salvation Army                                       |
++-----------------------------------------------------------------------+
+| > 14 Christian---Seventh-day Adventist                                |
++-----------------------------------------------------------------------+
+| > 15 Christian---Uniting Church                                       |
++-----------------------------------------------------------------------+
+| > 16 Christian---Pentecostal                                          |
++-----------------------------------------------------------------------+
+| > 17 Other Christian                                                  |
++-----------------------------------------------------------------------+
+| > 18 Hinduism                                                         |
++-----------------------------------------------------------------------+
+| > 19 Islam                                                            |
++-----------------------------------------------------------------------+
+| > 20 Judaism                                                          |
++-----------------------------------------------------------------------+
+| > 21 Australian Aboriginal Traditional Religions                      |
++-----------------------------------------------------------------------+
+| > 22 Baha\'i                                                          |
++-----------------------------------------------------------------------+
+| > 23 Chinese Religions                                                |
++-----------------------------------------------------------------------+
+| > 24 Druse                                                            |
++-----------------------------------------------------------------------+
+| > 25 Japanese Religions                                               |
++-----------------------------------------------------------------------+
+| > 26 Nature Religions                                                 |
++-----------------------------------------------------------------------+
+| > 27 Sikhism                                                          |
++-----------------------------------------------------------------------+
+| > 28 Spiritualism                                                     |
++-----------------------------------------------------------------------+
+| > 29 Miscellaneous Religions                                          |
++-----------------------------------------------------------------------+
+| > 30 No Religion, so described                                        |
++-----------------------------------------------------------------------+
+| > 31 Secular Beliefs                                                  |
++-----------------------------------------------------------------------+
+| > 32 Other Spiritual Beliefs                                          |
++-----------------------------------------------------------------------+
+
+\--*End Content for Variable Religion---Specific\--*
+
+30. Nominee's Race
+
+Variable Label: race
+
+Values:
+
+1 White
+
+2 Asian
+
+3 Indigenous
+
+4 Black
+
+\--*End Content for Variable Race\--*
+
+31. Nominee's Gender
+
+Variable Label: gender
+
+Values:
+
+> 1 Female
+>
+> 2 Male
+
+\--*End Content for Variable Gender\--*
+
+32. Year of Death
+
+Variable Label: yearDeath
+
+Enter year of death of the justice.
+
+\--*End Content for Variable Year of Death\--*
+
+33. Exact Date of Death
+
+Variable Label: dateDeath
+
+Enter exact date of death in an 8-digit format (e.g. 01012018).
+
+\--*End Content for Variable Exact Date of Death\--*
+
+34. Age at Date of Death
+
+Variable Label: ageDeath
+
+Enter the justices age on his or her date of death.
+
+\--*End Content for Variable Age at Date of Death\--*
+
+35. Year Departed Court
+
+Variable Label: yearDeparture
+
+Enter the year the justice departed the Court.
+
+\--*End Content for Variable Year Departed Court\--*
+
+36. Exact Date of Departure from Court
+
+Variable Label: dateDeparture
+
+Enter exact date of departure from the Court in an 8-digit format (e.g.
+01012018).
+
+\--*End Content for Variable Exact Date of Departure from Court\--*
+
+37. Age on Date of Departure
+
+Variable Label: ageDateDeparture
+
+Enter age on date justice departed the Court.
+
+\--*End Content for Variable Age on Date of Departure\--*
+
+38. Reason for Departing Court
+
+Variable Label: reasonDeparture
+
+Values:
+
+1 Died in office
+
+2 Reached constitutional retirement age
+
+> 3 Retired \[defined as no longer participating in the workforce after
+> stepping down\]
+
+4 Resigned \[continued to work after stepping down\]
+
+\--*End Content for Variable Reason for Departure\--*
+
+39. Resignation Party
+
+Variable Label: resignationParty
+
+This variable indicates the controlling political party when a justice
+resigned, therefore a value is only entered where the reason for
+departure variable is coded as 4. This variable is only coded when the
+justice resigned earlier than the mandated retirement age. If a justice
+retired when constitutionally required then no assumptions can be made
+about partisan gaming. However if retirement occurred prior to mandated
+retirement age then it is possible that the resignation was timed for
+partisan impact. This variable captures this possibility.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+999 Not applicable
+
+\--*End Content for Variable Resignation Party\--*
+
+40. Prime Minister on Date of Departure
+
+Variable Label: PMDeparture
+
+This variable indicates the Prime Minister on the date of the justice's
+departure from the Court.
+
+**Values:**
+
+1 Barton (01.01.1901 -- 24.09.1903)
+
+> 2 Deakin1 (24.09.1903 -- 27.04.1904)
+>
+> 3 Watson (27.04.1904 -- 17.08.1904)
+>
+> 4 Reid (18.08.1904 -- 05.07.1905)
+>
+> 5 Deakin 2 (05.07.1905 -- 13.11.1908)
+>
+> 6 Fisher 1 (13.11.1908 -- 02.06.19090
+>
+> 7 Deakin 3 (02.06.1909 -- 29.04.1910)
+>
+> 8 Fisher 2 (29.04.1910 -- 24.06.1913)
+>
+> 9 Cook (24.06.1913 -- 17.09.1914)
+>
+> 10 Fisher 3 (17.09.1914 -- 27.10.1915)
+>
+> 11 Hughes (27.10.1915 -- 09.02.1923)
+>
+> 12 Bruce (09.02.1923 -- 22.10.1929)
+>
+> 13 Scullin (22.10.1929 -- 06.01.1932)
+>
+> 14 Lyons (06.01.1932 -- 07.04.1939)
+>
+> 15 Page (07.04.1939 -- 26.04.1939)
+>
+> 16 Menzies 1 (26.04.1939 -- 29.08.194)
+>
+> 17 Fadden (29.08.1941 -- 07.10.1941)
+>
+> 18 Curtin (07.10.1941 -- 05.07.1945)
+>
+> 19 Forde (06.07.1945 -- 13.07.1945)
+>
+> 20 Chifley (13.07.1945 -- 19.12.1949)
+>
+> 21 Menzies 2 (19.12.1949 -- 26.01.1966)
+>
+> 22 Holt (26.01.1966 -- 19.12.1967)
+>
+> 23 McEwen (19.12.1967 -- 10.01.1968)
+>
+> 24 Gorton (10.01.1968 -- 10.03.1971)
+>
+> 25 McMahon(10.03.1971 -- 05.12.1972)
+>
+> 26 Whitlam (05.12.1972 -- 11.11.1975)
+>
+> 27 Fraser (11.11.1975 -- 11.03.1983)
+>
+> 28 Hawke (11.03.1983 -- 20.12.1991)
+>
+> 29 Keating (20.12.1991 -- 11.03.1996)
+>
+> 30 Howard (11.03.1996 -- 3.12.2007)
+>
+> 31 Rudd 1 (03.12.2007 -- 24.06.2010)
+>
+> 32 Gillard (24.06.2010 -- 27.06.2013)
+>
+> 33 Rudd 2 (27.06.2013 -- 18.09.2013)
+>
+> 34 Abbott (18.09.2013 -- 15.09.2015)
+>
+> 35 Turnbull (15.09.2015 -- present)
+
+\--*End Content for Variable Prime Minister on Date of Departure\--*
+
+41. Prime Minister Party on Date of Departure
+
+Variable Label: PMPartyDeparture
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+3 Country
+
+4 United Australia
+
+5 Nationalist
+
+6 Protectionist
+
+7 Commonwealth Liberal
+
+8 Free Trade
+
+\--*End Content for Variable Prime Minister Party on Date of
+Departure\--*
+
+42. Political Power on Date Retirement
+    Announced
+
+Variable Label: politicalPowerRetirementAnnounce
+
+This variable indicates the controlling political party in both the
+House of Representatives and the Senate on the date of the High Court
+decision. The normalizations contain both the coding options as well as
+the necessary information for political power in any given year.
+
+**Values:**
+
+1 Coalition House/Coalition Senate
+
+2 Coalition House/Not Coalition Senate
+
+3 Labour House/Labour Senate
+
+4 Labour House/Not Labour Senate
+
+5 Neither/Neither
+
++-------------------------+---------------------+----------------------+
+|                         | > **Party in        |                      |
+|                         | > Control**         |                      |
++=========================+=====================+======================+
+| > **Election**          | > **House**         | > **Senate**         |
++-------------------------+---------------------+----------------------+
+| > Dec 1, 1984           | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > July 11, 1987         | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Mar 24, 1990          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Mar 13, 1993          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Oct 3, 1998           | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+|                         |                     |                      |
++-------------------------+---------------------+----------------------+
+| > Nov 10, 2001          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Oct 9, 2004           | > Coalition         | > Coalition          |
++-------------------------+---------------------+----------------------+
+| > Nov 24, 2007          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Aug 21, 2010          | > Neither           | > Neither            |
++-------------------------+---------------------+----------------------+
+| > Sept 7, 2013          | > Coalition         | > Neither            |
++-------------------------+---------------------+----------------------+
+| > July 2, 2016          | > Coalition         | > Neither            |
++-------------------------+---------------------+----------------------+
+
+\--*End Content for Variable Political Power on Date Retirement
+Announced\--*
+
+43. Position Held by Justice After Departure
+    from Court 1
+
+Variable Label: positionAfterDeparture1
+
+Enter the role the justice took immediately after departing the Court.
+
+1 Barrister
+
+2 Academic (honorary)
+
+3 Academic (faculty)
+
+4 Academic (administrative, e.g., VC)
+
+5 Foreign judicial service
+
+6 International judicial service
+
+7 Commissioner (Cth)
+
+8 Commissioner (state)
+
+9 Director/chair of foundation or similar organization
+
+10 Governor-General
+
+11 Other government service (Cth)
+
+12 Other government service (state)
+
+\--*End Content for Variable Position Held by Justice After Departure
+from Court 1\--*
+
+44. Party Appointing to Position Held by
+    Justice After Departure from Court 1
+
+Variable Label: positionAfterDepartureParty1
+
+1 Liberal
+
+2 Labor
+
+\--*End Content for Variable Party Appointing Position Held by Justice
+After Departure from Court 1\--*
+
+45. Position Held by Justice After Departure
+    from Court 2
+
+Variable Label: positionAfterDeparture2
+
+This variable facilitates the capture of situations where the justice
+held multiple roles after departing the Court. If there are more than
+two, enter them here and make a note in the comments.
+
+\--*End Content for Variable Position Held by Justice After Departure
+from Court 2\--*
+
+46. Party Appointing to Position Held by
+    Justice After Departure from Court 2
+
+Variable Label: positionAfterDepartureParty2
+
+If appointment by government was required for the second role the
+justice took after departing the Court, enter the name of the party
+appointing the justice to the role (e.g. Labour).
+
+\--*End Content for Variable Party Appointing Position Held by Justice
+After Departure from Court 2\--*
+
+47. Position Held by Justice After Departure
+    from Court 3
+
+Variable Label: positionAfterDeparture3
+
+This variable facilitates the capture of situations where the justice
+held multiple roles after departing the Court. If there are more than
+two, enter them here and make a note in the comments.
+
+\--*End Content for Variable Position Held by Justice After Departure
+from Court 3\--*
+
+48. Party Appointing to Position Held by
+    Justice After Departure from Court 3
+
+Variable Label: positionAfterDepartureParty3
+
+If appointment by government was required for the third role the justice
+took after departing the Court, enter the name of the party appointing
+the justice to the role (e.g. Labour).
+
+\--*End Content for Variable Party Appointing Position Held by Justice
+After Departure from Court 3\--*
+
+49. Position Held by Justice After Departure
+    from Court 4
+
+Variable Label: positionAfterDeparture4
+
+This variable facilitates the capture of situations where the justice
+held multiple roles after departing the Court. If there are more than
+two, enter them here and make a note in the comments.
+
+\--*End Content for Variable Position Held by Justice After Departure
+from Court 4\--*
+
+50. Party Appointing to Position Held by
+    Justice After Departure from Court 4
+
+Variable Label: positionAfterDepartureParty4
+
+If appointment by government was required for the third role the justice
+took after departing the Court, enter the name of the party appointing
+the justice to the role (e.g. Labour).
+
+\--*End Content for Variable Party Appointing Position Held by Justice
+After Departure from Court 4\--*
+
+51. Childhood Location---General (Country or
+    State)
+
+Variable Label: childhoodLocationGeneral
+
+Variable identifies the general childhood location of the justice. If
+the childhood location is not captured below, enter the location.
+
+Values:
+
+> 1 Australian Capital Territory
+>
+> 2 New South Wales
+>
+> 3 Northern Territory
+>
+> 4 Queensland
+>
+> 5 South Australia
+>
+> 6 Tasmania
+>
+> 7 Victoria
+>
+> 8 Western Australia
+>
+> 9 UK
+>
+> 10 USA
+
+\--*End Content for Variable Childhood Location---General\--*
+
+52. Childhood Location---Specific (City or
+    Town)
+
+Variable Label: childhoodLocationSpecific
+
+Enter the specific city or town where the justice spent the majority of
+their childhood.
+
+1 Capital city
+
+2 Town
+
+\--*End Content for Variable Childhood Location---Specific\--*
+
+53. Childhood Surrounds
+
+Variable Label: childhoodSurrounds
+
+Variable refers to the general environment in which the justice spent
+their childhood. Where the family moved, the code should reflect the
+most prominent experience.
+
+Values:
+
+> 1 Family farm
+>
+> 2 Rural
+>
+> 3 Small town
+>
+> 4 Small city
+>
+> 5 Urban (large/larger city)
+
+\--*End Content for Variable Childhood Surrounds\--*
+
+Family Information
+
+54. Childhood Economic Status
+
+Variable Label: economicStatus
+
+This variable indicates the general socioeconomic status of the
+justice's family during his or her childhood. Where the family suffered
+upward or downward shifts in economic status the coder should code the
+variable according to that status that describes the largest segment of
+the justice's childhood.
+
+Values:
+
+1 Lower
+
+2 Lower-middle
+
+3 Middle
+
+4 Upper-middle
+
+5 Upper
+
+\--*End Content for Variable Childhood Economic Status\--*
+
+55. Primary Occupation of Father
+
+Variable Label: occupationFather
+
+Enter father's occupation.
+
+1 Homemaker
+
+2 Politics
+
+3 Public service
+
+4 Professional, employee
+
+5 Military
+
+6 Professional, self-employed
+
+7 Blue collar
+
+8 Lawyer
+
+9 Academic
+
+10 Teacher
+
+11 Administrative role
+
+\--*End Content for Variable Primary Occupation of Father\--*
+
+56. Political Affiliation Father
+
+Variable Label: politicalFather
+
+Variable denotes whether the justice's father was formally associated
+with a political party and worked in a political role for that party.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+999 Not applicable
+
+\--*End Content for Variable Political Affiliation Father\--*
+
+57. Primary Occupation of Mother
+
+Variable Label: occupationMother
+
+Enter mother's occupation.
+
+\--*End Content for Variable Primary Occupation of Mother\--*
+
+58. Political Affiliation Mother
+
+Variable Label: politicalMother
+
+Variable denotes whether the justice's mother was formally associated
+with a political party and worked in a political role for that party.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+999 Not applicable
+
+\--*End Content for Variable Political Affiliation Mother\--*
+
+59. Primary Occupation of Spouse
+
+Variable Label: occupationSpouse
+
+Enter spouse's occupation.
+
+\--*End Content for Variable Primary Occupation of Spouse\--*
+
+60. Political Affiliation Spouse
+
+Variable Label: politicalSpouse
+
+Variable denotes whether the justice's spouse was formally associated
+with a political party and worked in a political role for that party.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+999 Not applicable
+
+\--*End Content for Variable Political Affiliation Spouse\--*
+
+61. Number of Marriages
+
+Variable Label: numberMarriages
+
+Enter the number of marriages of the justice. Include same sex domestic
+partnerships prior to the legalization of same sex marriage.
+
+\--*End Content for Variable Number Marriages\--*
+
+62. Date of Last Marriage
+
+Variable Label: dateMarraige
+
+Enter the date of the justices last marriage.
+
+\--*End Content for Variable Date of Last Marriage\--*
+
+63. Number of Children
+
+Variable Label: numberChildren
+
+Enter the number of children the justice has.
+
+\--*End Content for Variable Number of Children\--*
+
+64. **Number of Daughters**
+
+Variable Label: numberDaughters
+
+Enter the number of daughters the justice has.
+
+\--*End Content for Variable Number of Daughters\--*
+
+65. **Number of Sons**
+
+Variable Label: numberSons
+
+Enter the number of sons the justice has.
+
+\--*End Content for Variable Number of Sons\--*
+
+Educational Background Variables
+
+66. Type of Secondary Education
+
+Variable Label: secondaryEducationType
+
+Values:
+
+1 Public
+
+2 Private---coeducational
+
+3 Private---single sex
+
+\--*End Content for Variable Type of Secondary Education\--*
+
+67. First Degree
+
+Variable Label: firstDegree
+
+This variable reflects the first degree commenced by the justice. Enter
+degree name (e.g. BA) and major if the information is available (e.g.
+history). Where the justice undertook a double degree, disaggregate the
+degrees and list one under first degree and the other under second
+degree. Where a justice commenced by did not finish (e.g., because of
+transferring the degree program), the degree should still be included.
+
+1 Bachelor of Laws
+
+2 Bachelor of Arts
+
+3 Bachelor of Economics
+
+4 Bachelor of Commerce
+
+5 Bachelor of Jurisprudence
+
+6 Bachelor of Science
+
+\--*End Content for Variable First Degree\--*
+
+68. First Degree Institution
+
+Variable Label: firstDegreeInstitution
+
+Enter name of institution at which first degree was commenced.
+
+1 Australian National University
+
+2 Barristers Admission Board
+
+3 University of Melbourne
+
+4 University of Queensland
+
+5 University of Sydney
+
+6 University of Western Australia
+
+7 Murdoch University
+
+8 Oxford
+
+\--*End Content for Variable First Degree Institution\--*
+
+69. First Degree Status
+
+Variable Label: firstDegreeStatus
+
+Variable denotes whether the degree was completed or not.
+
+Values:
+
+1 Completed
+
+2 Not completed
+
+\--*End Content for Variable First Degree Status\--*
+
+70. First Degree Year Started
+
+Variable Label: firstDegreeYearStart
+
+Variable denotes the year the degree was commenced.
+
+\--*End Content for Variable First Degree Year Started\--*
+
+71. First Degree Year Completed
+
+Variable Label: firstDegreeYearEnd
+
+Variable denotes the year the degree was completed. If the degree was
+not completed code 999.
+
+\--*End Content for Variable First Degree Year Completed\--*
+
+72. Second Degree
+
+Variable Label: secondDegree
+
+See variable First Degree for information.
+
+\--*End Content for Variable Second Degree\--*
+
+73. Second Degree Institution
+
+**Variable Label:** secondDegreeInstitution
+
+See above for information.
+
+\--*End Content for Variable Second Degree Institution\--*
+
+74. Second Degree Status
+
+Variable Label: secondDegreeStatus
+
+Variable denotes whether the degree was completed or not.
+
+Values:
+
+1 Completed
+
+2 Not completed
+
+\--*End Content for Variable Second Degree Status\--*
+
+75. Second Degree Year Started
+
+Variable Label: secondDegreeYearStart
+
+Variable denotes the year the degree was commenced.
+
+\--*End Content for Variable Second Degree Year Started\--*
+
+76. Second Degree Year Completed
+
+Variable Label: secondDegreeYearEnd
+
+Variable denotes the year the degree was completed. If the degree was
+not completed code 999.
+
+\--*End Content for Variable Second Degree Year Completed\--*
+
+77. Third Degree
+
+Variable Label: thirdDegree
+
+See above.
+
+\--*End Content for Variable Third Degree\--*
+
+78. Third Degree Institution
+
+**Variable Label:** thirdDegreeInstitution
+
+See above.
+
+\--*End Content for Variable Third Degree Institution\--*
+
+79. Third Degree Status
+
+Variable Label: thirdDegreeStatus
+
+Variable denotes whether the degree was completed or not.
+
+Values:
+
+1 Completed
+
+2 Not completed
+
+\--*End Content for Variable Third Degree Status---*
+
+80. Third Degree Year Started
+
+Variable Label: thirdDegreeYearStart
+
+Variable denotes the year the degree was commenced.
+
+\--*End Content for Variable Third Degree Year Started\--*
+
+81. Third Degree Year Completed
+
+Variable Label: thirdDegreeYearEnd
+
+Variable denotes the year the degree was completed. If the degree was
+not completed code 999.
+
+\--*End Content for Variable Second Degree Year Completed\--*
+
+82. Name of Law School
+
+**Variable Label:** nameLawSchool
+
+Replicates above information but provides here for ease of analysis.
+
+\--*End Content for Variable Name of Law School\--*
+
+83. Year of Law School
+
+Variable Label: lastYearLawSchool
+
+Enter year justice graduated from law school.
+
+\--*End Content for Variable Last Year of Law School\--*
+
+84. Academic Honours Medal
+
+Variable Label: academicHonoursMedal
+
+Variable denotes whether justice was awarded the university medal in any
+undergraduate degree.
+
+Values:
+
+> 1 Law
+>
+> 2 Non-law
+>
+> 3 Law and non-law (multiple)
+>
+> 4 None recorded
+
+\--*End Content for Variable Academic Honours Medal\--*
+
+85. Academic Honours First Class Honours
+
+Variable Label: academicHonoursFirstClass
+
+Variable denotes whether justice was awarded first class honours in any
+undergraduate degree.
+
+Values:
+
+> 1 Law
+>
+> 2 Other
+>
+> 3 Multiple
+>
+> 4 None recorded
+
+\--*End Content for Variable Academic Honours First Class Honours\--*
+
+86. Academic Honours Overseas Scholarship
+
+Variable Label: academicHonoursOverseas
+
+Variable denotes whether justice was awarded a significant scholarship
+to study overseas.
+
+Values:
+
+> 1 Rhodes
+>
+> 2 Fulbright
+>
+> 3 Other
+>
+> 4 None recorded
+
+\--*End Content for Variable Academic Honours Overseas\--*
+
+87. Overseas Study
+
+Variable Label: overseasStudy
+
+Binary variable that denotes whether the justice studied outside of
+Australia.
+
+Values:
+
+1 Studied overseas
+
+2 Did not study overseas
+
+\--*End Content for Variable Overseas Study\--*
+
+88. Overseas Study Location
+
+Variable Label: overseasStudyLocation
+
+Variable identifies the country in which the justice studied outside of
+Australia.
+
+Values:
+
+1 UK
+
+2 USA
+
+3 Other
+
+If not US or UK enter the name of the country.
+
+\--*End Content for Variable Overseas Study\--*
+
+89. First Graduate Degree
+
+Variable Label: firstGradDegree
+
+Enter name of degree.
+
+1 Doctor of Philosophy
+
+2 Master of Laws
+
+3 BCL
+
+4 Other, law
+
+5 Other, non-law
+
+\--*End Content for Variable First Graduate Degree\--*
+
+90. First Graduate Degree Institution
+
+Variable Label: firstGradDegreeInstitution
+
+1 Oxford
+
+2 Cambridge
+
+3 Harvard
+
+4 Yale
+
+5 University of Melbourne
+
+6 University of Sydney
+
+7 Hague
+
+\--*End Content for Variable First Graduate Degree Institution\--*
+
+91. First Graduate Degree Status
+
+Variable Label: firstGradDegreeStatus
+
+Variable denotes whether the degree was completed or not.
+
+Values:
+
+1 Completed
+
+2 Not completed
+
+\--*End Content for Variable First Graduate Degree Status\--*
+
+92. Second Graduate Degree
+
+Variable Label: secondGradDegree
+
+Enter name of degree.
+
+\--*End Content for Variable Second Graduate Degree\--*
+
+93. Second Graduate Degree Institution
+
+Variable Label: secondGradDegreeInstitution
+
+Enter name of institution.
+
+\--*End Content for Variable Second Graduate Degree Institution\--*
+
+94. Second Graduate Degree Status
+
+Variable Label: secondGradDegreeStatus
+
+Variable denotes whether the degree was completed or not.
+
+Values:
+
+1 Completed
+
+2 Not completed
+
+\--*End Content for Variable Second Graduate Degree Status\--*
+
+95. Third Graduate Degree
+
+Variable Label: thirdGradDegree
+
+Enter name of degree.
+
+\--*End Content for Variable Third Graduate Degree\--*
+
+96. Third Graduate Degree Institution
+
+Variable Label: thirdGradDegreeInstitution
+
+Enter name of institution.
+
+\--*End Content for Variable Third Graduate Degree Institution\--*
+
+97. Third Graduate Degree Status
+
+Variable Label: thirdGradDegreeStatus
+
+Variable denotes whether the degree was completed or not.
+
+Values:
+
+1 Completed
+
+2 Not completed
+
+\--*End Content for Variable Third Graduate Degree Status\--*
+
+98. Last Year Attended Graduate Institution
+
+Variable Label: lastYearAttendedGrad
+
+Enter last year nominee attended graduate institution.
+
+\--*End Content for Variable Last Year Attended Graduate Institution\--*
+
+Employment Background Variables
+
+99. Position When Nominated
+
+Variable Label: positionWhenNom
+
+Values:
+
+> 1 Chief Justice of Federal of Australia
+>
+> 2 Justice of Federal of Australia
+>
+> 3 Chief Justice of state supreme court/court of appeals
+>
+> 4 Justice of state supreme court/court of appeals
+>
+> 5 Commonwealth Solicitor General
+>
+> 6 State solicitor general
+>
+> 7 Barrister
+>
+> 8 Solicitor
+>
+> 9 Other
+
+\--*End Content for Variable Position When Nominated\--*
+
+100. Position When Nominated Location
+
+Variable Label: positionNomLocation
+
+Location refers to state of registry if federal court justice, and state
+of SG/SG if appointment from a state position. Cth SG listed as 9
+
+Values:
+
+> 1 Australian Capital Territory
+>
+> 2 New South Wales
+>
+> 3 Northern Territory
+>
+> 4 Queensland
+>
+> 5 South Australia
+>
+> 6 Tasmania
+>
+> 7 Victoria
+>
+> 8 Western Australia
+>
+> 9 Federal (Cth SG only)
+
+\--*End Content for Variable Position When Nominated\--*
+
+101. Nominated from Judiciary
+
+Variable Label: nomFromJudiciary
+
+Denotes whether the nominee was holding judicial office when appointed
+(binary).
+
+Values:
+
+1 Yes
+
+2 No
+
+*\--End Content for Variable Prior Judicial Service---*
+
+102. Prior Judicial Service
+
+Variable Label: priorJudicialService
+
+Prior judicial appointment (binary). Denotes whether the nominee has
+ever served on the judiciary at any point prior to their appointment.
+
+Values:
+
+1 Yes
+
+2 No
+
+\--*End Content for Variable Prior Judicial Service\--*
+
+103. Total Months Judicial Service
+
+Variable Label: totalNumMonthsJudicialService
+
+Denotes the total (aggregate) number of months that the nominee has
+served on any lower court prior to their HCA appointment. For this
+variable and the 4 subsequent variables, any service 15 days and under
+in the residual month is rounded down to the closest whole month, and
+any service over 15 days in the residual service month is rounded up to
+the nearest whole month for the purposes of calculating the total number
+of whole months served on the judiciary.
+
+\--*End Content for Variable Total Months Judicial Service\--*
+
+104. Number of Months State Court Service
+
+Variable Label: numMonthsStateCourtService
+
+Denotes the total number of months that the nominee has served on any
+state court prior to their HCA appointment. The variable aggregates any
+trial level and appellate level service.
+
+*\--End Content for Variable Number of Months State Court Service\--*
+
+105. Number of Months Federal Court Service
+
+Variable Label: numMonthsFedCourtService
+
+Denotes the total number of months that the nominee has served on any
+federal court prior to their HCA appointment. The variable aggregates
+any trial level and appellate level service.
+
+*\--End Content for Variable Number of Months Federal Court Service\--*
+
+106. Number of Months Appellate Court Service
+
+Variable Label: numMonthsAppCourtService
+
+Denotes the total number of months that the nominee has served on any
+appellate court prior to their HCA appointment. The variable aggregates
+federal level and state level service where the court is an appellate
+court. For the purpose of this variable and the subsequent variable,
+service on the Federal Court of Australia is considered appellate court
+service, despite the justices of the Federal Court sitting as trail
+judges in some instances.
+
+*\--End Content for Variable Number of Months Appellate Court
+Service\--*
+
+107. Number of Months Trial Court Service
+
+Variable Label: numMonthsTrialCourtService
+
+Denotes the total number of months that the nominee has served on any
+trial court prior to their HCA appointment. The variable aggregates
+federal level and state level service where the court is an trial court.
+For the purpose of this variable and the subsequent variable, service on
+the Federal Court of Australia is considered appellate court service,
+despite the justices of the Federal Court sitting as trail judges in
+some instances.
+
+*\--End Content for Variable Number of Months Trial Court Service\--*
+
+108. Prior Judicial Service 1---General
+
+Variable Label: priorJudicialService1General
+
+Where nominee has more than one prior judicial appointment, enter first
+in time for this variable.
+
+Values:
+
+> 1 Federal court---trial level \[Any federal court not the FCA or
+> Family Court\]
+>
+> 2 Federal court---appellate level \[Federal Court of Australia\]
+>
+> 3 Family Court of Australia
+>
+> 4 State supreme court---trial level
+>
+> 5 State supreme court---appellate level
+>
+> 6 State district court (county court)
+>
+> 7 State local court (magistrates court)
+>
+> 8 State speciality court
+
+\--*End Content for Variable Prior Judicial Service 1---General\--*
+
+109. Prior Judicial Service 1---Location
+
+Variable Label: priorJudicialService1Location
+
+Denotes where the justice served.
+
+> **Values:**
+>
+> 1 Australia (federal actor)
+>
+> 2 Australian Capital Territory
+>
+> 3 New South Wales
+>
+> 4 Northern Territory
+>
+> 5 Queensland
+>
+> 6 South Australia
+>
+> 7 Tasmania
+>
+> 8 Victoria
+>
+> 9 Western Australia
+
+\--*End Content for Variable Prior Judicial Service 1---Location\--*
+
+110. Prior Judicial Service 1---Specific
+
+Variable Label: priorJudicialService1Specific
+
+If judicial service was on a federal court, note the registry location
+where the justice was based next to the value (e.g. Sydney).
+
+Values:
+
+> 1 Family Court of Australia
+>
+> 2 Federal Magistrates Court
+>
+> 3 Federal Circuit Court of Australia
+>
+> 5 Federal Court of Australia
+>
+> 6 Australian Industrial Court
+>
+> 7 Australia Military Court
+>
+> 8 Commonwealth Court of Conciliation and Arbitration
+>
+> 9 Commonwealth Industrial Court
+>
+> 10 Federal Court of Bankruptcy
+>
+> 11 Industrial Relations Court of Australia
+>
+> 12 Supreme Court of New South Wales---Common Law Division
+>
+> 13 Supreme Court of New South Wales---Equity Division
+>
+> 14 Supreme Court of New South Wales---Court of Appeal
+>
+> 15 Supreme Court of New South Wales---Court of Criminal Appeal
+>
+> 16 Land and Environment Court of New South Wales
+>
+> 17 District Court of New South Wales
+>
+> 18 Local Court of New South Wales
+>
+> 19 New South Wales Industrial Court
+>
+> 20 The Children's Court of New South Wales
+>
+> 21 New South Wales Dust Diseases Tribunal
+>
+> 22 Drug Court of New South Wales
+>
+> 23 New South Wales Chief Industrial Magistrate's Court
+>
+> 24 New South Wales Coroner's Court
+>
+> 25 Supreme Court of Queensland---Court of Appeal
+>
+> 26 Supreme Court of Queensland---Trial Division (Criminal)
+>
+> 27 Supreme Court of Queensland---Trial Division (Civil)
+>
+> 28 Industrial Court of Queensland
+>
+> 29 Queensland Planning and Environment Court
+>
+> 30 Queensland Land Appeal Court
+>
+> 31 District Court of Queensland
+>
+> 32 Magistrates Court of Queensland
+>
+> 33 Queensland Children's Court
+>
+> 34 Queensland Mental Health Court
+>
+> 35 Queensland Murri Court
+>
+> 36 Queensland Domestic Violence Court
+>
+> 37 Queensland Drug and Alcohol Court
+>
+> 38 Queensland Coroner's Court
+>
+> 39 Supreme Court of Victoria---Court of Appeals
+>
+> 40 Supreme Court of Victoria---Trial Court Common Law Division
+>
+> 41 Supreme Court of Victoria---Trial Court Commercial Division
+>
+> 42 Supreme Court of Victoria---Trial Court Criminal Division
+>
+> 43 County Court of Victoria
+>
+> 44 Magistrates' Court of Victoria
+>
+> 45 Children's Court of Victoria
+>
+> 46 Victorian Coroner's Court
+>
+> 47 Supreme Court of South Australia---Trial Division
+>
+> 48 Supreme Court of South Australia---Criminal Appeal Division
+>
+> 49 Supreme Court of South Australia---Civil Appeal Division
+>
+> 50 District Court of South Australia
+>
+> 51 Magistrates Court of South Australia
+
+52 Environment, Resources, and Development Court of South Australia
+
+> 53 South Australia Industrial Relations Court
+>
+> 54 Wardens Court of South Australia
+>
+> 55 Youth Court of South Australia
+>
+> 56 South Australia Coroner's Court
+>
+> 57 Supreme Court of Western Australia---Court of Appeals
+>
+> 58 Supreme Court of Western Australia---General (Trial) Division
+>
+> 59 Family Court of Western Australia
+>
+> 60 District Court of Western Australia
+>
+> 61 Magistrates Court of Western Australia
+>
+> 62 Aboriginal Community Court of Western Australia
+>
+> 63 Children's Court of Western Australia
+>
+> 64 Drug Court of Western Australia
+>
+> 65 Geraldton Family Violence Court, Western Australia
+>
+> 66 Western Australia Coroner's Court
+>
+> 67 Supreme Court of Tasmania---Criminal Division
+>
+> 68 Supreme Court of Tasmania---Civil Division
+>
+> 69 Supreme Court of Tasmania---Court of Appeals
+>
+> 70 Magistrates Court of Tasmania
+>
+> 71Tasmanian Coroner's Court
+>
+> 72 Supreme Court of the Northern Territory---Court of Appeal
+>
+> 73 Supreme Court of the Northern Territory---Court of Criminal Appeal
+>
+> 74 Supreme Court of the Northern Territory---Civil Trial
+>
+> 75 Supreme Court of the Northern Territory---Criminal Trial
+>
+> 76 Northern Territory Local Court (Magistrate's Court)
+>
+> 77 Coroner's Court of the Northern Territory
+>
+> 78 Supreme Court of the Australian Capital Territory
+>
+> 79 Supreme Court of the Australian Capital Territory---Court of Appeal
+>
+> 80 Magistrates Court of the Australian Capital Territory
+>
+> 81 Coroner's Court of the Australian Capital Territory
+>
+> 82 Supreme Court of Norfolk Island
+>
+> 83 Court of Petty Sessions for Norfolk Island
+>
+> 84 Nauru Supreme Court
+>
+> 85 Other
+
+\--*End Content for Variable Prior Judicial Service 1---Specific\--*
+
+111. Prior Judicial Service 1---Start Date
+
+Variable Label: priorJudicialService1StartDate
+
+Enter date first served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 1---Start Date---*
+
+112. Prior Judicial Service 1---End Date
+
+Variable Label: priorJudicialService1EndDate
+
+Enter date last served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 1---End Date\--*
+
+113. Prior Judicial Service 1---Months Served
+
+Variable Label: numMonthsJudicialService1
+
+Number of years served in months
+
+\--*End Content for Variable Prior Judicial Service 1---Months
+Served\--*
+
+114. Prior Judicial Service 1---Year First
+     Served
+
+Variable Label: priorJudicialService1FirstYear
+
+Enter year first served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 1---Year First
+Served\--*
+
+115. Prior Judicial Service 1---Year Last
+     Served
+
+Variable Label: priorJudicialService1LastYear
+
+Enter year last served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 1---Year Last
+Served\--*
+
+116. Prior Judicial Service 1---Party
+     Appointing
+
+Variable Label: priorJudicialService1Party
+
+Enter the name of the political party who appointed the justice to this
+role.
+
+\--*End Content for Variable Prior Judicial Service 1---Party\--*
+
+117. Prior Judicial Service 2---General
+
+Variable Label: priorJudicialService2General
+
+Values:
+
+> 1 Federal court---trial level \[Any federal court not the FCA or
+> Family Court\]
+>
+> 2 Federal court---appellate level \[Federal Court of Australia\]
+>
+> 3 Family Court of Australia
+>
+> 4 State supreme court---trial level
+>
+> 5 State supreme court---appellate level
+>
+> 6 State district court (county court)
+>
+> 7 State local court (magistrates court)
+>
+> 8 State speciality court
+
+\--*End Content for Variable Prior Judicial Service 2---General\--*
+
+118. Prior Judicial Service 2---Location
+
+Variable Label: priorJudicialService2Location
+
+Values:
+
+> 1 Australia (federal actor)
+>
+> 2 Australian Capital Territory
+>
+> 3 New South Wales
+>
+> 4 Northern Territory
+>
+> 5 Queensland
+>
+> 6 South Australia
+>
+> 7 Tasmania
+>
+> 8 Victoria
+>
+> 9 Western Australia
+
+\--*End Content for Variable Prior Judicial Service 2---Location\--*
+
+119. Prior Judicial Service 2---Specific
+
+Variable Label: priorJudicialService2Specific
+
+Values:
+
+> 1 Family Court of Australia
+>
+> 2 Federal Magistrates Court
+>
+> 3 Federal Circuit Court of Australia
+>
+> 5 Federal Court of Australia
+>
+> 6 Australian Industrial Court
+>
+> 7 Australia Military Court
+>
+> 8 Commonwealth Court of Conciliation and Arbitration
+>
+> 9 Commonwealth Industrial Court
+>
+> 10 Federal Court of Bankruptcy
+>
+> 11 Industrial Relations Court of Australia
+>
+> 12 Supreme Court of New South Wales---Common Law Division
+>
+> 13 Supreme Court of New South Wales---Equity Division
+>
+> 14 Supreme Court of New South Wales---Court of Appeal
+>
+> 15 Supreme Court of New South Wales---Court of Criminal Appeal
+>
+> 16 Land and Environment Court of New South Wales
+>
+> 17 District Court of New South Wales
+>
+> 18 Local Court of New South Wales
+>
+> 19 New South Wales Industrial Court
+>
+> 20 The Children's Court of New South Wales
+>
+> 21 New South Wales Dust Diseases Tribunal
+>
+> 22 Drug Court of New South Wales
+>
+> 23 New South Wales Chief Industrial Magistrate's Court
+>
+> 24 New South Wales Coroner's Court
+>
+> 25 Supreme Court of Queensland---Court of Appeal
+>
+> 26 Supreme Court of Queensland---Trial Division (Criminal)
+>
+> 27 Supreme Court of Queensland---Trial Division (Civil)
+>
+> 28 Industrial Court of Queensland
+>
+> 29 Queensland Planning and Environment Court
+>
+> 30 Queensland Land Appeal Court
+>
+> 31 District Court of Queensland
+>
+> 32 Magistrates Court of Queensland
+>
+> 33 Queensland Children's Court
+>
+> 34 Queensland Mental Health Court
+>
+> 35 Queensland Murri Court
+>
+> 36 Queensland Domestic Violence Court
+>
+> 37 Queensland Drug and Alcohol Court
+>
+> 38 Queensland Coroner's Court
+>
+> 39 Supreme Court of Victoria---Court of Appeals
+>
+> 40 Supreme Court of Victoria---Trial Court Common Law Division
+>
+> 41 Supreme Court of Victoria---Trial Court Commercial Division
+>
+> 42 Supreme Court of Victoria---Trial Court Criminal Division
+>
+> 43 County Court of Victoria
+>
+> 44 Magistrates' Court of Victoria
+>
+> 45 Children's Court of Victoria
+>
+> 46 Victorian Coroner's Court
+>
+> 47 Supreme Court of South Australia---Trial Division
+>
+> 48 Supreme Court of South Australia---Criminal Appeal Division
+>
+> 49 Supreme Court of South Australia---Civil Appeal Division
+>
+> 50 District Court of South Australia
+>
+> 51 Magistrates Court of South Australia
+
+52 Environment, Resources, and Development Court of South Australia
+
+> 53 South Australia Industrial Relations Court
+>
+> 54 Wardens Court of South Australia
+>
+> 55 Youth Court of South Australia
+>
+> 56 South Australia Coroner's Court
+>
+> 57 Supreme Court of Western Australia---Court of Appeals
+>
+> 58 Supreme Court of Western Australia---General (Trial) Division
+>
+> 59 Family Court of Western Australia
+>
+> 60 District Court of Western Australia
+>
+> 61 Magistrates Court of Western Australia
+>
+> 62 Aboriginal Community Court of Western Australia
+>
+> 63 Children's Court of Western Australia
+>
+> 64 Drug Court of Western Australia
+>
+> 65 Geraldton Family Violence Court, Western Australia
+>
+> 66 Western Australia Coroner's Court
+>
+> 67 Supreme Court of Tasmania---Criminal Division
+>
+> 68 Supreme Court of Tasmania---Civil Division
+>
+> 69 Supreme Court of Tasmania---Court of Appeals
+>
+> 70 Magistrates Court of Tasmania
+>
+> 71Tasmanian Coroner's Court
+>
+> 72 Supreme Court of the Northern Territory---Court of Appeal
+>
+> 73 Supreme Court of the Northern Territory---Court of Criminal Appeal
+>
+> 74 Supreme Court of the Northern Territory---Civil Trial
+>
+> 75 Supreme Court of the Northern Territory---Criminal Trial
+>
+> 76 Northern Territory Local Court (Magistrate's Court)
+>
+> 77 Coroner's Court of the Northern Territory
+>
+> 78 Supreme Court of the Australian Capital Territory
+>
+> 79 Supreme Court of the Australian Capital Territory---Court of Appeal
+>
+> 80 Magistrates Court of the Australian Capital Territory
+>
+> 81 Coroner's Court of the Australian Capital Territory
+>
+> 82 Supreme Court of Norfolk Island
+>
+> 83 Court of Petty Sessions for Norfolk Island
+>
+> 84 Nauru Supreme Court
+>
+> 85 Other
+>
+> 86 Family Court of Australia---Full Court
+
+\--*End Content for Variable Prior Judicial Service 2---Specific\--*
+
+120. Prior Judicial Service 2---Start Date
+
+Variable Label: priorJudicialService2StartDate
+
+Enter date first served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 2---Start Date---*
+
+121. Prior Judicial Service 2---End Date
+
+Variable Label: priorJudicialService2EndDate
+
+Enter date last served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 2---End Date\--*
+
+122. Prior Judicial Service 2---Months Served
+
+Variable Label: numMonthsJudicialService2
+
+Number of years served in months
+
+\--*End Content for Variable Prior Judicial Service 2---Months
+Served\--*
+
+123. Prior Judicial Service 2---Year First
+     Served
+
+Variable Label: priorJudicialService2FirstYear
+
+Enter year first served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 2---Year First
+Served\--*
+
+124. Prior Judicial Service 2---Year Last
+     Served
+
+Variable Label: priorJudicialService2LastYear
+
+Enter year last served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 2---Year Last
+Served\--*
+
+125. Prior Judicial Service 2---Party
+     Appointing
+
+Variable Label: priorJudicialService2Party
+
+Enter the name of the political party who appointed the justice to this
+role.
+
+\--*End Content for Variable Prior Judicial Service 2---Party\--*
+
+126. Prior Judicial Service 3---General
+
+Variable Label: priorJudicialService3General
+
+Values:
+
+> 1 Federal court---trial level \[Any federal court not the FCA or
+> Family Court\]
+>
+> 2 Federal court---appellate level \[Federal Court of Australia\]
+>
+> 3 Family Court of Australia
+>
+> 4 State supreme court---trial level
+>
+> 5 State supreme court---appellate level
+>
+> 6 State district court (county court)
+>
+> 7 State local court (magistrates court)
+>
+> 8 State speciality court
+
+\--*End Content for Variable Prior Judicial Service 3---General\--*
+
+127. Prior Judicial Service 3---Location
+
+Variable Label: priorJudicialService3Location
+
+Values:
+
+> 1 Australia (federal actor)
+>
+> 2 Australian Capital Territory
+>
+> 3 New South Wales
+>
+> 4 Northern Territory
+>
+> 5 Queensland
+>
+> 6 South Australia
+>
+> 7 Tasmania
+>
+> 8 Victoria
+>
+> 9 Western Australia
+
+\--*End Content for Variable Prior Judicial Service 3---Location\--*
+
+128. Prior Judicial Service 3---Specific
+
+Variable Label: priorJudicialService3Specific
+
+Values:
+
+> 1 Family Court of Australia
+>
+> 2 Federal Magistrates Court
+>
+> 3 Federal Circuit Court of Australia
+>
+> 4 Federal Court of Australia
+>
+> 6 Australian Industrial Court
+>
+> 7 Australia Military Court
+>
+> 8 Commonwealth Court of Conciliation and Arbitration
+>
+> 9 Commonwealth Industrial Court
+>
+> 10 Federal Court of Bankruptcy
+>
+> 11 Industrial Relations Court of Australia
+>
+> 12 Supreme Court of New South Wales---Common Law Division
+>
+> 13 Supreme Court of New South Wales---Equity Division
+>
+> 14 Supreme Court of New South Wales---Court of Appeal
+>
+> 15 Supreme Court of New South Wales---Court of Criminal Appeal
+>
+> 16 Land and Environment Court of New South Wales
+>
+> 17 District Court of New South Wales
+>
+> 18 Local Court of New South Wales
+>
+> 19 New South Wales Industrial Court
+>
+> 20 The Children's Court of New South Wales
+>
+> 21 New South Wales Dust Diseases Tribunal
+>
+> 22 Drug Court of New South Wales
+>
+> 23 New South Wales Chief Industrial Magistrate's Court
+>
+> 24 New South Wales Coroner's Court
+>
+> 25 Supreme Court of Queensland---Court of Appeal
+>
+> 26 Supreme Court of Queensland---Trial Division (Criminal)
+>
+> 27 Supreme Court of Queensland---Trial Division (Civil)
+>
+> 28 Industrial Court of Queensland
+>
+> 29 Queensland Planning and Environment Court
+>
+> 30 Queensland Land Appeal Court
+>
+> 31 District Court of Queensland
+>
+> 32 Magistrates Court of Queensland
+>
+> 33 Queensland Children's Court
+>
+> 34 Queensland Mental Health Court
+>
+> 35 Queensland Murri Court
+>
+> 36 Queensland Domestic Violence Court
+>
+> 37 Queensland Drug and Alcohol Court
+>
+> 38 Queensland Coroner's Court
+>
+> 39 Supreme Court of Victoria---Court of Appeals
+>
+> 40 Supreme Court of Victoria---Trial Court Common Law Division
+>
+> 41 Supreme Court of Victoria---Trial Court Commercial Division
+>
+> 42 Supreme Court of Victoria---Trial Court Criminal Division
+>
+> 43 County Court of Victoria
+>
+> 44 Magistrates' Court of Victoria
+>
+> 45 Children's Court of Victoria
+>
+> 46 Victorian Coroner's Court
+>
+> 47 Supreme Court of South Australia---Trial Division
+>
+> 48 Supreme Court of South Australia---Criminal Appeal Division
+>
+> 49 Supreme Court of South Australia---Civil Appeal Division
+>
+> 50 District Court of South Australia
+>
+> 51 Magistrates Court of South Australia
+
+52 Environment, Resources, and Development Court of South Australia
+
+> 53 South Australia Industrial Relations Court
+>
+> 54 Wardens Court of South Australia
+>
+> 55 Youth Court of South Australia
+>
+> 56 South Australia Coroner's Court
+>
+> 57 Supreme Court of Western Australia---Court of Appeals
+>
+> 58 Supreme Court of Western Australia---General (Trial) Division
+>
+> 59 Family Court of Western Australia
+>
+> 60 District Court of Western Australia
+>
+> 61 Magistrates Court of Western Australia
+>
+> 62 Aboriginal Community Court of Western Australia
+>
+> 63 Children's Court of Western Australia
+>
+> 64 Drug Court of Western Australia
+>
+> 65 Geraldton Family Violence Court, Western Australia
+>
+> 66 Western Australia Coroner's Court
+>
+> 67 Supreme Court of Tasmania---Criminal Division
+>
+> 68 Supreme Court of Tasmania---Civil Division
+>
+> 69 Supreme Court of Tasmania---Court of Appeals
+>
+> 70 Magistrates Court of Tasmania
+>
+> 71Tasmanian Coroner's Court
+>
+> 72 Supreme Court of the Northern Territory---Court of Appeal
+>
+> 73 Supreme Court of the Northern Territory---Court of Criminal Appeal
+>
+> 74 Supreme Court of the Northern Territory---Civil Trial
+>
+> 75 Supreme Court of the Northern Territory---Criminal Trial
+>
+> 76 Northern Territory Local Court (Magistrate's Court)
+>
+> 77 Coroner's Court of the Northern Territory
+>
+> 78 Supreme Court of the Australian Capital Territory
+>
+> 79 Supreme Court of the Australian Capital Territory---Court of Appeal
+>
+> 80 Magistrates Court of the Australian Capital Territory
+>
+> 81 Coroner's Court of the Australian Capital Territory
+>
+> 82 Supreme Court of Norfolk Island
+>
+> 83 Court of Petty Sessions for Norfolk Island
+>
+> 84 Nauru Supreme Court
+>
+> 85 Other
+
+\--*End Content for Variable Prior Judicial Service 3 Specific\--*
+
+129. Prior Judicial Service 3---Start Date
+
+Variable Label: priorJudicialService3StartDate
+
+Enter date first served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 3---Start Date---*
+
+130. Prior Judicial Service 3---End Date
+
+Variable Label: priorJudicialService3EndDate
+
+Enter date last served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 3---End Date\--*
+
+131. Prior Judicial Service 3---Months Served
+
+Variable Label: numMonthsJudicialService3
+
+Number of years served in months
+
+\--*End Content for Variable Prior Judicial Service 3---Months
+Served\--*
+
+132. Prior Judicial Service 3---Year First
+     Served
+
+Variable Label: priorJudicialService3FirstYear
+
+Enter year first served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 3---Year First
+Served\--*
+
+133. Prior Judicial Service 3---Year Last
+     Served
+
+Variable Label: priorJudicialService3LastYear
+
+Enter year last served on judiciary.
+
+\--*End Content for Variable Prior Judicial Service 3---Year Last
+Served\--*
+
+134. Prior Judicial Service 3---Party
+     Appointing
+
+Variable Label: priorJudicialService3Party
+
+Enter the name of the political party who appointed the justice to this
+role.
+
+\--*End Content for Variable Prior Judicial Service 3---Party\--*
+
+135. Admission to the Bar
+
+Variable Label: barAdmission
+
+Values:
+
+1 Yes
+
+2 No
+
+\--*End Content for Variable Admission to the Bar\--*
+
+136. Year of First Admission to the Bar
+
+Variable Label: barAdmissionYear
+
+Enter year.
+
+\--*End Content for Variable Year Admitted to the Bar\--*
+
+137. State in Which First Admitted to the Bar
+
+Variable Label: barAdmissionState
+
+Values:
+
+> 1 Australian Capital Territory
+>
+> 2 New South Wales
+>
+> 3 Northern Territory
+>
+> 4 Queensland
+>
+> 5 South Australia
+>
+> 6 Tasmania
+>
+> 7 Victoria
+>
+> 8 Western Australia
+>
+> 9 Overseas
+
+\--*End Content for Variable State in Which Admitted to the Bar\--*
+
+138. Promotion to Senior Counsel
+
+Variable Label: barPromotion
+
+1 Yes, SC/QC
+
+2 No
+
+\--*End Content for Variable Promotion to Senior Counsel\--*
+
+139. Year Promoted to Senior Counsel
+
+Variable Label: barPromotionYear
+
+\--*End Content for Variable Year Promoted to Senior Counsel\--*
+
+140. High Court Appearances
+
+Variable Label: hcaAppearances
+
+Variable captures whether the nominee appeared before the High Court as
+a barrister.
+
+Values:
+
+1 No
+
+2 Yes---Infrequent \[1-5 appearances\]
+
+3 Yes---Moderate frequency \[6-15 appearances\]
+
+4 Yes---Frequent (more than 15 appearances\]
+
+\--*End Content for Variable High Court Appearances\--*
+
+141. Practice as Solicitor
+
+Variable Label: solicitor
+
+Values:
+
+1 Yes
+
+2 No
+
+\--*End Content for Variable Practice as a Solicitor\--*
+
+142. Year First Practiced as Solicitor
+
+Variable Label: solicitorFirstYear
+
+\--*End Content for Variable Year First Practiced as a Solicitor\--*
+
+143. Year Last Practiced as Solicitor
+
+Variable Label: solicitorLastYear
+
+\--*End Content for Variable Year Last Practiced as a Solicitor\--*
+
+144. State Where First Admitted as Solicitor
+
+Variable Label: solicitorState
+
+Values:
+
+> 1 Australian Capital Territory
+>
+> 2 New South Wales
+>
+> 3 Northern Territory
+>
+> 4 Queensland
+>
+> 5 South Australia
+>
+> 6 Tasmania
+>
+> 7 Victoria
+>
+> 8 Western Australia
+>
+> 9 Overseas
+
+\--*End Content for Variable State Where Admitted as a Solicitor\--*
+
+145. Law Teaching
+
+Variable Label: teaching
+
+Values:
+
+1 Yes---Fulltime academic
+
+2 Yes---Adjunct/casual academic
+
+3 No
+
+\--*End Content for Variable Law Teaching\--*
+
+146. High Court Associateship
+
+Variable Label: hcaAssociate
+
+Values:
+
+1 Yes
+
+2 No
+
+\--*End Content for Variable High Court Associateship\--*
+
+147. Year of High Court Associateship
+
+Variable Label: hcaAssociateYear
+
+\--*End Content for Variable Year of High Court Associateship\--*
+
+148. Justice for High Court Associateship
+
+Variable Label: hcaAssociateJustice
+
+\--*End Content for Variable Justice for High Court Associateship\--*
+
+149. Other Judicial Associateship
+
+Variable Label: otherAssociate
+
+Values:
+
+1 Yes
+
+2 No
+
+\--*End Content for Variable Other Judicial Associateship\--*
+
+150. Year of Other Judicial Associateship
+
+Variable Label: otherAssociateYear
+
+Enter year.
+
+\--*End Content for Variable Year of Other Judicial Associateship\--*
+
+151. Government Appointment Type
+
+Variable Label: govAppointmentType
+
+This variable denotes the type of government appointment previously held
+by a justice. I only captured specific appointments, meaning some
+government appointments were excluded because they are insufficiently
+associated with partisanship. The values denote the appointment types I
+included, and I disaggregated between four types of appointment in case
+we want to weight them differently.
+
+Values:
+
+1 Commonwealth Solicitor-General
+
+2 State Solicitor-General
+
+3 Commonwealth tribunal appointment (e.g., AAT)
+
+> 4 Commonwealth commission (major commission only, e.g., Human Rights
+> Commission, Law Reform Commission)
+
+999 Not applicable (i.e., no relevant prior government position held by
+the justice)
+
+\--*End Content for Variable Government Appointment Type\--*
+
+152. Government Appointment Party
+
+Variable Label: governmentAppointmentParty
+
+Denotes the political party who appointed the justice to this role.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+999 Not applicable
+
+\--*End Content for Variable Government Appointment Party\--*
+
+153. Political Party Commonwealth
+
+Variable Label: politicalPartyCth
+
+Variable denotes whether the justice has political experience in federal
+politics, standing or holding office as a member of parliament.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+999 Not applicable
+
+\--*End Content for Variable Political Party Commonwealth\--*
+
+154. Known Political Identification
+
+Variable Label: politicalIdentification
+
+Variable denotes whether the justice is known to have membership in, or
+overtly express support for a specific political party. Includes youth
+party groups at university.
+
+Values:
+
+1 Liberal
+
+2 Labor
+
+999 Not applicable
+
+\--*End Content for Variable Known Political Identification---*
+
+155. Notes
+
+Variable Label: Notes
+
+Any notes to the data.
+
+\--*End Content for Variable Notes\--*
+
+
+## Citation
+
+If you use this data, please cite:
+
+Leslie, P., Robinson, Z., Smyth, R., & Jacobi, T. (2026). Supporting comparative studies of
+judicial behavior: Introducing the Australian High Court Database. *Journal of Law & Empirical
+Analysis*, *3*(1), 251--263. <https://doi.org/10.1177/2755323X261438254>
+
+```bibtex
+@article{leslie2026hcdb,
+  author  = {Pat Leslie and Zo\"{e} Robinson and Russell Smyth and Tonja Jacobi},
+  title   = {Supporting Comparative Studies of Judicial Behavior: Introducing the Australian High Court Database},
+  journal = {Journal of Law \& Empirical Analysis},
+  year    = {2026},
+  volume  = {3},
+  number  = {1},
+  pages   = {251--263},
+  doi     = {10.1177/2755323X261438254}
+}
+```

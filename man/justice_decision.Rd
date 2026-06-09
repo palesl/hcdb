@@ -25,4 +25,13 @@ justice_decision
 \description{
 Data from all justice decisions in all cases in the High Court of Australia, 1995-2020
 }
+\references{
+Leslie, P., Robinson, Z., Smyth, R., & Jacobi, T. (2026). Supporting comparative
+studies of judicial behavior: Introducing the Australian High Court Database. \emph{Journal of
+Law & Empirical Analysis}, \emph{3}(1), 251–263. \doi{10.1177/2755323X261438254}
+}
+\seealso{
+Full variable documentation: \code{vignette("justice_decision_codebook", package = "hcdb")},
+\code{vignette("justice_decision_core_codebook", package = "hcdb")}
+}
 \keyword{datasets}

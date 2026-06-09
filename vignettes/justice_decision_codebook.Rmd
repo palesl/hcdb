@@ -1,0 +1,6337 @@
+---
+title: "Justice Decision Codebook"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Justice Decision Codebook}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+**HCDB Justice Decision Codebook (justice_decision)]**
+
+**[Contents]**
+
+[Introduction
+
+Identification Variables
+
+1. HCDB Case ID
+
+2. Commonwealth Law Reports Citation
+
+3. Australian Law Journal Report Citation
+
+4. Australian Law Report Citation
+
+5. High Court Citation
+
+6. Case Number
+
+7. Case Name
+
+8. Multiple Matters
+
+9. Number of Multiple Matters
+
+10. Multiple Matters HCDB Identification 1
+
+11. Multiple Matters HCDB Identification 2
+
+12. Multiple Matters HCDB Identification 3
+
+13. Multiple Matters HCDB Identification 4
+
+14. Multiple Matters HCDB Identification 5
+
+15. Multiple Matters HCDB Identification 6
+
+16. Multiple Matters HCDB Identification 7
+
+17. Multiple Matters HCDB Identification 8
+
+Background Variables
+
+18. Number of Appellants/Petitioners
+
+19. Number of Appellants, Federal Government
+
+20. Number of Appellants, State Government
+
+21. Number of Appellants, Corporation
+
+22. Number of Appellants, Non-Corporate Entity
+
+23. Number of Appellants, Individuals
+
+24. Appellant/Petitioner \[1\] to \[34\]
+
+25. Appellant/Petitioner State \[1\] to \[34\]
+
+26. Number of Respondents
+
+27. Number of Respondents, Federal Government
+
+28. Number of Respondent, State Government
+
+29. Number of Respondent, Corporation
+
+30. Number of Respondent, Non-Corporate Entity
+
+31. Number of Respondents, Individuals
+
+32. Respondent \[1\] to \[49\]
+
+33. Respondent State \[1\] to \[49\]
+
+34. Intervener
+
+35. Number of Interveners
+
+36. Intervener Identity \[1\] to \[10\]
+
+37. Amicus
+
+38. Number of Amici
+
+39. Manner in which Court takes Jurisdiction General
+
+40. Manner in which Court takes Jurisdiction Specific
+
+41. Administrative Action Preceding Litigation
+
+42. Administrative Review Preceding Litigation 1
+
+43. Administrative Review Preceding Litigation 2
+
+44. Origin of Case General
+
+45. Origin of Case Specific
+
+46. Origin of Case State
+
+47. Source of Case General
+
+48. Source of Case Specific
+
+49. Source of Case State
+
+50. Lower Court Disposition
+
+51. Lower Court Disposition Direction
+
+52. Lower Court Dissent
+
+53. Lower Court Panel Size
+
+54. Number of Lower Court Dissents
+
+Gatekeeping Variables
+
+55. Special Leave Method
+
+56. Number of Justices on Preliminary Special Leave Panel
+
+58. Preliminary Special Leave Hearing
+
+59. Preliminary Special Leave Date
+
+60. Natural Court at Preliminary Special Leave Hearing
+
+61. Referral Justice Where no Preliminary Special Leave Hearing
+
+62. Preliminary Special Leave Outcome
+
+63. Justice Granting Special Leave 1
+
+64. Justice Granting Special Leave 2
+
+65. Justice Granting Special Leave 3
+
+66. Special Leave Location
+
+67. Political Power on Date of Preliminary Special Leave Hearing
+
+68. Year of Preliminary Special Leave Hearing
+
+69. Term of Preliminary Special Leave Hearing
+
+70. Chief Justice Special Leave
+
+71. Prime Minister on Date of Preliminary Special Leave Hearing
+
+Chronological Variables
+
+72. Date of Decision
+
+73. Year of Court Decision
+
+74. Term of Court Decision
+
+75. Natural Court Decision
+
+76. Chief Justice of Date of Decision
+
+77. Political Power on Date of High Court Decision
+
+78. Prime Minister on Date of Decision
+
+79. Number of Justices on Panel
+
+80. Date of Commencement of Oral Argument
+
+81. Date Oral Argument Concluded
+
+82. Total Time for Oral Argument Days
+
+83. Total Time for Oral Argument Minutes
+
+84. Year of Court Oral Argument
+
+85. Term of Court Oral Argument
+
+86. Natural Court Oral Argument
+
+87. Chief Justice Oral Argument
+
+88. Political Power Oral Argument
+
+89. Prime Minister on Date of Oral Argument
+
+90. Location of Oral Argument
+
+91. Commonwealth Solicitor-General Representation at Oral Argument
+
+92. Commonwealth Solicitor-General Party Representation at Oral
+Argument 1
+
+93. Commonwealth Solicitor-General Party Representation at Oral
+Argument 2
+
+Substantive Variables
+
+94. Primary Issue Area
+
+95. Primary Issue Sub Area
+
+96. Primary Issue
+
+97. Secondary Issue Area
+
+98. Secondary Issue Sub Area
+
+99. Secondary Issue
+
+100. Tertiary Issue Area
+
+101. Tertiary Issue Sub Area
+
+102. Tertiary Issue
+
+103. Authority for Decision 1
+
+104. Authority for Decision 1 State
+
+105. Authority for Decision 2
+
+106. Authority for Decision 2 State
+
+107. Authority for Decision 3
+
+108. Authority for Decision 3 State
+
+109. Panel Special Leave Decision
+
+110. Panel Special Leave Outcome General
+
+111. Panel Special Leave Outcome Specific
+
+112. Costs Decision
+
+113. Costs Decision Related HCDBID
+
+114. Legal Provision Considered by the Court 1
+
+115. Legal Provision Supplement 1
+
+116. Legal Provision Considered by the Court 2
+
+117. Legal Provision Supplement 2
+
+118. Legal Provision Considered by the Court 3
+
+119. Legal Provision Supplement 3
+
+120. Decision Type
+
+121. Constitutional Matter
+
+122. Judicial Review
+
+123. Lower Court Constitutional Decision
+
+Outcome, Voting, and Opinion Variables
+
+124. Declaration of Unconstitutionality
+
+125. Disposition of Case
+
+126. Winning Party
+
+127. Decision Direction
+
+128. Decision Direction Dissent
+
+129. Majority Votes
+
+130. Minority Votes
+
+131. Justice ID
+
+132. Vote in the Case
+
+133. Direction of the Individual Justice's Votes
+
+134. Majority and Minority Voting by Justice
+
+135. Justice Coalition 1
+
+136. Justice Coalition 2
+
+137. Justice Coalition 3
+
+138. Justice Coalition 4
+
+139. Justice Coalition 5
+
+140. Justice Coalition 6
+
+141. Ideological Distribution of Panel
+
+142. Ideological Distribution of Court
+
+143. Gender Distribution of Panel
+
+144. Gender Distribution of Court
+
+Justice Characteristics Variables
+
+145. RLS Justice Ideology Score
+
+146. Party of Prime Minister Appointing Justice
+
+147. Gender Identity of Justice
+
+148. Notes
+
+HCDB Appendix
+
+A1 varAdminAction
+
+A2 varAdminReview
+
+A3 varAmicus
+
+A4 varAuthorityDecision
+
+A5 varCaseDisposition
+
+A6 varCaseSourceGeneral
+
+A7 varCaseSourceSpecific
+
+A8 varChief
+
+A9 varConstitutionalMatter
+
+A10 varCosts
+
+A11 varDecisionDirection
+
+A12 varDecisionDirectionDissent
+
+A13 varDecisionTypes
+
+A14 varDeclarationUncon
+
+A15 Gender Distribution
+
+A16 varIdeological Distribution
+
+A17 varIntervener
+
+A18 varIssues
+
+A19 varIssueArea
+
+A20 varIssueSubArea
+
+A21 varJudicialReview
+
+A22 varJurisdictionGeneral
+
+A23 varJurisdictionSpecific
+
+A24 varJustice
+
+A25 varJusticeDirection
+
+A26 varJusticeGender
+
+A27 varIdeology
+
+A28 varJusticeMajority
+
+A29 varJusticePM
+
+A30 varLawArea
+
+A31 varLegalProvisions
+
+A32 varLowerCourtConsitutionalOutcome
+
+A33 varLowerCourtDisposition
+
+A34 varLowerCourtDissent
+
+A35 varMultipleMatters
+
+A36 varNaturalCourt
+
+A37 varParties
+
+A38 varPartyWinning
+
+A39 varPoliticalPower
+
+A40 varPreliminarySpecialLeaveHearing
+
+A41 varPrimeMinister
+
+A42 varRegistry
+
+A43 varSG
+
+A44 varSGParty
+
+A45 varSpecialLeaveMethod
+
+A46 varSpecialLeaveOutcomeGeneral
+
+A47 varSpecialLeavePanel
+
+A48 varSpecialLeavePanelPreliminary
+
+A49 varSpecialLeaveOutcomePreliminary
+
+A50 varSpecialLeaveOutcomeSpecific
+
+A51 varStates
+
+A52 varTerm
+
+A53 varVote
+
+Introduction
+
+This document reflects the coding rules for the High Court Database.
+This codebook was specifically and deliberatively modelled off the
+Supreme Court Database Code Book in order to facilitate comparative
+judicial politics research, as well as provide a robust dataset for
+Australian researchers interested in engaging with the empirical study
+of judicial politics.
+
+This first iteration of the database extends from April 1995 (beginning
+of the Brennan Court) to December 31, 2020. Future iterations will
+extend the dataset backwards to include decided cases from the beginning
+of the Mason Court in early 1987 and forwards to include 2021 onwards.
+
+The dataset includes over 1 million data points, with approximately 315
+variables coded for each case. With this much data, it is inevitable
+that errors will be present, despite our best efforts (which include
+triple coded variables and intercoder reliability tests). Please let us
+know of any errors, as well as any comments or feedback on the dataset
+via email at <zoe.robinson@anu.edu.au> or <patrick.leslie@anu.edu.au>.
+
+All variables were drawn from a combination of High Court opinions, High
+Court special leave dispositions (both individual and summary form),
+High Court special leave transcripts (where relevant), High Court
+transcripts of oral argument on the merits, and the lower court opinion
+appealed from to the High Court (where relevant). All sources were
+located from one of three online repositories: the High Court of
+Australia website (www.hcourt.gov.au), Austlii (www.austlii.edu.au),
+and/or Jade (www.jade.io). The online version of the database includes a
+link to all sources for each individual case coded (i.e., each database
+entry is accompanied by the High Court opinion for the case, the
+transcript of oral argument, the special leave transcript (where
+relevant), and the lower court opinion (where relevant)).
+
+The variables are subdivided into 6 broad categories:
+
+1.  Identification variables, which provides the basic identification
+    metrics including the unique database id number, various citations
+    for the decision;
+
+2.  Background variables, which includes information about the parties
+    to the case and the litigation history of the case;
+
+3.  Gatekeeping variables, which includes information about the special
+    leave hearing (where relevant);
+
+4.  Chronological variables, which contains information about the
+    litigation history in the High Court including oral argument data;
+
+5.  Substantive variables, which includes variables identifying the
+    issue(s) of the case, legal authorities relied on, as well as
+    further data where the matter is constitutional; voting and opinion
+    variables, which captures the winning party, the votes of each
+    justice, the various justice coalitions in written opinions, and the
+    ideological direction of the outcome and of each justice's vote; and
+
+6.  Justice characteristic variables, which includes a limited number of
+    background characteristics of each individual justice, including
+    ideology, gender, and age (further social background data will be
+    released in a separate dataset).
+
+Where a variable is irrelevant for the case being coded, 999 is the
+entry. Where information is unavailable for a variable, 888 is the
+entry. Most variables contain normalizations---the list of values from
+which a coder can choose to code a variable. Each variable has its own
+page and includes a descriptive variable name, the variable label
+deployed in the dataset, the relevant normalization, and a description
+of the variable. The values for the normalizations included in the
+Appendix.
+
+We thank the Australian National University and the generous financial
+support of the Futures Scheme; this database is possible only because of
+this funding. We wish to thank to Ben Wickham, Special Senior Registrar
+at the High Court of Australia, for his assistance with the intricacies
+of High Court jurisdiction and opinion writing. We thank Andrew Lynch
+for his provision of his raw data of constitutional cases dating back to
+2004, which we used, in part, for cross-checking the coding of variables
+relating to constitutional claims. We thank the many excellent research
+assistants who code this dataset: Jonathan Tjandra, Edmund Handby,
+Andrew Ray, Julia Rheinberger, Benjamin Durkin, Matthew Putt, Indira
+Wrigley, and Shreeya Smith.
+
+*\--End of Content for Introduction\--*
+
+Identification Variables
+
+1.  HCDB Case ID
+
+Variable Label: HCDBcaseId
+
+Normalizations: N/A
+
+The Case ID is the HCDB unique internal identification number. The Case
+ID contains 7 digits; the first four digits are the year, as the year is
+reflective of the Term of the High Court, the next three identify the
+case within the year (determined in date order of the date of decision),
+starting at 001 and counting up.
+
+For example, the HCDB ID for the fifth relevant case decided in 2015
+will 2015005. Note the use of the term "relevant." This indicates that
+the three numbers that reflect the case in the year is not the
+docket---or case---number assigned by the court, but rather is the
+number the coder will assign the case that the coder deems relevant for
+inclusion in the database.
+
+\--*End Content for Variable HCDB Case ID\--*
+
+2.  Commonwealth Law Reports Citation
+
+Variable Label: clrCite
+
+Normalizations: N/A
+
+The next four variables provide various citations for each case. This
+variable represents the Commonwealth Law Reports citation, the
+authorized reporter for the decisions of the High Court. This citation
+will not be present in all cases.
+
+\--*End Content for Variable Commonwealth Law Reports Citation\--*
+
+3.  Australian Law Journal Report Citation
+
+Variable Label: aljrCite
+
+Normalizations: N/A
+
+This variable represents the Australian Law Journal Report citation.
+This citation will not be present in all cases.
+
+\--*End Content for Variable Australian Law Journal Report Citation\--*
+
+4.  Australian Law Report Citation
+
+Variable Label: alrCite
+
+Normalizations: N/A
+
+This variable represents the Australian Law Report citation. This
+citation will not be present in all cases.
+
+\--*End Content for Variable Australian Law Report Citation\--*
+
+5.  High Court Citation
+
+Variable Label: hcaCite
+
+Normalizations: N/A
+
+This variable provides medium neutral citation for the decision; that
+is, the High Court's internal citation for the case. This citation will
+always be present.
+
+\--*End Content for Variable High Court Citation\--*
+
+6.  Case Number
+
+Variable Label: caseNumber
+
+Normalizations: N/A
+
+This variable contains the case number that the High Court has assigned
+to the case (i.e. docket number/matter number). Case numbers are
+assigned by the state in which the case is filed (and the state in which
+the case is filed in the High Court is the state where the case was
+heard prior to the High Court appeal), and then numerically in the order
+in which they were filed. For example, the first case filed in Sydney in
+2017 will have the case number S1, the third case filed in Perth will
+have the case number P3, and so on.
+
+While the Court will sometimes consolidate a number of cases under one
+medium neutral citation (i.e. HCA citation), every individual case will
+have its own case number and therefore will have an independent HCDBID
+in the dataset. For example, \[2007\] HCA 50 is comprised of two cases,
+S373/2006 (Weston Aluminium Pty Limited v Environment Protection
+Authority) and S211/2006 (Weston Aluminium Pty Limited v Alcoa Australia
+Rolled Products). While multiple case numbers under a single case
+citation will almost always contain the same issue(s) as the lead
+case---with the only difference will be the parties to the case, and the
+origin and source of the case---the coding approach was to code each
+individual case. It is up to individual researchers whether they would
+prefer to deploy the more finely coded HCDBID as the unit of analysis
+or, rather to use the more general High Court's medium neutral citation
+(HCA cite) as the unit of analysis. Researchers interested in oral
+argument and attorneys should use the more discrete HCDBID as the unit
+of analysis given that individual cases that are consolidated do not
+always share attorney representation.
+
+\--*End Content for Variable Case Number\--*
+
+*\
+*
+
+7.  Case Name
+
+Variable Label: caseName
+
+Normalizations: N/A
+
+This is the name of the case. The case name is associated with the case
+number, therefore where cases are consolidated the case name is not that
+of the lead case but rather the particular case, although the HCA
+citation will remain the same.
+
+\--*End Content for Variable Case Name\--*
+
+*\
+*
+
+8.  Multiple Matters
+
+Variable Label: multipleMatters
+
+Normalizations: varMultipleMatters (2)
+
+This variable identifies whether the decision of the Court relates to a
+single case (matter) or multiple cases. If the decision issued by the
+Court relates to more than one case, as identified by the presence of
+more than one case number under a single medium neutral (HCA) citation,
+it is coded as a multiple matter.
+
+\--*End Content for Variable Multiple Matters\--*
+
+*\
+*
+
+9.  Number of Multiple Matters
+
+Variable Label: numMultipleMatters
+
+Normalizations: N/A
+
+This variable denotes the total number of matters decided in the single
+High Court decision issued by the Court (i.e. under a single medium
+neutral (HCA) citation), including the matter being coded. For example,
+if the decision lists 3 matter numbers under one medium neutral
+citation, then "3" will be coded for this variable.
+
+\--*End Content for Variable Number of Multiple Matters\--*
+
+10. Multiple Matters HCDB Identification 1
+
+11. Multiple Matters HCDB Identification 2
+
+12. Multiple Matters HCDB Identification 3
+
+13. Multiple Matters HCDB Identification 4
+
+14. Multiple Matters HCDB Identification 5
+
+15. Multiple Matters HCDB Identification 6
+
+16. Multiple Matters HCDB Identification 7
+
+17. Multiple Matters HCDB Identification 8
+
+Variable Label: multipleMatterHCDBID
+
+Normalizations: N/A
+
+These 8 variables identify the HCDBID of all cases that were decided in
+the same decision of the Court. Each related case is coded by HCDBID and
+any irrelevant cells coded as 999. The related cases only relate to
+those *decided* with the case being coded, not heard with the matter
+being coded (i.e. if oral argument is consolidated but the Court issues
+written opinions for each case then this is not coded as a multiple
+matter).
+
+\--*End Content for Variable Multiple Matters HCDB Identification\--*
+
+Background Variables
+
+*\
+*
+
+18. Number of Appellants/Petitioners
+
+Variable Label: numAppellants
+
+Normalizations: N/A
+
+This variable identifies the total number of appellants/petitioners in
+any given matter. The total number of appellants listed are counted,
+with this information identified from the transcript of the hearing). In
+the instance where multiple parties are listed under one appellant (e.g.
+"first appellant, James Bond and Bob Builder") this is coded as one
+party. The exception to this is where only one appellant is listed
+(e.g., "appellant") and there are multiple parties that are distinct
+party type, such as an individual and a corporation (e.g., "first
+appellant, James Bond and Bob Builder Pty Ltd). In this instance the
+parties are disaggregated and coded as multiple parties.
+
+\--*End Content for Variable Appellant/Petitioner Type\--*
+
+*\
+*
+
+19. Number of Appellants, Federal Government
+
+Variable Label: numAppellantsFed
+
+Normalizations: N/A
+
+This variable identifies the total number of appellants/petitioners that
+can be categorized as the federal government in any given matter. This
+includes individuals involved in litigation in their capacity as a
+federal government employee, e.g., Minister for Employment.
+
+\--*End Content for Variable Number Appellant/Petitioner, Federal
+Government\--*
+
+*\
+*
+
+20. Number of Appellants, State Government
+
+Variable Label: numAppellantsState
+
+Normalizations: N/A
+
+This variable identifies the total number of appellants/petitioners that
+can be categorized as the state government in any given matter. This
+includes individuals involved in litigation in their capacity as a state
+or local government employee.
+
+\--*End Content for Variable Number Appellant/Petitioner, State
+Government\--*
+
+*\
+*
+
+21. Number of Appellants, Corporation
+
+Variable Label: numAppellantsCorp
+
+Normalizations: N/A
+
+This variable identifies the total number of appellants/petitioners that
+can be categorized as a corporate entity in any given matter. This
+includes any corporate form.
+
+\--*End Content for Variable Number Appellant/Petitioner,
+Corporation\--*
+
+*\
+*
+
+22. Number of Appellants, Non-Corporate Entity
+
+Variable Label: numAppellantsNonCorp
+
+Normalizations: N/A
+
+This variable identifies the total number of appellants/petitioners that
+can be categorized as a non-corporate entity in any given matter. This
+includes any unions, interests groups, and (less ideally), foreign
+nations.
+
+\--*End Content for Variable Number Appellant/Petitioner, Non-Corporate
+Entity\--*
+
+*\
+*
+
+23. Number of Appellants, Individuals
+
+Variable Label: numAppellantsIndividuals
+
+Normalizations: N/A
+
+This variable identifies the total number of appellants/petitioners that
+can be categorized as individuals.
+
+\--*End Content for Variable Number Appellant/Petitioner,
+Individuals\--*
+
+*\
+*
+
+24. Appellant/Petitioner \[1\] to \[34\]
+
+Variable Label: appellant
+
+Normalizations: varParties (59)
+
+This variable identifies the party who appealed to the High Court.
+Reference should be made to the variable "Appellant/Petitioner type" to
+identify whether this party is in fact an appellant, or a petitioner
+(applied in the HCA's original jurisdiction).
+
+The variable, along with the variable "respondent" provides information
+as to the identity of the parties in terms of the *capacity* in which
+the party is acting in the litigation. The exception to this is where
+the parties are states or a subdivision of the state, when this variable
+only identifies the party as a state and a subsequent variable
+identifies the particular state. Therefore, if a state or a subdivision
+of a state is a party, the value will reflect this, and the subsequent
+variable appellantState notes the identity of the specific state. Note
+that if the Commonwealth government is a party, then the state variable
+includes a code to reflect this.
+
+The appellant(s) and respondent(s) are characterized as the Court's
+opinion identifies them. That is, the parties are characterized as the
+opinion describes them in the context of the litigation. For example, an
+employer who is also a business is characterized as an employer if the
+litigation involves the businesses role as an employer, and a business
+if the litigation involves another capacity.
+
+Each party is coded independently. [Currently there 34 appellant
+variables, starting with appellant1 and continuing sequentially up to
+and including appellant34.] Irrelevant cells are coded as
+"999" (i.e. if there is only 1 appellant, the remaining appellant
+variables from appellant2 to appellant34 will be coded 999).
+
+Notes:
+
+-   In Australia, federal criminal matters can be brought in state
+    court. Consequently, where the party is the Queen/King in a criminal
+    matter, the party and related state code will reflect the
+    legislation/code under which the defendant was originally charged.
+    If the defendant was charged under the federal criminal law, despite
+    the crime being prosecuted in a state court, the code will identify
+    the party as the federal government.
+
+-   Where the varParties does not contain an option that describes the
+    appellant or respondent, the code will be "other". We endeavour to
+    use this coding sparingly.
+
+\--*End Content for Variable Appellant/Petitioner\--*
+
+25. Appellant/Petitioner State \[1\] to \[34\]
+
+Variable Label: appellantState
+
+Normalizations: varStates (12)
+
+Following the SCDB Codebook coding rules, this variable identifies if
+the state or any state actor (including prosecutors in criminal matters)
+is the petitioner, including federal government action, courts and
+judicial officers.
+
+As noted above, each party is coded independently and consequentially
+each party variable has an associated state variable. [Currently there
+34 appellant variables and 34 associated appellant state
+variables.] Irrelevant cells are coded as "999".
+
+\--*End Content for Variable Appellant/Petitioner State\--*
+
+26. Number of Respondents
+
+Variable Label: numRespondents
+
+Normalizations: N/A
+
+See variable numAppellants.
+
+\--*End Content for Variable Respondent\--*
+
+27. Number of Respondents, Federal Government
+
+Variable Label: numRespondentsFed
+
+Normalizations: N/A
+
+This variable identifies the total number of respondents that can be
+categorized as the federal government in any given matter. This includes
+individuals involved in litigation in their capacity as a federal
+government employee, e.g., Minister for Employment.
+
+\--*End Content for Variable Number Respondent, Federal Government\--*
+
+*\
+*
+
+28. Number of Respondent, State Government
+
+Variable Label: numRespondentState
+
+Normalizations: N/A
+
+This variable identifies the total number of respondents that can be
+categorized as the state government in any given matter. This includes
+individuals involved in litigation in their capacity as a state or local
+government employee.
+
+\--*End Content for Variable Number Respondent, State Government\--*
+
+*\
+*
+
+29. Number of Respondent, Corporation
+
+Variable Label: numRespondentsCorp
+
+Normalizations: N/A
+
+This variable identifies the total number of respondents that can be
+categorized as a corporate entity in any given matter. This includes any
+corporate form.
+
+\--*End Content for Variable Number Respondent, Corporation\--*
+
+*\
+*
+
+30. Number of Respondent, Non-Corporate Entity
+
+Variable Label: numRespondentsNonCorp
+
+Normalizations: N/A
+
+This variable identifies the total number of respondents that can be
+categorized as a non-corporate entity in any given matter. This includes
+any unions, interest groups, and (less ideally), foreign nations.
+
+\--*End Content for Variable Number Respondents, Non-Corporate
+Entity\--*
+
+*\
+*
+
+31. Number of Respondents, Individuals
+
+Variable Label: numRespondentsIndividuals
+
+Normalizations: N/A
+
+This variable identifies the total number of respondents that can be
+categorized as individuals.
+
+\--*End Content for Variable Number Respondents, Individuals\--*
+
+*\
+*
+
+32. Respondent \[1\] to \[49\]
+
+Variable Label: respondent
+
+Normalizations: varParties (59)
+
+See appellant variable. Note that there are [currently 49 respondent
+variables, starting with respondent1 and continuing sequentially up to
+and including respondent49.] Irrelevant cells are coded as
+"999" (i.e. if there is only 1 appellant, the remaining appellant
+variables from respondent2 to respondent49 are coded 999).
+
+\--*End Content for Variable Respondent\--*
+
+33. Respondent State \[1\] to \[49\]
+
+Variable Label: respondentState
+
+Normalizations: varStates (12)
+
+See variable appellantState.
+
+\--*End Content for Variable Respondent State\--*
+
+*\
+*
+
+34. Intervener
+
+Variable Label: intervener
+
+Normalizations: varIntervener (2)
+
+In the Australian context, there are two types of non-parties to a
+case---interveners and amicus curiae. This variable denotes whether
+there is an intervener participating in the case. An intervener must
+usually have a personal or direct interest in the outcome of the case.
+Intervention is either by right or by leave. Most notably, in
+constitutional matters state and federal governments are granted a right
+of intervention. This variable identifies whether there was an
+intervener in the case, regardless of whether the intervention was by
+leave or right.
+
+\--*End Content for Variable Intervener\--*
+
+*\
+*
+
+35. Number of Interveners
+
+Variable Label: numIntervener
+
+Normalizations: N/A
+
+This variable identifies the total number of interveners participating
+in the case. Note that this variable aggregates interveners only, and
+does not include amici.
+
+\--*End Content for Variable Number of Interveners\--*
+
+*\
+*
+
+36. Intervener Identity \[1\] to \[10\]
+
+Variable Label: intervener1 (2, 3, etc)
+
+Normalizations: varState (12)
+
+This variable identifies the intervener participating in the litigation.
+In most instances the intervener will be the federal government or a
+state government. In the case where the intervener is a statutory
+intervener that is not a state (e.g., Human Rights Commission), the code
+will be other.
+
+\--*End Content for Variable Intervener Identity\--*
+
+37. Amicus
+
+Variable Label: amicus
+
+Normalizations: varAmicus (2)
+
+This variable identifies whether an amicus was granted leave to provide
+submissions (written or oral) in the case. Amicus are relatively rare in
+the High Court of Australia.
+
+\--*End Content for Variable Amicus\--*
+
+38. Number of Amici
+
+Variable Label: numAmici
+
+Normalizations: N/A
+
+This variable identifies the total number of amici participating in the
+case. Note that this variable aggregates amici only, and does not
+include interveners.
+
+\--*End Content for Variable Number of Amici\--*
+
+39. Manner in which Court takes Jurisdiction
+    General
+
+Variable Label: jurisdictionGeneral
+
+Normalizations: varJurisdictionGeneral (6)
+
+The variable varJurisdictionGeneral and the subsequent variable
+varJurisdictionSpecific are concerned with the way in which the Court
+undertakes to hear a case it has been asked to consider. The High Court
+of Australia uses a variety of means by which it undertakes to consider
+cases. For the information of comparative scholars not familiar with
+Australian law and procedure, the High Court's jurisdictional ambit is
+complex for a number of reasons that are important for researchers to
+consider:
+
+-   First, the Australian judicial system is, by and large, unitary in
+    its function, and state courts are vested with federal jurisdiction.
+
+-   Second, the High Court's exclusive jurisdiction is limited, with
+    lower federal courts able to exercise much of the original
+    jurisdiction assigned to the High Court under the Constitution.
+
+-   Third, the High Court has the power to hear cases in original
+    jurisdiction sitting as a single justice, or to remit those cases to
+    any federal or state court.
+
+-   Fourth, the High Court is the final court of appeal on matters of
+    state law.
+
+-   Fifth, the Australian Constitution is far more specific than, e.g.,
+    the US Constitution with respect to the nature and ambit of federal
+    jurisdiction, and in addition, the Constitution grants Parliament
+    the power to add to the Court's original jurisdiction via
+    legislation, which it has done.
+
+In light of the above, there are a large number of ways in which the
+Court can take jurisdiction. Because of the small N and in order to
+facilitate analysis, the decision was made to include two jurisdictional
+variables.
+
+The first jurisdictional variable, varJurisdictionGeneral, identifies
+the general way in which the Court took jurisdiction. That is, this
+variable identifies whether the Court is hearing the case as a result of
+an appeal as of right, special leave, original jurisdiction, or
+reference question by a single High Court justice. The option "other"
+has also been included and should be used for, e.g., the court of
+disputed returns or any other manner the Court takes jurisdiction that
+is not accurately captured by the other options.
+
+The second jurisdictional variable, varJurisdictionSpecific, identifies
+the specific way in which the Court took jurisdiction. Therefore, it
+disaggregates each of the general categories into more detailed
+categories of jurisdiction.
+
+You will find that the general and specific codes "pair," for example a
+case under the Court's special leave jurisdiction will always have a
+general code 1, and a specific code of 3 (appeal from federal court) or
+4 (appeal from state court), and a case coded 2 for general (appeal as
+of right) will always be coded 7 for specific. See normalizations for
+details regarding the values mentioned here.
+
+Note that although the option of reference jurisdiction (general code 4,
+specific code 11), this should only be used where a more detailed coding
+cannot be sourced, which is unlikely.
+
+Note: this database only captures cases decided by a panel of the High
+Court, which is defined pursuant to the Judiciary Act 1901 (Cth) as two
+or more justices sitting together. Therefore, any decision issued by a
+single justice sitting in the Court's original jurisdiction is excluded.
+
+\--*End Content for Variable Manner in which Court takes Jurisdiction
+General---*
+
+*\
+*
+
+40. Manner in which Court takes Jurisdiction
+    Specific
+
+Variable Label: jurisdictionSpecific
+
+Normalizations: varJurisdictionSpecific (13)
+
+See variable varJurisdictionGeneral.
+
+\--*End Content for Variable Manner in which Court takes Jurisdiction
+Specific\--*
+
+41. Administrative Action Preceding Litigation
+
+Variable Label: adminAction
+
+Normalizations: varAdminAction (54)
+
+This variable pertains to government administrative action preceding
+litigation. The activity includes that of an official as well as the
+associated department or statutory body. In other words, this variable
+captures the foundational government decision that gave rise to the
+litigation. This variable is relevant only where the administrative
+decision occurred in the context of the case. This variable includes
+decision of commissions in the first instance, including independent
+statutory bodies such as the Human Rights Commission.
+
+Notably, the variable identifies the specific federal administrative
+action. If the administrative action occurred in the context of a state,
+the variable identifies only that the administrative action occurred
+with within the specific state or territory rather than identifying the
+specific state governmental agency decision-maker.
+
+We determined whether administrative action occurred in the context of
+the case by reading the material that appears in the summary of the case
+and the background facts of the opinion.
+
+\--*End Content for Variable Administrative Action Preceding
+Litigation\--*
+
+42. Administrative Review Preceding Litigation
+    1
+
+Variable Label: adminReview1
+
+Normalizations: varAdminReview (46)
+
+If administrative review via a tribunal occurred prior to the matter
+entering the judiciary, this variable indicates the identity of that
+tribunal. In the event that there are multiple levels of administrative
+review prior to the case entering the judiciary, adminReview1 denotes
+the tribunal of origin and the subsequent variable adminReview2 denotes
+the second level (i.e. appellate) tribunal.
+
+Multiple levels of review were frequent in cases prior to July 1, 2015,
+when initial administrative review occurred in the Migration Review
+Tribunal, Social Security Review Tribunal, and Refugee Review Tribunal,
+with subsequent appellate merits review in the Administrative Appeals
+Tribunal (AAT). In that instance, the initial tribunal will appear in
+this variable, and the AAT will appear in adminReview2.
+
+All efforts were taken to include every possible federal and state
+tribunal, however, in the event that the specific tribunal is not
+included in the normalizations, options are given for "other" at the
+federal and specific state level.
+
+\--*End Content for Variable Administrative Review Preceding Litigation
+1\--*
+
+43. Administrative Review Preceding Litigation
+    2
+
+Variable Label: adminReview2
+
+Normalizations: varAdminReview (46)
+
+See variable Administrative Review Preceding Litigation 1.
+
+\--*End Content for Variable Administrative Review Preceding Litigation
+2\--*
+
+44. Origin of Case General
+
+Variable Label: caseOriginGeneral
+
+Normalizations: varCaseSourcesGeneral (7)
+
+This variable focuses on the general level of court in which the case
+originated---that is, the type of court in which the case entered the
+judicial system. Because this is a general designation, where relevant
+(i.e. in appellate cases) this variable should be used in conjunction
+with the variable Origin of Case State. This general designation, then,
+can, for example, facilitate comparisons of the High Court's treatment
+of similar matters from different states.
+
+Because some cases are appealed directly from an administrative agency
+to a state or federal appeals court, the court of origin will sometimes
+be an appellate court. Courts that have subsequently been disbanded or
+are defunct are included with their own codes. This variable has no
+entry (999) if the case arose under the High Court's original
+jurisdiction.
+
+Note: cases that are removed to federal court from state court or
+vice-versa are coded as originating in the court that hears and issues a
+substantive opinion in the case (i.e. the court which the case was
+removed to).
+
+\--*End Content for Variable Origin of Case General\--*
+
+45. Origin of Case Specific
+
+Variable Label: caseOriginSpecific
+
+Normalizations: varCaseSourceSpecific (88)
+
+This variable focuses on the specific court in which the case
+originated---that is, the specific court in which the case entered the
+judicial system. The difference between this variable and the prior
+variable (caseOriginGeneral), then, is the level of generality. This
+variable identifies the specific court, rather than the general level of
+the originating court in the judicial system. As with the prior
+variable, because some cases are appealed directly from an
+administrative agency to a state or federal appeals court, the court of
+origin will sometimes be an appellate court. Courts that have
+subsequently been disbanded or are defunct are included with their own
+codes.
+
+\--*End Content for Variable Origin of Case Specific\--*
+
+46. Origin of Case State
+
+Variable Label: caseOriginState
+
+Normalizations: varStates (12)
+
+If the case originated in a state court, this variable identifies the
+state. If the case originated in the federal system, the designated
+state code for federal jurisdiction is used. For purposes of analysis,
+this variable should be used in conjunction with the variable, Origin of
+Case General.
+
+\--*End Content for Variable Origin of Case State\--*
+
+47. Source of Case General
+
+Variable Label: caseSourceGeneral
+
+Normalizations: varCaseSourcesGeneral (7)
+
+This variable identifies the general level of court whose decision the
+High Court reviewed. It is a generalized version of the variable
+caseSourceSpecific. If the case originated in the same court whose
+decision the High Court reviewed, the entry in the variable
+caseOriginGeneral will be the same as here. This variable has no entry
+(999) if the case arose under the High Court's original jurisdiction.
+
+\--*End Content for Variable Source of Case General\--*
+
+48. Source of Case Specific
+
+Variable Label: caseSourceSpecific
+
+Normalizations: varCaseSourceSpecific (88)
+
+This variable identifies the specific court whose decision the High
+Court reviewed. The difference between this variable and the prior
+variable (caseSourceSpecific), then, is the level of generality. This
+variable identifies the specific court, rather than the general level of
+the source court in the judicial system. If the case originated in the
+same court whose decision the High Court reviewed, the entry in the
+caseOrigin should be the same here. This variable has no entry (999) if
+the case arose under the High Court's original jurisdiction.
+
+\--*End Content for Variable Source of Case Specific\--*
+
+49. Source of Case State
+
+Variable Label: caseSourceState
+
+Normalizations: varStates (12)
+
+This variable is to be used in conjunction with the variable
+caseSourceGeneral, as it will identify the associated state. If the
+source of the case is a state court, this variable identifies the state.
+If the case originated in the federal system, the designated state code
+for federal jurisdiction is used.
+
+\--*End Content for Variable Source of Case State\--*
+
+50. Lower Court Disposition
+
+Variable Label: lcDisposition
+
+Normalizations: varLowerCourtDisposition (3)
+
+This variable specifies the treatment the court whose decision the High
+Court reviewed accorded the decision of the court it reviewed, e.g.,
+appeal allowed, appeal denied, matter remitted etc. The coding for lower
+court disposition is general and captures whether the appeal was allowed
+(in whole or part) or dismissed.
+
+This variable will not contain an entry where the decision the High
+Court reviewed is that of an administrative agency, a trial court, or if
+the case arose under the Court's original jurisdiction and proceeded
+directly to a full court hearing.
+
+\--*End Content for Variable Lower Court Disposition\--*
+
+51. Lower Court Disposition Direction
+
+Variable Label: lcDispositionDirection
+
+Normalizations: varDecisionDirection (3)
+
+This variable specifies whether the decision of the court whose decision
+the High Court reviewed was itself liberal or conservative, as the terms
+are defined in the direction of decision normalization
+(varDecisionDirection). This variable permits determination of whether
+the High Court's disposition of the case upheld or overturned a liberal
+or conservative lower court decision.
+
+For the purposes of coding:
+
+-   If the High Court allowed, either in whole or part, the appeal or
+    application, the lower court's decision direction is the opposite of
+    the High Court's and not the same as the High Court's decision
+    direction. For example, if the High Court allowed an appeal and set
+    the order below aside and this decision was liberal, the lower
+    court's direction is conservative.
+
+-   If the High Court dismissed the application/appeal, either in whole
+    or part, the lower court's decision direction is the same as the
+    High Court's.
+
+-   If the jurisdiction is original jurisdiction and the case proceeded
+    directly to the High Court's full court for hearing, then the lower
+    court's direction is unspecifiable.
+
+-   If the direct of the High Court's decision is unspecifiable, the
+    lower court's decision is also unspecifiable.
+
+\--*End Content for Variable Lower Court Disposition Direction\--*
+
+[\
+]
+
+52. Lower Court Dissent
+
+Variable Label: lcDissent
+
+Normalizations: varLowerCourtDissent (2)
+
+This variable identifies whether there was a dissent in the court
+below---i.e. whether there was a dissent in the decision that the HCA is
+reviewing. This variable captures dissent from the outcome only (i.e.
+orders), not divergence in opinion on points of law.
+
+\--*End Content for Variable Lower Court Dissent\--*
+
+*\
+*
+
+53. Lower Court Panel Size
+
+Variable Label: lcPanelSize
+
+Normalizations: N/A
+
+This variable identifies the number of judges issuing the decision of
+the court whose decision the High Court is reviewing. If there is no
+lower court decision, this variable will be coded 999.
+
+\--*End Content for Variable Lower Court Panel Size\--*
+
+[\
+]
+
+54. Number of Lower Court Dissents
+
+Variable Label: lcDissentNum
+
+Normalizations: N/A
+
+This variable denotes the number of judges dissenting from the outcome
+(orders) of the court issuing the decision being reviewed by the HCA.
+Where there are no dissents, the code will be 0.
+
+\--*End Content for Variable Number of Lower Court Dissents\--*
+
+Gatekeeping Variables
+
+55. Special Leave Method
+
+Variable Label: specialLeaveMethod
+
+Normalizations: varSpecialLeaveMethod (2)
+
+Special leave is the High Court's gatekeeping mechanism, analogous to
+certiorari in the US. This variable identifies whether the Court granted
+special leave on the papers or after an oral hearing.
+
+Prior to 1984, the High Court's appellate jurisdiction functioned as of
+right. That is, there was no filtering process for appeals to the High
+Court and the Court was required to hear all cases appealed to it. In
+1984, amendments to the Commonwealth Judiciary Act of 1901 stipulated
+that appeal to the High Court would be possible only if "special leave"
+was granted by one or two justices. Grant or denial of special leave was
+to be decided after an oral hearing.
+
+From January 2005, the High Court Rules stated that special leave could
+be granted or denied on the papers, but in practice the Court held an
+oral hearing expect in the case of unrepresented litigants. In 2016, the
+Court issued a notice stating that they would determine the grant or
+denial of special leave on most matters on the papers, however some
+matters would still require an oral hearing.
+
+Note: special leave grants are coded as via oral argument only if
+representative appearances were made and parties were prepared to make
+oral argument to the Court. If the Court simply announces leave is to be
+granted without any appearances, this is coded as a grant of special
+leave on the papers.
+
+Where the question is removal rather than special leave, the variable is
+equally applicable. Pursuant to High Court Rule 26.07, any two justices
+of the Court may determine a removal application on the papers, or they
+may list the matter for hearing on the question of whether removal
+should be granted. Consequently, the same codes are applicable for
+removal method as for special leave method.
+
+\--*End Content for Variable Special Leave Method\--*
+
+*\
+*
+
+56. Number of Justices on Preliminary Special
+    Leave Panel
+
+Variable Label: numJusticesSL
+
+Normalizations: N/A
+
+This variable denotes the number of justices sitting on a preliminary
+special leave or removal panel. This will number either 2 or 3 justices.
+
+\--*End Content for Variable Number of Justices on Preliminary Special
+Leave Panel\--*
+
+57. 
+
+58. Preliminary Special Leave Hearing
+
+Variable Label: prelimSLHearing
+
+Normalizations: varPreliminarySpecialLeaveHearing (2)
+
+This variable identifies whether there was a preliminary special leave
+or removal hearing prior to the matter being granted special leave, or
+the special leave application being heard by the full court. For special
+leave, generally the answer will be yes, but infrequently a special
+leave application will be referred directly to the full court by a
+single justice in a directions hearing. If the matter is referred to the
+full court by the preliminary special leave panel without consideration
+by the panel this is to be coded as if there was a special leave hearing
+given that the panel was constituted, with the outcome code reflecting
+the referral of the special leave question to the full panel. For
+removal, it will be extremely rare that they code will not be yes.
+
+This variable is only relevant where the Court takes jurisdiction by
+special leave or removal. If the matter arose under the Court's original
+jurisdiction, leave as of right, or reference, this variable is coded
+999.
+
+\--*End Content for Variable Preliminary Special Leave Hearing\--*
+
+*\
+*
+
+59. Preliminary Special Leave Date
+
+Variable Label: prelimSLDate
+
+Normalizations: N/A
+
+This variable identifies the date of the preliminary special leave or
+removal panel (if oral argument), the date special leave or removal
+granted on the papers, or the date of referral to a full panel. The date
+is in the format YEARMONTHDAY. For example, 1 July 2018 will be entered
+as 20180701.
+
+\--*End Content for Variable Preliminary Special Leave Date\--*
+
+*\
+*
+
+60. Natural Court at Preliminary Special Leave
+    Hearing
+
+Variable Label: preliminarySpecialLeaveNaturalCourt
+
+Normalizations: varNaturalCourt (18)
+
+This variable identifies the natural court on the date of the
+preliminary special leave hearing.
+
+Natural court refers to the period during which no personnel change
+occurs on the Court. Each natural court begins on the date of swearing
+in of a new justice or chief justice. The courts are numbered
+consecutively by chief justice, and the relevant period is noted next to
+the values in the normalizations. Sometimes there is a lag between the
+departure of a justice and their replacement being sworn in. In this
+instance the decision was made that the new natural court does not
+commence until the swearing in of the new justice (i.e. the prior
+natural court will be coded until the date of the swearing in of the new
+justice, even where the prior justice has already formally departed the
+Court). In this iteration of the HCDB, the natural courts are coded only
+from Chief Justice Brennan forward.
+
+\--*End Content for Variable Reason for Natural Court at Preliminary
+Special Leave Hearing\--*
+
+61. Referral Justice Where no Preliminary
+    Special Leave Hearing
+
+Variable Label: referralJustice
+
+Normalizations: varJustice (56)
+
+This variable is only relevant if the response to the prior variable was
+that there was no hearing on the question of special leave or removal,
+referred directly to full court on question of special leave or removal.
+In this instance, this variable identifies the justice referring the
+matter to the full court for hearing on the special leave or removal
+question.
+
+\--*End Content for Variable Referral Justice\--*
+
+62. Preliminary Special Leave Outcome
+
+Variable Label: prelimSLOutcome
+
+Normalizations: varSpecialLeaveOutcomePreliminary (5)
+
+This variable identifies the outcome of the preliminary special leave
+panel.
+
+\--*End Content for Variable Preliminary Special Leave Outcome\--*
+
+63. Justice Granting Special Leave 1
+
+Variable Label: justiceSpecialLeave1
+
+Normalizations: varJustice (56)
+
+In Australia, the grant or denial of a petition for special leave is
+determined by two or three justices. This variable identifies the first
+of three justices that make the decision to grant special leave in the
+case. The subsequent variables, justiceSpecialLeave2 and
+justiceSpecialLeave3 identify additional justices that make the decision
+to grant special leave. The justices are listed in the order that
+appears on the special leave disposition/transcript, which is in order
+of seniority (where the by chief justice is the most senior justice,
+followed by the pusine justices in order of appointment). This variable
+is relevant for both written and oral grant or denial of special
+leave---that is, if special leave is granted on the papers, code those
+justices that granted the special leave petition on the papers.
+
+\--*End Content for Variable Justice Granting Special Leave 1\--*
+
+64. Justice Granting Special Leave 2
+
+Variable Label: justiceSpecialLeave2
+
+Normalizations: varJustice (56)
+
+See variable justiceSpecialLeave1.
+
+\--*End Content for Variable Justices Granting Special Leave 2\--*
+
+65. Justice Granting Special Leave 3
+
+Variable Label: justiceSpecialLeave2
+
+Normalizations: varJustice (56)
+
+See variable justiceSpecialLeave1.
+
+\--*End Content for Variable Justices Granting Special Leave 3\--*
+
+*\
+*
+
+66. Special Leave Location
+
+Variable Label: justiceSpecialLeaveLocation
+
+Normalizations: varRegistry (8)
+
+While principal location of the High Court is Canberra. However, the
+High Court maintains "registries" in each capital city of each State and
+justices frequently reside outside of Canberra with a primary office in
+a state registry. Consequently, special leave hearings often occur in
+locations outside of Canberra. This variable identifies the location in
+which the special leave hearing occurred. If the hearing was via
+videolink, the location will be listed as where the leave application
+was filed.
+
+\--*End Content for Variable Special Leave Location\--*
+
+67. Political Power on Date of Preliminary
+    Special Leave Hearing
+
+Variable Label: politicalPowerSpecialLeave
+
+Normalizations: varPoliticalPower (5)
+
+This variable indicates the controlling political party in both the
+House of Representatives and the Senate on the date of the preliminary
+special leave hearing. The normalizations contain both the coding
+options as well as the necessary information for political power in any
+given year.
+
+\--*End Content for Variable Political Power on Date of Preliminary
+Special Leave Hearing---*
+
+68. Year of Preliminary Special Leave Hearing
+
+Variable Label: yearSL
+
+Normalizations: N/A
+
+This variable identifies the year in which the Court heard the special
+leave application. This will be the year in which the special leave
+application was decided.
+
+\--*End Content for Variable Year of Court Special Leave\--*
+
+69. Term of Preliminary Special Leave Hearing
+
+Variable Label: termSL
+
+Normalizations: varTerm (37)
+
+This variable identifies the term in which the Court heard the special
+leave application. A term runs from July 1 through to June 30 of the
+subsequent year. Given this dataset will eventually extend back to the
+start of Chief Justice Mason's term in 1987, the first term will be
+1986-1987.
+
+\--*End Content for Variable Term of Court Special Leave\--*
+
+70. Chief Justice Special Leave
+
+Variable Label: chiefSL
+
+Normalizations: varChief (13)
+
+This variable identifies the chief justice during whose tenure the
+special leave hearing occurred.
+
+\--*End Content for Variable Chief Justice Special Leave\--*
+
+71. Prime Minister on Date of Preliminary
+    Special Leave Hearing
+
+Variable Label: pmSL
+
+Normalizations: varPrimeMinister (37)
+
+This variable indicates the Prime Minister on the date of the
+preliminary special leave hearing. Where a Prime Minister served
+multiple consecutive terms, this is not specifically disaggregated.
+However, where a Prime Minister was re-elected following a period of
+non-service, this is specified. For example, while John Howard served
+multiple consecutive terms as Prime Minister, he has only one entry
+"Howard," whereas Alfred Deakin served multiple non-consecutive terms
+and has three entries, "Deakin 1," "Deakin 2," and "Deakin 3."
+
+\--*End Content for Variable Prime Minister on Date of Preliminary
+Special Leave Hearing---*
+
+Chronological Variables
+
+72. Date of Decision
+
+Variable Label: dateDecision
+
+Normalizations: N/A
+
+This variable contained the year, month, and day that the Court
+announced its decision in the case. Example, 13 March 2018 is coded as
+20180313.
+
+\--*End Content for Variable Date of Decision\--*
+
+73. Year of Court Decision
+
+Variable Label: yearDecision
+
+Normalizations: N/A
+
+This variable identifies the year in which the Court handed down its
+decision. This will be the year in which the case was decided.
+
+\--*End Content for Variable Year of Court Decision\--*
+
+74. Term of Court Decision
+
+Variable Label: termDecision
+
+Normalizations: varTerm (37)
+
+This variable identifies the term in which the Court decided the case. A
+term runs from July 1 through to June 30 of the subsequent year. Given
+this dataset will eventually extend back to the start of Chief Justice
+Mason's term in 1987, the first term will be 1986-1987.
+
+\--*End Content for Variable Term of Court Decision\--*
+
+75. Natural Court Decision
+
+Variable Label: naturalCourtDecision
+
+Normalizations: varNaturalCourt (18)
+
+This variable identifies the natural court that was responsible for the
+decision. Natural court refers to the period during which no personnel
+change occurs on the Court. Each natural court begins on the date of
+swearing in of a new justice or chief justice. The courts are numbered
+consecutively by chief justice, and the relevant period is noted next to
+the values in the normalizations. Sometimes there is a lag between the
+departure of a justice and her replacement being sworn in. In this
+instance the decision was made that the new natural court does not
+commence until the swearing in of the new justice (i.e. the prior
+natural court will be coded until the date of the swearing in of the new
+justice, even where the prior justice has already formally departed the
+Court).
+
+Note that in this iteration of the HCDB, the natural courts are coded
+only from Chief Justice Brennan forward.
+
+\--*End Content for Variable Natural Court Decision\--*
+
+76. Chief Justice of Date of Decision
+
+Variable Label: chiefDecision
+
+Normalizations: varChief (13)
+
+This variable identifies the chief justice during whose tenure the case
+was decided.
+
+\--*End Content for Variable Chief Justice Decision\--*
+
+77. Political Power on Date of High Court
+    Decision
+
+Variable Label: politicalPowerHcDecision
+
+Normalizations: varPoliticalPower (5)
+
+This variable indicates the controlling political party in both the
+House of Representatives and the Senate on the date of the High Court
+decision. The normalizations contain both the coding options as well as
+the necessary information for political power in any given year.
+
+\--*End Content for Variable Political Power on Date of High Court
+Decision---*
+
+78. Prime Minister on Date of Decision
+
+Variable Label: pmHcDecision
+
+Normalizations: varPrimeMinister (37)
+
+This variable indicates the Prime Minister on the date of the decision.
+Where a Prime Minister served multiple consecutive terms, this is not
+specifically disaggregated. However, where a Prime Minister was
+re-elected following a period of non-service, this is specified. For
+example, while John Howard served multiple consecutive terms as Prime
+Minister, he has only one entry "Howard," whereas Alfred Deakin served
+multiple non-consecutive terms and has three entries, "Deakin 1,"
+"Deakin 2," and "Deakin 3."
+
+\--*End Content for Variable Prime Minister on Date of Decision\--*
+
+*\
+*
+
+79. Number of Justices on Panel
+
+Variable Label: numberJustices
+
+Normalizations: N/A
+
+Pursuant to the Judiciary Act 1901, Section 19, a full court panel
+comprises two or more justices sitting together. This variable
+identifies the size of the panel that decided the case.
+
+\--*End Content for Variable Number of Justices on Panel\--*
+
+80. Date of Commencement of Oral Argument
+
+Variable Label: dateArgumentBegin
+
+Normalizations: N/A
+
+This variable identifies the date (YYYYMMDD) that oral argument
+commenced. Because oral argument is not time limited in the High Court
+as in other jurisdictions, oral argument often spans a number of days.
+In conjunction with the variable dateArgumentConclude, this variable
+identifies the number of calendar days that the case was listed for
+hearing before the Court.
+
+\--*End Content for Variable Date of Commencement of Oral Argument\--*
+
+81. Date Oral Argument Concluded
+
+Variable Label: dateArgumentConclude
+
+Normalizations: N/A
+
+See variable dateArgumentBegin.
+
+\--*End Content for Variable Date Oral Argument Concluded\--*
+
+82. Total Time for Oral Argument Days
+
+Variable Label: totalTimeArgumentDays
+
+Normalizations: N/A
+
+This variable provides an aggregation of the prior two variables by
+denoting the number of calendar days that the case was heard before the
+High Court. Researchers should note that this is a rough measure of oral
+argument time given that each calendar day is counted as a full day;
+i.e., even where a case is heard for only 30 minutes it is counted as a
+day.
+
+\--*End Content for Variable Total Time for Oral Argument Days\--*
+
+83. Total Time for Oral Argument Minutes
+
+Variable Label: totalTimeArgumentMins
+
+Normalizations: N/A
+
+This variable provides researchers with a precise calculation of the
+time given to oral argument before the Court in minutes. Time is
+calculated excluding any breaks in argument for lunch or other reasons.
+This variable, then, provides an exact measure of the time the justices
+and attorneys interacted in formal oral argument.
+
+\--*End Content for Variable Total Time for Oral Argument Minutes---*
+
+84. Year of Court Oral Argument
+
+Variable Label: yearArgument
+
+Normalizations: N/A
+
+This variable identifies the year in which the Court heard the merits
+case. This will be the year in which the case was heard.
+
+\--*End Content for Variable Year of Court Oral Argument\--*
+
+85. Term of Court Oral Argument
+
+Variable Label: termArgument
+
+Normalizations: varTerm (37)
+
+This variable identifies the term in which the Court held oral argument
+in the case. A term runs from July 1 through to June 30 of the
+subsequent year. Given this dataset will eventually extend back to the
+start of Chief Justice Mason's term in 1987, the first term will be
+1986-1987.
+
+\--*End Content for Variable Term of Court Oral Argument\--*
+
+86. Natural Court Oral Argument
+
+Variable Label: naturalCourtOralArgument
+
+Normalizations: varNaturalCourt (18)
+
+This variable identifies the natural court when the Court heard the case
+on the merits.
+
+Natural court refers to the period during which no personnel change
+occurs on the Court. Each natural court begins on the date of swearing
+in of a new justice or chief justice. The courts are numbered
+consecutively by chief justice, and the relevant period is noted next to
+the values in the normalizations. Sometimes there is a lag between the
+departure of a justice and her replacement being sworn in. In this
+instance the decision was made that the new natural court does not
+commence until the swearing in of the new justice (i.e. the prior
+natural court will be coded until the date of the swearing in of the new
+justice, even where the prior justice has already formally departed the
+Court).
+
+\--*End Content for Variable Natural Court Oral Argument\--*
+
+87. Chief Justice Oral Argument
+
+Variable Label: chiefArgument
+
+Normalizations: varChief (13)
+
+This variable identifies the chief justice during whose tenure the case
+was heard.
+
+\--*End Content for Variable Chief Justice Oral Argument\--*
+
+88. Political Power Oral Argument
+
+Variable Label: politicalPowerArgument
+
+Normalizations: varPoliticalPower (5)
+
+This variable indicates the controlling political party in both the
+House of Representatives and the Senate on the date of the High Court
+decision. The normalizations contain both the coding options as well as
+the necessary information for political power in any given year.
+
+\--*End Content for Variable Political Power on Date of High Court Oral
+Argument\--*
+
+89. Prime Minister on Date of Oral Argument
+
+Variable Label: pmArgument
+
+Normalizations: varPrimeMinister (37)
+
+This variable indicates the Prime Minister on the date of the decision.
+Where a Prime Minister served multiple consecutive terms, this is not
+specifically disaggregated. However, where a Prime Minister was
+re-elected following a period of non-service, this is specified. For
+example, while John Howard served multiple consecutive terms as Prime
+Minister, he has only one entry "Howard," whereas Alfred Deakin served
+multiple non-consecutive terms and has three entries, "Deakin 1,"
+"Deakin 2," and "Deakin 3."
+
+\--*End Content for Variable Prime Minister on Date of Oral Argument\--*
+
+90. Location of Oral Argument
+
+Variable Label: locationOralArgument
+
+Normalizations: varRegistry (8)
+
+This variable identifies the location where oral argument occurred.
+
+\--*End Content for Variable Location of Oral Argument\--*
+
+91. Commonwealth Solicitor-General
+    Representation at Oral Argument
+
+Variable Label: cthSGRepOralArgument
+
+Normalizations: varSG (2)
+
+This variable denotes whether the Commonwealth Solicitor General
+appeared at the oral argument for the matter.
+
+\--*End Content for Variable Commonwealth Solicitor General
+Representation\--*
+
+92. Commonwealth Solicitor-General Party
+    Representation at Oral Argument 1
+
+Variable Label: cthSGRepPartyOralArgument1
+
+Normalizations: varSGParty (4)
+
+This variable captures who the Commonwealth Solicitor General
+represented at oral argument, appellant/petitioner, respondent,
+intervener, or amici. In some instances, the Commonwealth Solicitor
+General represents multiple parties during one oral argument hearing. In
+this instance, the subsequent variable captures this situation of
+multi-party representation.
+
+\--*End Content for Variable Commonwealth Solicitor General
+Representation Party 1\--*
+
+93. Commonwealth Solicitor-General Party
+    Representation at Oral Argument 2
+
+Variable Label: cthSGRepPartyOralArgument2
+
+Normalizations: varSGParty (4)
+
+See variable cthSGRepPartyOralArgument1
+
+\--*End Content for Variable Commonwealth Solicitor General
+Representation Party 2\--*
+
+Substantive Variables
+
+\
+
+94. Primary Issue Area
+
+Variable Label: primaryIssueArea
+
+Normalizations: varIssueArea (11)
+
+There are three variables relating to identification of the issue
+considered by the Court in the decision. The difference between the
+three variables is in the level of generality at which the issue is
+coded. Unlike other jurisdictions, which grant final court review on
+extremely specific questions, final court review in Australia tends to
+be more generalized. For that reason, we have included capacity for a
+primary issue area and its related sub area and issue, and a secondary
+issue area and its related sub area and issue. The issue of primary
+importance is captured in the primary variable, and a secondary issue is
+included only where it was relevant to the outcome of the case. Given
+the complexity of many constitutional cases, an option for a tertiary
+issue area was added, and is coded only in public law cases where
+necessary.
+
+At the most general level is the variable issueArea, which consists of a
+universe of 10 substantive issue codes. The areas were chosen to reflect
+both the general understanding of legal categorization in Australia as
+well as categories that are useful for analysis for scholars and
+commentators. The categories were developed after an extensive
+examination of judicial records, practice areas in the federal and state
+courts, discussions with legal scholars, examination of legal
+scholarship, and discussions with Court personnel.
+
+The categorization is imperfect, and some readers might disagree with
+some categorizations. In this instance, the more specific issues
+variables issueSubArea (which disaggregates the broader categories into
+sub-areas) and issues (which provides the most detailed level of issue)
+permits recategorization of the broad issue area.
+
+Below is a list of both the broad level issueArea variable and the
+narrower issueSubArea. The inclusion of this list here is for ease of
+understanding, and coders should refer to the relevant normalizations
+for the coding options. The issue sub areas are ordered and coded by
+their larger issue area. For example, Common Law is coded as "1" under
+the issueArea variable, and Common Law---Torts is coded as "101," Common
+Law---Contract as "102," and so on, under the issueSubArea variable. In
+2 issue sub areas, the sub areas are identical to the broader issue area
+because of the discrete nature of the general area.
+
++---------------------------+------------------------------------------+
+| **Issue Area**            | **Issue Sub Area**                       |
++:==========================+:=========================================+
+| Common Law (includes      | Tort \[101\]                             |
+| traditional common law    |                                          |
+| areas now governed by     | Contract \[102\]                         |
+| statute) \[1\]            |                                          |
+|                           | Equity \[103\]                           |
+|                           |                                          |
+|                           | Trusts \[104\]                           |
++---------------------------+------------------------------------------+
+| Public Law---Federal      | Constitutional law \[201\]               |
+| \[2\]                     |                                          |
+|                           | Administrative law \[202\]               |
++---------------------------+------------------------------------------+
+| Public Law---State \[3\]  | Constitutional law \[301\]               |
+|                           |                                          |
+|                           | Administrative law \[302\]               |
++---------------------------+------------------------------------------+
+| Civil Rights              | Statutory rights \[401\]                 |
+| (non-constitutional)      |                                          |
+| \[4\]                     | State bills of rights \[402\]            |
+|                           |                                          |
+|                           | Common law rights \[403\]                |
+|                           |                                          |
+|                           | Indigenous rights (including native      |
+|                           | title) \[404\]                           |
+|                           |                                          |
+|                           | Refugees \[405\]                         |
++---------------------------+------------------------------------------+
+| Criminal Law and          | Federal criminal law \[501\]             |
+| Procedure \[5\]           |                                          |
+|                           | Federal criminal procedure \[502\]       |
+|                           |                                          |
+|                           | State criminal law \[503\]               |
+|                           |                                          |
+|                           | State criminal procedure \[504\]         |
++---------------------------+------------------------------------------+
+| Economic Relations \[6\]  | Corporate and business \[601\]           |
+|                           |                                          |
+|                           | Bankruptcy and insolvency \[602\]        |
+|                           |                                          |
+|                           | Property \[603\]                         |
+|                           |                                          |
+|                           | Intellectual property \[604\]            |
+|                           |                                          |
+|                           | Consumer and competition \[605\]         |
+|                           |                                          |
+|                           | Taxation \[606\]                         |
+|                           |                                          |
+|                           | Banking and finance \[607\]              |
+|                           |                                          |
+|                           | Succession (wills and estates) \[608\]   |
++---------------------------+------------------------------------------+
+| Employment and Industrial | Employment and industrial relations      |
+| Relations \[7\]           | \[701\]                                  |
++---------------------------+------------------------------------------+
+| Admiralty and Maritime    | Admiralty and maritime \[801\]           |
+| \[8\]                     |                                          |
++---------------------------+------------------------------------------+
+| Procedure and Ethics      | Civil procedure/litigation \[901\]       |
+| \[9\]                     |                                          |
+|                           | Evidence \[902\]                         |
+|                           |                                          |
+|                           | Statutory interpretation (Acts           |
+|                           | Interpretation Act) \[903\]              |
+|                           |                                          |
+|                           | Legal profession (ethics) \[904\]        |
+|                           |                                          |
+|                           | Inherent power of the Court \[905\]      |
++---------------------------+------------------------------------------+
+| Miscellaneous \[10\]      | International law \[1001\]               |
+|                           |                                          |
+|                           | Family law \[1002\]                      |
+|                           |                                          |
+|                           | Migration (non-refugee) \[1003\]         |
+|                           |                                          |
+|                           | Environmental law \[1004\]               |
+|                           |                                          |
+|                           | Vulnerable persons (e.g. child           |
+|                           | protection, disabled persons etc)        |
+|                           | \[1005\]                                 |
++---------------------------+------------------------------------------+
+| Costs \[11\]              | Costs \[1101\]                           |
++---------------------------+------------------------------------------+
+
+\--*End Content for Variable Primary Issue Area\--*
+
+95. Primary Issue Sub Area
+
+Variable Label: primaryIssueSubArea
+
+Normalizations: varIssueSubArea (38)
+
+See variable primaryIssueArea.
+
+\--*End Content for Variable Primary Issue Sub Area\--*
+
+96. Primary Issue
+
+Variable Label: primaryIssue
+
+Normalizations: varIssue (214)
+
+This variable captures the most specific of the issues levels variables
+(see above, variable issueArea for overview). The variable identifies
+the issue for each decision. The objective is to categorize the case
+from a public policy standpoint, a perspective that the legal basis for
+the decision commonly disregards. In identifying the issue for each
+decision, then, the focus is on the subject matter of the controversy
+(e.g. religious liberty), rather than the legal basis for the case (e.g.
+section 116 of the Constitution). For the legal basis of the decision,
+see variable lawType. Necessarily, then, the issue variable, despite it
+being the most specific of the issues coding, may prove to lack the
+specificity desired for analysis. To that end, the legal provisions
+variables provide a more specific level of identification.
+
+The variable codes multiple specific issues, ordered by their larger
+issue area and issue sub area. For example, Common Law is coded as "1"
+under issue area, Common Law---Tort is coded as "101" under issue sub
+area, and Common Law---Tort---Negligence is coded as 10101 under issues.
+
+Some of the issues are simply coded as "general" rather than broken into
+narrow and specific areas, simply because the small number of cases in
+the issue sub area meant that it was not beneficial for analysis to
+break the sub area down any further.
+
+\--*End Content for Variable Primary Issue\--*
+
+97. Secondary Issue Area
+
+Variable Label: secondaryIssueArea
+
+Normalizations: varIssueArea (11)
+
+See variable primaryIssueArea.
+
+\--*End Content for Variable Secondary Issue Area\--*
+
+98. Secondary Issue Sub Area
+
+Variable Label: SecondaryIssueSubArea
+
+Normalizations: varIssueSubArea (38)
+
+See variable primaryIssueArea.
+
+\--*End Content for Variable Issue Sub Area\--*
+
+99. Secondary Issue
+
+Variable Label: secondaryIssue
+
+Normalizations: varIssue (214)
+
+See variable primaryIssue.
+
+\--*End Content for Variable Secondary Issue\--*
+
+100. Tertiary Issue Area
+
+Variable Label: tertiaryIssueArea
+
+Normalizations: varIssueArea (11)
+
+See variable primaryIssueArea
+
+\--*End Content for Variable Tertiary Issue Area\--*
+
+101. Tertiary Issue Sub Area
+
+Variable Label: tertiaryIssueSubArea
+
+Normalizations: varIssueSubArea (38)
+
+See variable primaryIssueArea.
+
+\--*End Content for Variable Tertiary Issue Sub Area\--*
+
+102. Tertiary Issue
+
+Variable Label: tertiaryIssue
+
+Normalizations: varIssue (212)
+
+See variable primaryIssue.
+
+\--*End Content for Variable Tertiary Issue\--*
+
+103. Authority for Decision 1
+
+Variable Label: authorityDecision1
+
+Normalizations: varAuthorityDecision (12)
+
+This variable and the next (authorityDecision2) specify the basis on
+which the High Court rested its decision with regard to each legal
+provision that the Court considered in the case (see variable lawType).
+Where the numeric indicator is based on state law, the variable
+authorityDecision1State should be used to identify the specific state.
+Coding this variable requires judgment, because many cases arguably rest
+on more than two bases for decision, however the job of the coder is to
+determine the primary bases for decision.
+
+There are 12 possible options:
+
+-   First: judicial review---federal constitution. This option is chosen
+    where the Court considers whether the challenged law or action is
+    contrary to the Commonwealth Constitution. This includes instances
+    where the Court interprets a statute narrowly so as to render it
+    constitutional.
+
+-   Second: judicial review---state constitution. This option is chosen
+    where the Court considers whether the challenged law or action is
+    contrary to the Constitution of a state. This includes instances
+    where the Court interprets a statute narrowly so as to render it
+    constitutional.
+
+-   Third: High Court supervision of state and federal courts or state
+    and federal administrative decision-maker. These options are chosen
+    where a "jurisdictional error" has occurred; that is, where a
+    decision-maker (judicial or administrative) has failed to exercise
+    or has exceeded the jurisdiction that has been conferred by the
+    constitution (federal or state) or legislation. There will be no
+    jurisdictional error where an incorrect decision has been made; this
+    is coded as an interpretation issue.
+
+-   Fourth: inherent power of the High Court.
+
+-   Fifth: interpretation of a federal or state statute or rule. The
+    option of interpretation is chosen where the Court rests its
+    decision on the interpretation of a federal or state statute or
+    regulation.
+
+-   Sixth: common law. The option of common law is chosen where the
+    Court rests its decision on common law.
+
+This variable and the variable lawType are related, and congruence
+should exist between this variable and the code that appears in the
+lawType variable. For example, if a constitutional provision appears the
+lawType variable, then the authorityDecision will reflect the
+Constitution as the authority for the decision.
+
+\--*End Content for Variable Authority for Decision 1---*
+
+104. Authority for Decision 1 State
+
+Variable Label: authorityDecision1State
+
+Normalizations: varState (12)
+
+This variable identifies the source (federal or specific state) of the
+law.
+
+\--*End Content for Variable Authority for Decision 1 State\--*
+
+105. Authority for Decision 2
+
+Variable Label: authorityDecision2
+
+Normalizations: varAuthorityDecision (12)
+
+See variable AuthorityDecision1.
+
+\--*End Content for Variable Authority for Decision 2\--*
+
+106. Authority for Decision 2 State
+
+Variable Label: authorityDecision2State
+
+Normalizations: varState (12)
+
+See variable AuthorityDecision1State.
+
+\--*End Content for Variable Authority for Decision 2 State\--*
+
+107. Authority for Decision 3
+
+Variable Label: authorityDecision3
+
+Normalizations: varAuthorityDecision (12)
+
+See variable AuthorityDecision1.
+
+\--*End Content for Variable Authority for Decision 3\--*
+
+108. Authority for Decision 3 State
+
+Variable Label: authorityDecision3State
+
+Normalizations: varState (12)
+
+See variable AuthorityDecision1State.
+
+\--*End Content for Variable Authority for Decision 3 State\--*
+
+109. Panel Special Leave Decision
+
+Variable Label: panelSLDecision
+
+Normalizations: varSpecialLeavePanel (2)
+
+This binary variable identifies whether the decision of the panel
+related to special leave instead of, or as well as, the merits hearing.
+The standard answer will be no, however there are instances where the
+merits panel will consider the special leave question.
+
+\--*End Content for Variable Panel Special Leave Decision\--*
+
+*\
+*
+
+110. Panel Special Leave Outcome General
+
+Variable Label: panelSLOutcomeGen
+
+Normalizations: varSpecialLeaveOutcomesGeneral (2)
+
+This binary variable and the following variable are relevant only where
+the prior variable is coded yes, meaning that the full panel of the HCA
+decided a special leave question. This variable provides a general
+answer on the question of special leave.
+
+\--*End Content for Variable Panel Special Leave Outcome General\--*
+
+111. Panel Special Leave Outcome Specific
+
+Variable Label: panelSLOutcomeSpecific
+
+Normalizations: varSpecialLeaveOutcomeSpecific (7)
+
+This variable provides specific information as to the panel's decision
+on special leave, providing 7 possible outcomes.
+
+\--*End Content for Variable Panel Special Leave Outcome Specific\--*
+
+112. Costs Decision
+
+Variable Label: costsDecision
+
+Normalizations: varCosts (2)
+
+Occasionally the question of costs in a case heard by the High Court is
+reserved and an opinion additional to the merits opinion is issued on
+the question of costs. This variable identifies whether the panel
+decision of the Court was exclusively a costs decision issued in
+relation to a merits decision previously handed down by the Court.
+
+\--*End Content for Variable Costs Decision\--*
+
+113. Costs Decision Related HCDBID
+
+Variable Label: costsRelationHCDBID
+
+Normalizations: N/A
+
+Where the variable "costsDecision" indicates that the case decided was
+on the question of costs relating to a previously issued opinion, this
+variable identifies the specific HCDBID of the earlier case for which
+the costs decision was issued.
+
+\--*End Content for Variable Costs Decision Related HCDBID\--*
+
+114. Legal Provision Considered by the Court 1
+
+Variable Label: lawType1
+
+Normalizations: varLawArea (10)
+
+This variable and the related variable lawSupp, identify the variable
+constitutional provision(s), statute(s), or rules(s) that the Court
+considered in the case. lawType1 identifies the primary basis for
+decision, and lawType2 the secondary basis. We have allowed for 2 legal
+provisions, in all instances except in constitutional cases, where we
+have allowed an additional variable, lawType3.
+
+The difference between lawType and lawSupp is that lawSupp is coded
+finely and identifies the specific law, constitutional provision or rule
+at issue (e.g. Constitution, section 75(v)(i)), whereas lawType is coded
+broadly (e.g. Constitution, federal statute). The criterion to determine
+the legal provision(s) is the legislation specified in the Court's own
+headnotes.
+
+Importantly, users should note that this variable is relevant only where
+two conditions are met:
+
+-   First, the law area involves federal or state constitution, statute,
+    or rule/regulation, or rules of a court. That is, if the case
+    involves common law and other areas not fitting this description,
+    this variable will be left blank (999).
+
+-   Second, an entry will only exist where the majority discusses the
+    legal provision. The headnote will usually indicate this. The mere
+    fact that the Court refers to or exercises a certain provision is
+    insufficient for an entry.
+
+Note that a case challenging the constitutionality of a law will have
+two entries, one being the constitutional challenge, and the other being
+the statute.
+
+\--*End Content for Variable Legal Provision Considered by the Court
+1\--*
+
+115. Legal Provision Supplement 1
+
+Variable Label: lawSupp1
+
+Normalizations: varLegalProvisions (1051)
+
+This variable identifies the specific legal provision on which the case
+was determined by the Court. Each lawSupp variable is linked to its
+related lawType variable (e.g. lawSupp1 and lawType1 are related). For
+example, if lawType1 denotes that the law type is the federal
+constitution, lawSupp1 will list the specific constitutional provision.
+Similarly, if lawType1 denotes the law type is a federal statute,
+lawSupp1 will state the specific statute and section (e.g., Commonwealth
+Anti-Discrimination Act of 2003, section 14).
+
+\--*End Content for Variable Legal Provision Supplement 1\--*
+
+116. Legal Provision Considered by the Court 2
+
+Variable Label: lawType2
+
+Normalizations: varLawArea (10)
+
+See variable lawType1.
+
+\--*End Content for Variable Legal Provision Considered by the Court
+2\--*
+
+*\
+*
+
+117. Legal Provision Supplement 2
+
+Variable Label: lawSupp2
+
+Normalizations: varLegalProvisions (1051)
+
+See variable lawSupp1.
+
+\--*End Content for Variable Legal Provision Supplement 2\--*
+
+118. Legal Provision Considered by the Court 3
+
+Variable Label: lawType3
+
+Normalizations: varLawArea (10)
+
+See variable lawType1.
+
+\--*End Content for Variable Legal Provision Considered by the Court
+3\--*
+
+*\
+*
+
+119. Legal Provision Supplement 3
+
+Variable Label: lawSupp3
+
+Normalizations: varLegalProvisions (1051)
+
+See variable lawsupp1.
+
+\--*End Content for Variable Legal Provision Supplement 3\--*
+
+120. Decision Type
+
+Variable Label: decisionType
+
+Normalizations: varDecisionType (4)
+
+This variable identifies the type of decision delivered by the High
+Court. Explanation of each numeric code is as follows:
+
+-   Decision Type 1: Cases of the Court decided by a signed opinion, or
+    multiple opinions after oral argument.
+
+-   Decision Type 2: Cases decided with an opinion but without oral
+    argument (e.g. per curiam decisions).
+
+-   Decision Type 3: Cases decided with an evenly divided vote that that
+    was appealed from a justice of the High Court, the Supreme Court of
+    a State or Territory, a decision of the Federal Court of Australia,
+    or a decision of the Family Court of Australia. In this instance,
+    the decision appealed is affirmed.
+
+-   Decision Type 4: Cases decided with an evenly divided vote that do
+    not fit within the description in Decision Type 3. In these cases,
+    the opinion of the Chief Justice, or most senior justice if the
+    Chief does not sit, shall prevail.
+
+\--*End Content for Variable Decision Type\--*
+
+121. Constitutional Matter
+
+Variable Label: lwConMatter
+
+Normalizations: varConstitutionalMatter (2)
+
+This binary variable indicates whether the case involves a
+constitutional matter. A constitutional matter is defined as "that
+subset of cases decided by the High Court in the application of legal
+principle identified by the Court as being derived from the Australian
+Constitution. That definition is framed deliberately to take in a wider
+category of cases than those simply involving matters within the
+constitutional description of 'a matter arising under this Constitution
+or involving its interpretation.'" (Stephen Gageler, 'The High Court on
+Constitutional Law: The 2001 Term' (2002) 25 University of New South
+Wales Law Journal 194, 195. Cited in Lynch, Andrew and George Williams,
+"The High Court on Constitutional Law: The 2005 Statistics" UNSW Law
+Journal, 29:2, 182-197, 184).
+
+The coding of this variable was cross-checked against that of Andrew
+Lynch and George Williams in their series of descriptive statistics on
+constitutional cases before the High Court, hence the variable name
+"lwConMatter", referring to Lynch and Williams.
+
+\--*End Content for Variable Constitutional Matter\--*
+
+122. Judicial Review
+
+Variable Label: judicalReview
+
+Normalizations: varJudicialReview (9)
+
+This variable denotes whether the Court engaged in judicial review and
+the nature of that review. In this context, we take judicial review to
+mean the review of a statute or executive action (e.g., executive order
+issued under authority of the Constitution rather than statutory
+authority) for compliance with the terms of the Constitution. This
+variable does not capture the outcome, simply whether the Court reviewed
+legislative or executive action. Specifically, we are capturing the
+cases where the Court deliberately defined and enforced constitutional
+limits (whether in favour or against the interests of the legislature or
+executive). Note that the values delineate between judicial review of
+law vis-à-vis the federal Constitution or a state constitution.
+
+\--*End Content for Variable Judicial Review\--*
+
+123. Lower Court Constitutional Decision
+
+Variable Label: lcConDecision
+
+Normalizations: varLowerCourtConstitutionalOutcome (5)
+
+This variable captures the lower court's treatment of the constitutional
+challenge, specifically whether the constitutional challenge was
+successful or unsuccessful as well as the nuances relating to the
+outcome (e.g., whether the law was declared invalid or the scope of the
+law was narrowed).
+
+\--*End Content for Variable Lower Court Constitutional Decision\--*
+
+Outcome, Voting, and Opinion Variables
+
+124. Declaration of Unconstitutionality
+
+Variable Label: declarationUncon
+
+Normalizations: varDeclarationUncon (11)
+
+This variable provides nuance as to whether the Court declared an act of
+Parliament, federal regulation, or state law or regulation,
+unconstitutional pursuant to either the federal constitution or a state
+constitution. This includes values that indicates whether the Court read
+the statute or regulation narrowly to avoid a declaration of
+unconstitutionality.
+
+\--*End Content for Variable Declaration of Unconstitutionality\--*
+
+125. Disposition of Case
+
+Variable Label: caseDisposition
+
+Normalizations: varCaseDisposition (17)
+
+This variable indicates the treatment the majority of the Court accorded
+the court whose decision it reviewed, e.g., appeal allowed, appeal
+denied, matter remitted etc. This variable provides significant nuance
+over the binary variable "partyWinning", which simply denotes which
+party was successful before the Court.
+
+\--*End Content for Variable Disposition of Case\--*
+
+126. Winning Party
+
+Variable Label: partyWinning
+
+Normalizations: varPartyWinning (3)
+
+This variable indicates whether the appellant/petitioner won in the High
+Court. The victory may not be total and complete (e.g. a remand rather
+than a reversal), but the disposition is nonetheless favourable to the
+appellant/petitioner.
+
+The following coding rules apply:
+
+-   Appellant/petitioner lost if the High Court affirmed the lower court
+    decision or dismissed the case/denied the motion;
+
+-   In all other instances the petitioning party is deemed to have won,
+    however there is a value for those rare cases when the winner of a
+    case was unclear.
+
+\--*End Content for Variable Winning Party\--*
+
+127. Decision Direction
+
+Variable Label: decisionDirection
+
+Normalizations: varDecisionDirection (3)
+
+In order to determine whether the Court supports or opposes the issue to
+which the case pertains, this variable does the ideological "direction"
+of the decision. Specifications of direction comports with conventional
+usage in the context of Australian public policy. Unspecifiable is an
+option where a liberal or conservative value is not identifiable.
+
+The rules for the direction of the decision are as follows:
+
+In the context of issues pertaining to criminal law, criminal procedure,
+statutory civil rights, common law rights, and any cases coded as
+constitutional rights, "liberal" =
+
+-   Pro-person accused or convicted of a crime
+
+-   Pro-civil liberties or civil rights claimant
+
+-   Pro-state in a state bill of rights case, where the challenge is to
+    the validity of the statute and the state is defending the statute
+
+-   Pro-indigent
+
+-   Pro- rights claimant in a constitutional rights claim
+
+-   Pro-privacy
+
+-   Pro-Indigenous rights, including pro-Native Title
+
+> Conservative = reverse of the above.
+
+In the context of issues pertaining to constitutional and administrative
+law, "liberal" =
+
+-   Pro-exercise of judicial power
+
+-   Pro-judicial "activism"
+
+-   Pro-federal power
+
+-   Anti-state
+
+-   Pro disclosure in FOI issues
+
+-   Pro-accountability and/or anti-corruption in elections cases
+
+-   Pro-individual in administrative law claims against the government
+
+-   Pro-judicial review in administrative law cases
+
+-   Pro-tribunal power in administrative law cases
+
+-   Pro-national government in federalism disputes
+
+In the context of issues pertaining to common law, economic relations,
+employment law, and bankruptcy and insolvency, "liberal" =
+
+-   Pro-injured party in tort claims
+
+-   Against statutory limitations of tort liability
+
+-   Against tort reform
+
+-   Pro-compensation
+
+-   Pro-small business versus large business
+
+-   Pro-economic underdog
+
+-   Pro-indigent
+
+-   Anti-business
+
+-   Pro-union
+
+-   Anti-employer/pro-employee
+
+-   Pro-state/anti-business in state tax cases
+
+-   Pro-debtor
+
+-   Pro-bankrupt
+
+-   Pro-competition
+
+-   Pro-consumer
+
+-   Pro-accountability of businesses
+
+-   Anti-union in union antitrust or union closed shop
+
+-   Pro-trial in arbitration
+
+-   Anti-union member or employee vis-à-vis union
+
+-   Anti-person alleging infringement of patent, copyright, or trademark
+
+-   In taxation matters: pro-government in individual versus government
+    claims; pro-federal government in federal versus state government
+    claims; and pro-government in corporations versus government claims
+
+> Conservative = reverse of above.
+
+In the context of issues pertaining to procedure and ethics, "liberal" =
+
+-   Pro-purposive and expansive interpretation in statutory
+    interpretation
+
+-   Pro-judicial power in inherent power issues
+
+-   Broadly inclusive of evidence for a plaintiff or criminal defendant
+
+> Conservative = reverse of above.
+
+In the context of issues pertaining to family law, migration,
+international law, and vulnerable persons, "liberal" =
+
+-   Pro-immigrant
+
+-   Pro-international agreement in public international law
+
+-   Pro-human rights
+
+-   Pro-female
+
+-   Pro-indigent
+
+-   Pro-vulnerable person
+
+-   Pro-underdog
+
+-   Pro-environment
+
+> Conservative = reverse of above.
+
+\--*End Content for Variable Decision Direction\--*
+
+128. Decision Direction Dissent
+
+Variable Label: decisionDirectionDissent
+
+Normalizations: varDecisionDirectionDissent (2)
+
+Occasionally the majority and dissenting opinion in a case will both
+support or oppose the issue in the case, with the difference between the
+opinions being the outcome (e.g. majority remitted the case, dissent
+reversed the decision). This should be a rare occurrence.
+
+In these cases, the entry in the prior variable decisionDirection should
+be determined based on whether the majority or the dissent more
+substantively supported the issue to which the case pertains, and an
+entry reflecting the opposite outcome should appear in this variable.
+For example, if both the majority and dissent held that the right to a
+trial by jury had been violated, but the majority voted to reverse the
+conviction and order a new trial and the dissent voted to reverse the
+conviction period, the decisionDirection (majority) would be coded
+conservative and the dissent liberal, because the dissent would have
+provided the appellant with more relief, therefore the appellant
+received less of a victory than the dissent would have provided.
+
+\--*End Content for Variable Decision Direction Dissent\--*
+
+129. Majority Votes
+
+Variable Label: majVotes
+
+Normalizations: N/A
+
+This variable specifies the number of justices voting in the majority.
+The subsequent variable minVotes indicates the number of justices voting
+in dissent. The number of votes refers to the number of justices who
+agree with the overall disposition of the case (i.e. the order), not to
+the vote on any particular issues in the case.
+
+Where the vote is evenly divided, e.g. 3-3, and the majority and
+minority votes will reflect this (i.e., majority vote will be entered as
+3).
+
+\--*End Content for Variable Majority Votes\--*
+
+130. Minority Votes
+
+Variable Label: minVotes
+
+Normalizations: N/A
+
+This variable specifies the number of votes in dissent on the
+disposition of the case. See variable majVotes.
+
+\--*End Content for Variable Minority Votes\--*
+
+131. Justice ID
+
+Variable Label: justice
+
+Normalizations: varJustice (56)
+
+This variable provides a unique identification number for each of the
+justices.
+
+\--*End Content for Variable Justice ID\--*
+
+132. Vote in the Case
+
+Variable Label: vote
+
+Normalizations: varVote (12)
+
+This variable provides information about the natures of each justice's
+vote in the case, e.g., whether the justice joined the majority opinion,
+was part of a concurrence, dissented etc.
+
+Whereas the variables relating to majority and minority voting focus on
+the outcome, this variable is largely concerned with how the justice
+engaged with the other justices on the panel. International researchers
+unfamiliar with Australian legal traditions should be aware of two
+traditions in the High Court complicate this variable: first, opinion
+writers are rarely, if ever, identified in a joint opinion or dissent,
+instead the justices are listed by seniority; and second, there is a
+tradition of individual opinion writing, meaning that it is possible to
+have up to 7 separate opinions in a case, even where the outcome is
+unanimous.
+
+\--*End Content for Variable Vote in the Case\--*
+
+[\
+]
+
+133. Direction of the Individual Justice's
+     Votes
+
+Variable Label: direction
+
+Normalizations: varJusticeDirection (2)
+
+This variable indicates whether the justice cast a liberal or
+conservative vote. For the definitions of liberal and conservative, see
+the variable decisionDirection. A missing value (999) indicates that the
+decisionDirection was unspecifiable or that the justice did not
+participate.
+
+\--*End Content for Variable Direction of the Individual Justice's
+Vote\--*
+
+134. Majority and Minority Voting by Justice
+
+Variable Label: majority
+
+Normalizations: varJusticeMajority (2)
+
+Public policy analysts and lawyers commonly want to know the frequency
+with which a given justice votes with the majority and/or dissent
+overall, or in a subset of cases. This variable provides that
+information for each justice, noting whether the justice voted with the
+majority or dissent in the case.
+
+\--*End Content for Variable Majority and Minority Voting by Justice\--*
+
+135. Justice Coalition 1
+
+136. Justice Coalition 2
+
+137. Justice Coalition 3
+
+138. Justice Coalition 4
+
+139. Justice Coalition 5
+
+140. Justice Coalition 6
+
+Variable Label: justiceCoalition \[1\]\[2\]\[3\]\[4\]\[5\]\[6\]
+
+Normalizations: varJustice (56)
+
+Public policy analysts and lawyers commonly want to know with whom and
+the frequency with which a given justice joins in coalition with other
+justices overall, or in a subset of cases. This variable provides that
+information for each justice, noting the justices with whom the justice
+joins an opinion.
+
+\--*End Content for Variables Justice Coalition\--*
+
+141. Ideological Distribution of Panel
+
+Variable Label: proportionLiberalPanel
+
+Normalizations: varIdeologicalDistribution (21)
+
+This variable indicates the proportion of ideologically liberal justices
+sitting on the panel that decided the case. The subsequent variable,
+proportionLiberalCourt indicates the proportion of ideologically liberal
+justices sitting on the Court at the time of decision. Whereas the
+latter variable is static for the period of each natural court, because
+the High Court sits on variable panels, both size and personnel, the
+variable proportionLiberalPanel varies by case.
+
+We use the Robinson, Leslie, and Sheppard ideology score as the measure
+for ideology, where 0.0 represents the most ideologically conservative
+justice and 1.0 represents the most ideologically liberal justice.
+(Robinson, Zoe, Patrick Leslie, and Jill Sheppard, 2021. "Judicial
+Ideology in the Absence of Rights: Evidence from Australia." Journal of
+Law and Courts, pp. 1-35.) The RLS ideology score for each justice can
+be found in the normalization varIdeology. The variable deploys a
+rudimentary bifurcation of the justices into "liberal" and
+conservative", where justices with an ideology score of 0.50 and below
+are deemed conservative, and 0.51 and above are deemed liberal.
+
+\--*End Content for Variable Ideological Distribution of Panel\--*
+
+*\
+*
+
+142. Ideological Distribution of Court
+
+Variable Label: proportionLiberalCourt
+
+Normalizations: varIdeologicalDistribution (21)
+
+See variable proportionLiberalPanel.
+
+\--*End Content for Variable Ideological Distribution of Court\--*
+
+*\
+*
+
+143. Gender Distribution of Panel
+
+Variable Label: proportionWomenPanel
+
+Normalizations: varGenderDistribution (21)
+
+This variable indicates the proportion of women justices sitting on the
+panel that decided the case. The gender identity of each justice can be
+found in the normalization varGender. The subsequent variable,
+proportionWomenCourt indicates the proportion of women justices sitting
+on the Court at the time of decision. Whereas the latter variable is
+static for the period of each natural court, because the High Court sits
+on variable panels, both size and personnel, the variable
+proportionWomenPanel varies by case.
+
+\--*End Content for Variable Gender Distribution of Panel\--*
+
+*\
+*
+
+144. Gender Distribution of Court
+
+Variable Label: proportionWomenCourt
+
+Normalizations: varGenderDistribution (21)
+
+See variable proportionWomenPanel.
+
+\--*End Content for Variable Gender Distribution of Court\--*
+
+*\
+*
+
+Justice Characteristics Variables
+
+145. RLS Justice Ideology Score
+
+Variable Label: rlsIdeologyScore
+
+Normalizations: varIdeology (23)
+
+We use the Robinson, Leslie, and Sheppard ideology score as the measure
+for ideology, where 0.0 represents the most ideologically conservative
+justice and 1.0 represents the most ideologically liberal justice. For a
+full description of the methodology employed to generate the RLS
+Ideology Score, see Robinson, Zoe, Patrick Leslie, and Jill Sheppard,
+2021. "Judicial Ideology in the Absence of Rights: Evidence from
+Australia." Journal of Law and Courts, pp. 1-35.)
+
+\--*End Content for Variable RLS Justice Ideology Score\--*
+
+*\
+*
+
+146. Party of Prime Minister Appointing
+     Justice
+
+Variable Label: appPMParty
+
+Normalizations: varJusticePM (2)
+
+This variable identifies the political party of the Prime Minister on
+the date the nomination was announced.
+
+\--*End Content for Variable Party of PM Appointing Justice\--*
+
+*\
+*
+
+147. Gender Identity of Justice
+
+Variable Label: gender
+
+Normalizations: varGender (2)
+
+This variable identifies whether the justices is a woman or a man.
+
+\--*End Content for Variable Gender Identity of Justice\--*
+
+*\
+*
+
+148. Notes
+
+Variable Label: Notes
+
+Normalizations: N/A
+
+Any notes to the data collection.
+
+\--*End Content for Variable Notes\--*
+
+*\
+*
+
+HCDB Appendix
+
+This Appendix contains the complete list of numeric codes for all
+numeric variables in the HCDB (i.e. normalizations).
+
+A1 varAdminAction
+
+\[54\] distinct values
+
+varAdminAction is used in conjunction with:
+
+*adminAction*
+
+**Values:**
+
+> **Commonwealth Administrative Agencies**
+>
+> 100 Australian Crime Commission
+>
+> 101 Australian Information Commissioner, and Related Delegates
+>
+> 102 Comcare, and Related Delegates
+>
+> 103 Commissioner of Patents, and Related Delegates
+>
+> 104 Commissioner of Taxation, and Related Delegates
+>
+> 105 Comptroller General of Customs, and Related Delegates
+>
+> 106 Copyright Tribunal of Australia
+>
+> 107 Human Rights and Equal Opportunity Commission
+>
+> 108 Migration Agents Registration Authority
+>
+> 109 Military Rehabilitation and Compensation Commission
+>
+> 110 Minister for Justice and Home Affairs, and Related Delegates
+> (including Secretary) []
+>
+> 111 Minister for Treasury (Treasurer), and Related Delegates
+> (including Secretary)
+>
+> 112 Minister for Immigration and Border Protection, and Related
+> Delegates (including Secretary) []
+>
+> 113 Minister for Immigration and Citizenship, and Related Delegates
+> (including Secretary) []
+>
+> 114 Minister for Immigration and Multicultural Affairs, and Related
+> Delegates (including Secretary)/Minister for Immigration and Ethnic
+> Affairs, and Related Delegates
+>
+> 115 Minister for Immigration and Multicultural and Indigenous Affairs,
+> and Related Delegates (including Secretary) []
+>
+> 116 Minister for Immigration, Multicultural Affairs and Citizenship,
+> and Related Delegates (including Secretary) []
+>
+> 117 Minister for Lands, Planning and Environment, and Related
+> Delegates (including Secretary)
+>
+> 118 National Competition Council []
+>
+> 119 Australian Communications and Media Authority
+>
+> 120 Minister for Home Affairs, and Related Delegates (including
+> Secretary) []
+>
+> 121 Minister for Justice, and Related Delegates (including Secretary)
+> []
+>
+> 122 Professional Services Review
+>
+> 123 Australian Prudential Regulation Authority, and Related Delegates
+>
+> 124 Minister for Employment and Workplace Relations, and Related
+> Delegates (including Secretary
+
+125 Companies Auditors and Liquidators Disciplinary Board
+
+126 Australian Competition and Consumer Commission
+
+127 Repatriation Commission
+
+> 128 Minister for Customs and Justice, and Related Delegates (including
+> Secretary)
+>
+> 129 Commonwealth Attorney-General
+>
+> 130 Development Allowance Authority
+>
+> 131 Commissioner of Australian Federal Police
+>
+> 132 Australian Heritage Commission
+>
+> 133 Minister for Social Security, and Related Delegates (including
+> Secretary)
+>
+> 134 Other
+>
+> **State**
+>
+> 200 ACT Government Minister, and Related Delegates
+>
+> 201 ACT Independent Body, and Related Delegates
+>
+> 202 NSW Government Minister, and Related Delegates
+>
+> 203 NSW Independent Body, and Related Delegates
+>
+> 204 Northern Territory Government Minister, and Related Delegates
+>
+> 205 Northern Territory Independent Body, and Related Delegates
+>
+> 206 Queensland Government Minister, and Related Delegates
+>
+> 207 Queensland Independent Body, and Related Delegates
+>
+> 208 South Australia Government Minister, and Related Delegates
+>
+> 209 South Australia Independent Body, and Related Delegates
+>
+> 210 Tasmania Government Minister, and Related Delegates
+>
+> 211 Tasmania Independent Body, and Related Delegates
+>
+> 212 Victoria Government Minister, and Related Delegates
+>
+> 213 Victoria Independent Body, and Related Delegates
+>
+> 214 Western Australia Government Minister, and Related Delegates
+>
+> 215 Western Australia Independent Body, and Related Delegates
+>
+> 216 Norfolk Island Government Minister, and Related Delegates
+>
+> 217 Norfolk Island Independent Body, and Related Delegates
+>
+> 218 Nauru Government Minister, and Related Delegates
+>
+> 219 Nauru Independent Body, and Related Delegates
+
+A2 varAdminReview
+
+46 distinct values
+
+varAdminReview is used in conjunction with:
+
+*adminReview1*
+
+*adminReview2*
+
+**Values:**
+
+1 Australian Competition Tribunal
+
+2 Australian Conciliation and Arbitration Commission
+
+3 Australian Coal Industry Tribunal
+
+4 Australian Copyright Tribunal
+
+5 Australian Industrial Relations Commission
+
+6 Commonwealth Administrative Appeals Tribunal (pre June 30, 2015)
+
+> 7 Commonwealth Amalgamated Administrative Appeals Tribunal (post July
+> 1, 2015)
+>
+> 8 Commonwealth Conciliation and Arbitration Commission
+>
+> 9 Commonwealth Defence Force Remuneration Review Tribunal
+
+10 Commonwealth Defence Force Discipline Appeal Tribunal
+
+11 Commonwealth Fair Work Australia
+
+12 Commonwealth Fair Work Commission
+
+13 Commonwealth Federal Police Disciplinary Tribunal
+
+14 Commonwealth Migration Review Tribunal
+
+15 Commonwealth Native Title Tribunal
+
+16 Commonwealth Refugee Review Committee
+
+17 Commonwealth Refugee Review Tribunal
+
+18 Commonwealth Social Security Appeals Tribunal
+
+19 Commonwealth Superannuation Complaints Tribunal
+
+20 Commonwealth Other
+
+> 21 Australian Capital Territory Civil and Administrative Tribunal
+>
+> 22 Australian Capital Territory Other
+
+23 New South Wales Industrial Relations Commission
+
+> 24 New South Wales Civil and Administrative Tribunal
+>
+> 25 New South Wales Workers Compensation Commission
+>
+> 26 New South Wales Guardianship Tribunal
+>
+> 27 New South Wales Independent Commission Against Corruption
+>
+> 28 New South Wales Administrative Decisions Tribunal
+>
+> 29 New South Wales Chief Industrial Magistrate's Court
+>
+> 30 New South Wales Local Government Pecuniary Interest and
+> Disciplinary Tribunal
+>
+> 31 New South Wales Mental Health Review Tribunal
+>
+> 32 New South Wales Victims Support Scheme
+>
+> 33 New South Wales Other
+>
+> 34 Queensland Industrial Relations Commission
+>
+> 35 Queensland Civil and Administrative Tribunal
+>
+> 36 Queensland Other
+>
+> 37 Victorian Civil and Administrative Tribunal
+>
+> 38 Victorian Victims of Crime Assistance Tribunal
+>
+> 39 Victoria Other
+>
+> 40 South Australian Civil and Administrative Tribunal
+>
+> 41 State Administrative Tribunal of Western Australia
+>
+> 42 South Australia Other
+>
+> 43 Nauru Refugee Status Review Tribunal
+>
+> 44 Administrative Tribunal of Western Australia
+>
+> 45 Land and Mining Tribunal of the Northern Territory
+>
+> 46 Western Australia Other
+
+A3 varAmicus
+
+\[2\] distinct values
+
+varAmicus is used in conjunction with:
+
+*amicus*
+
+1 no amici appeared in the case
+
+> 2 one or more amici appeared in the case
+
+A4 varAuthorityDecision
+
+\[12\] distinct values
+
+varAuthorityDecision is used in conjunction with:
+
+*authorityDecision1*
+
+*authorityDecision2*
+
+*authorityDecision3*
+
+**Values:**
+
+1 judicial review---federal constitution
+
+2 judicial review---state constitution
+
+> 3 High Court supervision of lower federal courts
+>
+> 4 High Court supervision of state courts
+>
+> 5 High Court supervision of administrative decision makers---federal
+>
+> 6 High Court supervision of administrative decision makers---state
+
+7 inherent power
+
+8 statutory interpretation---federal
+
+9 statutory interpretation---state
+
+10 regulation/administrative rule interpretation---federal
+
+11 regulation/administrative rule interpretation---state
+
+12 common law
+
+A5 varCaseDisposition
+
+\[17\] distinct values
+
+> varCaseDisposition is used in conjunction with:
+>
+> *caseDisposition*
+>
+> **Values:**
+>
+> 1 Appeal/application allowed
+>
+> 2 Appeal/application allowed, order below set aside and/or varied
+>
+> 3 Appeal/application allowed, order below set aside and/or varied in
+> part
+>
+> 4 Appeal/application allowed, order below set aside and/or varied,
+> matter remitted
+>
+> 5 Appeal/application allowed, order below set aside and/or varied in
+> part, matter remitted
+>
+> 6 Appeal/application dismissed
+>
+> 7 Appeal/application allowed, remit for further determination
+>
+> 8 Appeal/application allowed in part, remit for further determination
+>
+> 9 Appeal/application allowed in part, order below set aside and/or
+> varied
+>
+> 10 Appeal/application allowed in part, order below set aside and/or
+> varied in part
+>
+> 11 Appeal/application allowed in part, order below set aside and/or
+> varied, matter remitted
+>
+> 12 Appeal/application allowed in part, order below set aside and/or
+> varied in part, matter remitted
+>
+> 13 Special leave revoked
+>
+> 14 Appeal granted and appeal allowed instantia
+>
+> 15 Other disposition
+>
+> 16 Questions answered (special case, case referred, etc)
+>
+> 17 Special leave denied by enlarged bench
+
+A6 varCaseSourceGeneral
+
+\[7\] distinct values
+
+> varCaseSourceGeneral is used in conjunction with:
+>
+> *caseOriginGeneral*
+>
+> *caseSourceGeneral*
+>
+> **Values:**
+>
+> 1 Federal court---trial level
+>
+> 2 Federal court---appellate level
+>
+> 3 State supreme court---trial level
+>
+> 4 State supreme court---appellate level
+>
+> 5 State district court (county court)
+>
+> 6 State local court (magistrates court)
+>
+> 7 State speciality court
+
+A7 varCaseSourceSpecific
+
+\[88\] distinct values
+
+> varCaseSourceSpecific is used in conjunction with:
+>
+> *caseOriginSpecific*
+>
+> *caseSourceSpecific*
+>
+> **Values:**
+>
+> 1 Family Court of Australia---Single Judge
+>
+> 2 Federal Magistrates Court
+>
+> 3 Federal Circuit Court of Australia
+>
+> 4 Federal Court of Australia---Single Judge
+>
+> 5 Federal Court of Australia---Full Court
+>
+> 6 Australian Industrial Court
+>
+> 7 Australia Military Court
+>
+> 8 Commonwealth Court of Conciliation and Arbitration
+>
+> 9 Commonwealth Industrial Court
+>
+> 10 Federal Court of Bankruptcy
+>
+> 11 Industrial Relations Court of Australia
+>
+> 12 Supreme Court of New South Wales---Common Law Division
+>
+> 13 Supreme Court of New South Wales---Equity Division
+>
+> 14 Supreme Court of New South Wales---Court of Appeal
+>
+> 15 Supreme Court of New South Wales---Court of Criminal Appeal
+>
+> 16 Land and Environment Court of New South Wales
+>
+> 17 District Court of New South Wales
+>
+> 18 Local Court of New South Wales
+>
+> 19 New South Wales Industrial Court
+>
+> 20 The Children's Court of New South Wales
+>
+> 21 New South Wales Dust Diseases Tribunal
+>
+> 22 Drug Court of New South Wales
+>
+> 23 New South Wales Chief Industrial Magistrate's Court
+>
+> 24 New South Wales Coroner's Court
+>
+> 25 Supreme Court of Queensland---Court of Appeal
+>
+> 26 Supreme Court of Queensland---Trial Division (Criminal)
+>
+> 27 Supreme Court of Queensland---Trial Division (Civil)
+>
+> 28 Industrial Court of Queensland
+>
+> 29 Queensland Planning and Environment Court
+>
+> 30 Queensland Land Appeal Court
+>
+> 31 District Court of Queensland
+>
+> 32 Magistrates Court of Queensland
+>
+> 33 Queensland Children's Court
+>
+> 34 Queensland Mental Health Court
+>
+> 35 Queensland Murri Court
+>
+> 36 Queensland Domestic Violence Court
+>
+> 37 Queensland Drug and Alcohol Court
+>
+> 38 Queensland Coroner's Court
+>
+> 39 Supreme Court of Victoria---Court of Appeals
+>
+> 40 Supreme Court of Victoria---Trial Court Common Law Division
+>
+> 41 Supreme Court of Victoria---Trial Court Commercial Division
+>
+> 42 Supreme Court of Victoria---Trial Court Criminal Division
+>
+> 43 County Court of Victoria
+>
+> 44 Magistrates' Court of Victoria
+>
+> 45 Children's Court of Victoria
+>
+> 46 Victorian Coroner's Court
+>
+> 47 Supreme Court of South Australia---Trial Division
+>
+> 48 Supreme Court of South Australia---Criminal Appeal Division
+>
+> 49 Supreme Court of South Australia---Civil Appeal Division
+>
+> 50 District Court of South Australia
+>
+> 51 Magistrates Court of South Australia
+
+52 Environment, Resources, and Development Court of South Australia
+
+> 53 South Australia Industrial Relations Court
+>
+> 54 Wardens Court of South Australia
+>
+> 55 Youth Court of South Australia
+>
+> 56 South Australia Coroner's Court
+>
+> 57 Supreme Court of Western Australia---Court of Appeals
+>
+> 58 Supreme Court of Western Australia---General (Trial) Division
+>
+> 59 Family Court of Western Australia
+>
+> 60 District Court of Western Australia
+>
+> 61 Magistrates Court of Western Australia
+>
+> 62 Aboriginal Community Court of Western Australia
+>
+> 63 Children's Court of Western Australia
+>
+> 64 Drug Court of Western Australia
+>
+> 65 Geraldton Family Violence Court, Western Australia
+>
+> 66 Western Australia Coroner's Court
+>
+> 67 Supreme Court of Tasmania---Criminal Division
+>
+> 68 Supreme Court of Tasmania---Civil Division
+>
+> 69 Supreme Court of Tasmania---Court of Appeals
+>
+> 70 Magistrates Court of Tasmania
+>
+> 71Tasmanian Coroner's Court
+>
+> 72 Supreme Court of the Northern Territory---Court of Appeal
+>
+> 73 Supreme Court of the Northern Territory---Court of Criminal Appeal
+>
+> 74 Supreme Court of the Northern Territory---Civil Trial
+>
+> 75 Supreme Court of the Northern Territory---Criminal Trial
+>
+> 76 Northern Territory Local Court (Magistrate's Court)
+>
+> 77 Coroner's Court of the Northern Territory
+>
+> 78 Supreme Court of the Australian Capital Territory
+>
+> 79 Supreme Court of the Australian Capital Territory---Court of Appeal
+>
+> 80 Magistrates Court of the Australian Capital Territory
+>
+> 81 Coroner's Court of the Australian Capital Territory
+>
+> 82 Supreme Court of Norfolk Island
+>
+> 83 Court of Petty Sessions for Norfolk Island
+>
+> 84 Nauru Supreme Court
+>
+> 85 Other
+>
+> 86 Family Court of Australia---Full Court
+>
+> 87 Warden's Court of Western Australia
+>
+> 88 Nauru District Court
+
+A8 varChief
+
+\[13\] distinct values
+
+> varChief is used in conjunction with:
+>
+> *chiefSpecialLeave*
+>
+> *chiefOralArgument*
+>
+> *chiefDecision*
+>
+> **Values:**
+>
+> 1 Griffith
+>
+> 2 Knox
+>
+> 3 Isaacs
+>
+> 4 Duffy
+>
+> 5 Latham
+>
+> 6 Dixon
+>
+> 7 Barwick
+>
+> 8 Gibbs
+>
+> 9 Mason
+>
+> 10 Brennan
+>
+> 11 Gleeson
+>
+> 12 French
+>
+> 13 Kiefel
+
+A9 varConstitutionalMatter
+
+\[2\] distinct values
+
+varConstitutionalMatteris used in conjunction with:
+
+*lwConMatter*
+
+1 case does not involve a constitutional law matter
+
+2 case does involve a constitutional law matter
+
+A10 varCosts
+
+\[2\] distinct values
+
+varCosts is used in conjunction with:
+
+*costsDecision*
+
+**Values:**
+
+1 no
+
+2 yes
+
+A11 varDecisionDirection
+
+> \[3\] distinct values
+>
+> varDecisionDirection is used in conjunction with:
+>
+> *decisionDirection*
+>
+> *lcDispositionDirection*
+>
+> **Values:**
+>
+> 1 conservative
+>
+> 2 liberal
+>
+> 3 unspecifiable
+
+A12 varDecisionDirectionDissent
+
+\[2\] distinct values
+
+varDecisionDirectionDissent is used in conjunction with:
+
+*decisionDirectionDissent*
+
+> **Values:**
+>
+> 0 dissent in opposite direction
+>
+> 1 majority and dissent in same direction
+
+A13 varDecisionTypes
+
+\[4\] distinct values
+
+varDecisionTypes is used in conjunction with:
+
+*decisionType*
+
+**Values:**
+
+> 1 Cases of the Court decided by a signed opinion, or multiple opinions
+> after oral argument.
+
+2 Cases decided with an opinion but without oral argument
+
+> 3 Cases decided with an evenly divided vote that that was appealed
+> from a justice of the High Court, the Supreme Court of a State or
+> Territory, a decision of the Federal Court of Australia, or a decision
+> of the Family Court of Australia
+>
+> 4 Cases decided with an evenly divided vote that do not fit within the
+> description in Decision Type 3
+
+A14 varDeclarationUncon
+
+\[11\] distinct values
+
+> varDeclarationUncon is used in conjunction with:
+>
+> *declarationUncon*
+>
+> **Values:**
+>
+> 1 no declaration of unconstitutionality
+>
+> 2 act of Parliament declared unconstitutional pursuant to Commonwealth
+> Constitution
+>
+> 3 state or territorial law, regulation, or constitutional provision
+> unconstitutional pursuant to Commonwealth Constitution
+>
+> 4 local government regulation/ordinance unconstitutional pursuant to
+> Commonwealth Constitution
+>
+> 5 state or territorial law, regulation, or constitutional provision
+> unconstitutional pursuant to state constitution
+>
+> 6 local government regulation/ordinance unconstitutional pursuant to
+> state constitution
+>
+> 7 act of Parliament restricted in scope to avoid declaration of
+> unconstitutionality pursuant to Commonwealth Constitution
+>
+> 8 state or territorial law, regulation, or constitutional provision
+> restricted in scope to avoid declaration of unconstitutionality
+> pursuant to Commonwealth Constitution
+>
+> 9 local government regulation/ordinance restricted in scope to avoid
+> declaration of unconstitutionality pursuant to Commonwealth
+> Constitution
+>
+> 10 state or territorial law, regulation, or constitutional provision
+> restricted in scope to avoid declaration of unconstitutionality
+> pursuant to state constitution
+>
+> 11 local government regulation/ordinance restricted in scope to avoid
+> declaration of unconstitutionality pursuant to state constitution
+
+A15 Gender Distribution
+
+\[21\] distinct values
+
+varGenderDistribution is used in conjunction with:
+
+*proportionWomenPanel*
+
+*proportionWomenCourt*
+
+**Values:**
+
+  -------------------------------------------------------------------------------------------------
+  0 Female   1 Female  2 Female   3 Female   4 Female   5 Female   6 Female   7 Female   Total
+  Justices   Justice   Justices   Justices   Justices   Justices   Justices   Justices   Number of
+                                                                                         Justices
+  ---------- --------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+  0          0.50      1.00       NA         NA         NA         NA         NA         2
+
+  0          0.33      0.66       1.00       NA         NA         NA         NA         3
+
+  0          0.25      0.50       0.75       1.00       NA         NA         NA         4
+
+  0          0.20      0.40       0.60       0.80       1.00       NA         NA         5
+
+  0          0.17      0.33       0.50       0.66       0.83       1.00       NA         6
+
+  0          0.14      0.29       0.43       0.57       0.71       0.86       1.00       7
+  -------------------------------------------------------------------------------------------------
+
+A16 varIdeological Distribution
+
+\[21\] distinct values
+
+varIdeologicalDistribution is used in conjunction with:
+
+*proportionLiberalPanel*
+
+*proportionLiberalCourt*
+
+**Values:**
+
+  -------------------------------------------------------------------------------------------------
+  0 Liberal  1 Liberal 2 Liberal  3 Liberal  4 Liberal  5 Liberal  6 Liberal  7 Liberal  Total
+  Justices   Justice   Justices   Justices   Justices   Justices   Justices   Justices   Number of
+                                                                                         Justices
+  ---------- --------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+  0          0.50      1.00       NA         NA         NA         NA         NA         2
+
+  0          0.33      0.66       1.00       NA         NA         NA         NA         3
+
+  0          0.25      0.50       0.75       1.00       NA         NA         NA         4
+
+  0          0.20      0.40       0.60       0.80       1.00       NA         NA         5
+
+  0          0.17      0.33       0.50       0.66       0.83       1.00       NA         6
+
+  0          0.14      0.29       0.43       0.57       0.71       0.86       1.00       7
+  -------------------------------------------------------------------------------------------------
+
+A17 varIntervener
+
+\[2\] distinct values
+
+varIntervener is used in conjunction with:
+
+*intervener*
+
+**Values:**
+
+1 no intervener participated in the case
+
+2 one or more intervener(s) participated in the case
+
+A18 varIssues
+
+214 distinct values
+
+varIssues is used in conjunction with:
+
+*primaryIssue*
+
+*secondaryIssue*
+
+*tertiaryIssue*
+
+**Values:**
+
+> 10100 Common Law---Tort---Negligence
+>
+> 10101 Common Law---Tort---Professional malpractice
+>
+> 10102 Common Law---Tort---Breach of public and statutory duties
+>
+> 10103 Common Law---Tort---Misrepresentation (including defamation)
+>
+> 10104 Common Law---Tort---Trespass against person
+>
+> 10105 Common Law---Tort---Trespass against property
+>
+> 10106 Common Law---Tort---Occupation or possession of land
+>
+> 10107 Common Law---Tort---Intentional damage to economic interest
+>
+> 10108 Common Law---Tort---Interference with employment and family
+> relations
+>
+> 10109 Common Law---Tort---Limitation of actions
+>
+> 10110 Common Law---Tort---Defenses to tort liability
+>
+> 10111 Common Law---Tort---Remedies
+>
+> 10112 Common Law---Tort---Responsibility for liability (vicarious
+> liability etc)
+>
+> 10113 Common Law---Tort---Other
+>
+> 10200 Common Law---Contract---Formation
+>
+> 10201 Common Law---Contract---Scope and content
+>
+> 10202 Common Law---Contract---Avoidance
+>
+> 10203 Common Law---Contract---Performance and termination
+>
+> 10204 Common Law---Contract---Remedies
+>
+> 10205 Common Law---Contract---Other
+>
+> 10300 Common Law---Equity---Fraud, undue influence, and breach of
+> confidence
+>
+> 10301 Common Law---Equity---Estoppel
+>
+> 10302 Common Law---Equity---Fiduciary law
+>
+> 10303 Common Law---Equity---Other equitable relief (including set-off,
+> contribution etc)
+
+10400 Common Law---Trusts---General
+
+> 20100 Public Law---Federal constitutional law---Executive
+> power---general
+>
+> 20101 Public Law---Federal constitutional law---Executive
+> power---prerogative powers
+>
+> 20102 Public Law---Federal constitutional law---Executive
+> power---nationhood power
+>
+> 20103 Public Law---Federal constitutional law---Legislative power
+>
+> 20104 Public Law---Federal constitutional law---Legislative
+> power---Trade and commerce power
+>
+> 20105 Public Law---Federal constitutional law--- Legislative
+> power---Taxation power
+>
+> 20106 Public Law---Federal constitutional law--- Legislative
+> power---Corporations power
+>
+> 20107 Public Law---Federal constitutional law---Legislative
+> power---Races power
+>
+> 20108 Public Law---Federal constitutional law---Legislative
+> power---External affairs power
+>
+> 20109 Public Law---Federal constitutional law---Legislative
+> power---Appropriations and grants
+>
+> 20110 Public Law---Federal constitutional law---Legislative
+> power---Territories power
+>
+> 20111 Public Law---Federal constitutional law---Legislative
+> power---conciliation and arbitration power
+>
+> 20112 Public Law---Federal constitutional law---Legislative
+> power---defense power
+>
+> 20113 Public Law---Federal constitutional law---Legislative
+> power---other
+>
+> 20114 Public Law---Federal constitutional law---Federal judicial power
+>
+> 20115 Public Law---Federal constitutional law---Federal judicial
+> power---definition and scope of judicial power
+>
+> 20116 Public Law---Federal constitutional law---Federal judicial
+> power---limits on judicial power
+>
+> 20117 Public Law---Federal constitutional law---Federal judicial
+> power---other
+>
+> 20118 Public Law---Federal constitutional law---Separation of powers
+>
+> 20119 Public Law---Federal constitutional law---Federalism---general
+>
+> 20120 Public Law---Federal constitutional
+> law---Federalism---inconsistency (section 109)
+>
+> 20121 Public Law---Federal constitutional
+> law---Federalism---Cooperative federalism
+>
+> 20122 Public Law---Federal constitutional law---Constitutional
+> rights---Section 80
+>
+> 20123 Public Law---Federal constitutional law---Constitutional
+> rights---Section 116
+>
+> 20124 Public Law---Federal constitutional law---Constitutional
+> rights---Section 117
+>
+> 20125 Public Law---Federal constitutional law---Constitutional
+> rights---Section 92
+>
+> 20126 Public Law---Federal constitutional law---Constitutional
+> rights---Section 51(xxxi), "just terms" property acquisition
+>
+> 20127 Public Law---Federal constitutional law---Constitutional
+> rights---Implied freedom of political communication
+>
+> 20128 Public Law---Federal constitutional law---Constitutional
+> rights---Other
+>
+> 20129 Public Law---Federal constitutional law---Elections
+>
+> 20130 Public Law---Federal constitutional law---other
+>
+> 20200 Public Law---Federal administrative law---Relevant and
+> irrelevant considerations
+>
+> 20201 Public Law---Federal administrative law---Power of tribunal
+>
+> 20202 Public Law---Federal administrative law---Natural justice and/or
+> procedural fairness
+>
+> 20203 Public Law---Federal administrative law---Judicial review of
+> delegated legislation
+>
+> 20204 Public Law---Federal administrative law---Judicial review of
+> government action, including scope of power, improper exercise of
+> power, consequences of unlawful exercise of power, limits on judicial
+> review
+>
+> 20205 Public Law---Federal administrative law---Delegated legislation
+> other
+>
+> 20206 Public Law---Federal administrative law---Freedom of information
+>
+> 20207 Public Law---Federal administrative law---Merits review of
+> administrative decisions
+>
+> 20208 Public Law---Federal administrative law---Other
+>
+> 30100 Public Law---State constitutional law---legislative power
+>
+> 30101 Public Law---State constitutional law---executive power
+>
+> 30102 Public Law---State constitutional law---judicial power
+>
+> 30200 Public Law---State administrative law---General
+>
+> 40100 Civil Rights---Statutory rights---Race discrimination
+>
+> 40101 Civil Rights---Statutory rights---Sex discrimination
+>
+> 40102 Civil Rights---Statutory rights---Age discrimination
+>
+> 40103 Civil Rights---Statutory rights---Religious discrimination
+>
+> 40104 Civil Rights---Statutory rights---Disability discrimination
+>
+> 40105 Civil Rights---Statutory rights---Other federal rights
+>
+> 40106 Civil Rights---Statutory rights---Other state rights (excluding
+> statutory bills of rights)
+>
+> 40200 Civil Rights---State bills of rights---Australian Capital
+> Territory
+>
+> 40201 Civil Rights---State bills of rights---Victoria
+>
+> 40202 Civil Rights---State bills of rights---Other
+>
+> 40300 Civil Rights---Common law rights---General
+>
+> 40400 Civil Rights---Indigenous rights---Native title
+>
+> 40401 Civil Rights---Indigenous rights---Other rights
+>
+> 40500 Civil Rights---Refugees---general
+>
+> 50100 Criminal Law and Procedure---Federal criminal law---offenses
+> against the Commonwealth
+>
+> 50101 Criminal Law and Procedure---Federal criminal law---other
+> offenses, individual crime
+>
+> 50100 Criminal Law and Procedure---Federal criminal law---other
+> offenses, corporate crime
+>
+> 50200 Criminal Law and Procedure---Federal criminal
+> procedure---misconduct of government actor
+>
+> 50201 Criminal Law and Procedure---Federal criminal
+> procedure---misconduct of counsel
+>
+> 50202 Criminal Law and Procedure---Federal criminal
+> procedure---sentencing
+>
+> 50203 Criminal Law and Procedure---Federal criminal
+> procedure---questioning and arrest
+>
+> 50204 Criminal Law and Procedure---Federal criminal
+> procedure---pre-trial
+>
+> 50205 Criminal Law and Procedure---Federal criminal procedure---trial
+> conduct, general
+>
+> 50206 Criminal Law and Procedure---Federal criminal procedure---Other
+>
+> 50300 Criminal Law and Procedure---State criminal law---offenses
+> against the person leading to death (e.g. murder, manslaughter)
+>
+> 50301 Criminal Law and Procedure---State criminal law---other offenses
+> against the person leading (e.g. assault, armed robbery, kidnap)
+>
+> 50302 Criminal Law and Procedure---State criminal law---attempted
+> offenses against the person
+>
+> 50303 Criminal Law and Procedure---State criminal law---sexual
+> violence (including rape and attempted rape)
+>
+> 50304 Criminal Law and Procedure---State criminal law---offenses
+> against property
+>
+> 50305 Criminal Law and Procedure---State criminal law---drug offenses
+>
+> 50306 Criminal Law and Procedure---State criminal law---morality
+> offenses (e.g. disorderly conduct, alcohol-related offenses, gambling
+> offenses)
+>
+> 50307 Criminal Law and Procedure---State criminal law---white collar
+> crime
+>
+> 50308 Criminal Law and Procedure---State criminal law---political
+> crimes, including corruption
+>
+> 50309 Criminal Law and Procedure---State criminal law---other
+>
+> 50400 Criminal Law and Procedure---State criminal
+> procedure---misconduct of government actor
+>
+> 50401 Criminal Law and Procedure---State criminal
+> procedure---misconduct of counsel
+>
+> 50402 Criminal Law and Procedure---State criminal
+> procedure---sentencing
+>
+> 50403 Criminal Law and Procedure--- State criminal
+> procedure---questioning and arrest
+>
+> 50404 Criminal Law and Procedure---State criminal
+> procedure---pre-trial
+>
+> 50405 Criminal Law and Procedure--- State criminal procedure---trial
+> conduct, general
+>
+> 50406 Criminal Law and Procedure--- State criminal procedure---other
+>
+> 50407 Criminal Law and Procedure--- State criminal
+> procedure---evidence
+>
+> 60100 Economic Relations---Corporate and business---Actions by or
+> against ASIC
+>
+> 60101 Economic Relations---Corporate and business---Corporations
+> law---Company formation
+>
+> 60102 Economic Relations--- Corporate and business---Corporations
+> law---Shareholders rights
+>
+> 60103 Economic Relations--- Corporate and business---Corporations
+> law---Directors' duties
+>
+> 60104 Economic Relations--- Corporate and business---Corporations
+> law---Shareholder litigation
+>
+> 60105 Economic Relations--- Corporate and business---Corporations
+> law---Takeovers
+>
+> 60106 Economic Relations--- Corporate and business---Corporations
+> law---General corporate governance
+>
+> 60107 Economic Relations--- Corporate and business---International
+> commercial arbitration
+>
+> 60108 Economic Relations--- Corporate and business---Insurance
+>
+> 60109 Economic Relations--- Corporate and business---Commercial
+> disputes
+>
+> 60110 Economic Relations--- Corporate and business---Disputes between
+> individuals and banking and finance organizations (includes guarantor
+> issues)
+>
+> 60111 Economic Relations--- Corporate and business---Creditor-debtor
+> disputes
+>
+> 60112 Economic Relations--- Corporate and business---Other
+>
+> 60200 Economic Relations---Bankruptcy and Insolvency---Individual
+>
+> 60201 Economic Relations---Bankruptcy and Insolvency---Corporate
+> Insolvency
+>
+> 60202 Economic Relations---Bankruptcy and Insolvency---Liquidation
+>
+> 60203 Economic Relations---Bankruptcy and Insolvency---Director
+> Liability
+>
+> 60204 Economic Relations---Bankruptcy and Insolvency---Restructuring
+> (voluntary administration, deed of company arrangement)
+>
+> 60205 Economic Relations---Bankruptcy and Insolvency---Avoidance of
+> transactions
+>
+> 60206 Economic Relations---Bankruptcy and Insolvency---Other
+>
+> 60300 Economic Relations---Property---Landlord-tenant disputes
+>
+> 60301 Economic Relations---Property---Disputes over entitlement to
+> land
+>
+> 60302 Economic Relations---Property---Disputes between landowners
+>
+> 60303 Economic Relations---Property---Other
+>
+> 60400 Economic Relations---Intellectual property---patents
+>
+> 60401 Economic Relations---Intellectual property---exclusive rights
+> but not patents
+>
+> 60402 Economic Relations---Intellectual property---trademarks
+>
+> 60403 Economic Relations---Intellectual property---copyright disputes
+>
+> 60404 Economic Relations---Intellectual property---design and other
+> disputes
+>
+> 60500 Economic Relations---Consumer and competition law---restrictive
+> trade practices---cartel conduct and price fixing
+>
+> 60501 Economic Relations---Consumer and competition law---restrictive
+> trade practices---anti-competitive agreements
+>
+> 60502 Economic Relations---Consumer and competition law--- restrictive
+> trade practices---exclusionary provisions
+>
+> 60503 Economic Relations---Consumer and competition law--- restrictive
+> trade practices---misuse of market power
+>
+> 60504 Economic Relations---Consumer and competition law--- restrictive
+> trade practices---exclusive dealing
+>
+> 60505 Economic Relations---Consumer and competition law--- restrictive
+> trade practices---resale price maintenance
+>
+> 60506 Economic Relations---Consumer and competition law--- restrictive
+> trade practices---mergers
+>
+> 60507 Economic Relations---Consumer and competition law---consumer
+> protection---misleading and deceptive conduct
+>
+> 60508 Economic Relations---Consumer and competition law--- consumer
+> protection---unconscionable conduct
+>
+> 60509 Economic Relations---Consumer and competition law--- consumer
+> protection---conditions or warranties in consumer agreements
+>
+> 60510 Economic Relations---Consumer and competition law--- consumer
+> protection---other unfair practices
+>
+> 60511 Economic Relations---Consumer and competition law---access to
+> services
+>
+> 60512 Economic Relations---Consumer and competition law---violation of
+> statutory industry code
+>
+> 60513 Economic Relations---Consumer and competition law---immunity and
+> cooperation
+>
+> 60514 Economic Relations---Consumer and competition law---remedies
+>
+> 60515 Economic Relations---Consumer and competition law---restraint of
+> trade
+>
+> 60516 Economic Relations---Consumer and competition
+> law---telecommunications
+>
+> 60517 Economic Relations---Consumer and competition law---product
+> liability general
+>
+> 60518 Economic Relations---Consumer and competition law---Other
+>
+> 60600 Economic Relations---Taxation---Individual income taxation
+> liability disputes
+>
+> 60601 Economic Relations---Taxation---Corporate taxation liability
+> disputes
+>
+> 60602 Economic Relations---Taxation---Charitable taxation liability
+> disputes
+>
+> 60603 Economic Relations---Taxation---Individual taxation other
+>
+> 60604 Economic Relations---Taxation---Corporate taxation other
+>
+> 60605 Economic Relations---Taxation---Charitable taxation other
+>
+> 60606 Economic Relations---Taxation---Conduct of Taxation Commissioner
+>
+> 60607 Economic Relations---Taxation---GST disputes
+>
+> 60608 Economic Relations---Taxation---Land taxation disputes
+>
+> 60609 Economic Relations---Taxation---Taxation recovery
+>
+> 60610 Economic Relations---Taxation---Civil or criminal penalties
+>
+> 60611 Economic Relations---Taxation---Departure Prohibition Order
+>
+> 60612 Economic Relations---Taxation---Other
+>
+> 60700 Economic Relations---Banking and finance---General
+>
+> 60800 Economic Relations---Succession---General
+>
+> 70100 Employment and Industrial Relations---nature and scope of
+> employment
+>
+> 70101 Employment and Industrial Relations---unlawful termination
+>
+> 70102 Employment and Industrial Relations---employer contract
+> violations
+>
+> 70103 Employment and Industrial Relations---workplace conduct
+>
+> 70104 Employment and Industrial Relations---employee entitlements
+>
+> 70105 Employment and Industrial Relations---independent contractors
+>
+> 70106 Employment and Industrial Relations---workers compensation
+>
+> 70107 Employment and Industrial Relations---actions between
+> government-employer and individual(s)
+>
+> 70108 Employment and Industrial Relations---actions brought by union,
+> either for itself or on behalf of workers
+>
+> 70109 Employment and Industrial Relations---conduct of unions
+> (including boycotts and conduct of unions)
+>
+> 70110 Employment and Industrial Relations---Other
+>
+> 80100 Admiralty and Maritime---in rem proceedings
+>
+> 80101 Admiralty and Maritime---in person proceedings
+>
+> 80102 Admiralty and Maritime---maritime insurance
+>
+> 80103 Admiralty and Maritime---cargo claims
+>
+> 80104 Admiralty and Maritime---other
+>
+> 90100 Procedure and Ethics---Civil procedure/litigation---Choice of
+> law
+>
+> 90101 Procedure and Ethics---Civil procedure/litigation---Mediation,
+> negotiation, and settlement
+>
+> 90102 Procedure and Ethics---Civil procedure/litigation---Judgment
+> enforcement
+>
+> 90103 Procedure and Ethics---Civil procedure/litigation---Trial
+> procedure
+>
+> 90104 Procedure and Ethics---Civil procedure/litigation---Pre-trial
+> procedure (e.g. directions hearings, motions, subpoenas, judgment
+> before trial etc)
+>
+> 90105 Procedure and Ethics---Civil procedure/litigation---other
+>
+> 90200 Procedure and Ethics---Evidence---Interpretation of rule or
+> principle
+>
+> 90201 Procedure and Ethics---Evidence---Admissibility of evidence
+> (documentary and testimonial)
+>
+> 90202 Procedure and Ethics---Evidence---Privilege
+>
+> 90203 Procedure and Ethics---Evidence---Witness credibility
+>
+> 90204 Procedure and Ethics---Evidence---Sufficiency of evidence
+>
+> 90205 Procedure and Ethics---Evidence---Other
+>
+> 90300 Procedure and Ethics---Statutory interpretation (Acts
+> Interpretation Act)---General
+>
+> 90400 Procedure and Ethics---Legal profession (ethics)---General
+>
+> 90500 Procedure and Ethics---Inherent power of the Court---General
+>
+> 100100 Miscellaneous ---International law---Public international law
+>
+> 100101 Miscellaneous ---International law---Private international law
+>
+> 100200 Miscellaneous ---Family law---General
+>
+> 100300 Miscellaneous ---Migration (non-refugee)---immigration
+>
+> 100301 Miscellaneous ---Migration (non-refugee)---deportation
+>
+> 100302 Miscellaneous ---Migration (non-refugee)---citizenship
+>
+> 100400 Miscellaneous ---Environmental law---General
+>
+> 100500 Miscellaneous ---Vulnerable persons---General
+>
+> 110100 Costs---Costs
+
+A19 varIssueArea
+
+\[11\] distinct values
+
+varIssueArea is used in conjunction with:
+
+*primaryIssueArea*
+
+*secondaryIssueArea*
+
+*tertiaryIssueArea*
+
+**Values:**
+
+1 Common Law (Civil)
+
+2 Public Law---Federal
+
+3 Public Law---State
+
+4 Civil Rights (non-constitutional)
+
+5 Criminal Law and Procedure
+
+6 Economic Relations
+
+7 Employment and Industrial Relations
+
+8 Admiralty and Maritime
+
+9 Procedure and Ethics
+
+10 Miscellaneous
+
+11 Costs
+
+A20 varIssueSubArea
+
+\[38\] distinct values
+
+varIssueSubArea is used in conjunction with:
+
+*primaryIssueSubArea*
+
+*secondaryIssueSubArea*
+
+*tertiaryIssueSubArea*
+
+**Values:**
+
+> 101 Common Law---Tort (including negligence)
+>
+> 102 Common Law---Contract
+>
+> 103 Common Law---Equity
+>
+> 104 Common Law---Trusts
+>
+> 201 Public Law---Federal constitutional law
+>
+> 202 Public Law---Administrative law
+>
+> 301 Public Law---State constitutional law
+>
+> 302 Public Law---State Administrative law
+>
+> 401 Civil Rights---Statutory rights
+>
+> 402 Civil Rights---State bills of rights
+>
+> 403 Civil Rights---Common law rights
+>
+> 404 Civil Rights---Indigenous rights
+>
+> 405 Civil Rights---Refugees
+>
+> 501 Criminal Law and Procedure---Federal criminal law
+>
+> 502 Criminal Law and Procedure---Federal criminal procedure
+>
+> 503 Criminal Law and Procedure---State criminal law
+>
+> 504 Criminal Law and Procedure---State criminal procedure
+>
+> 601 Economic Relations---Corporations law
+>
+> 602 Economic Relations---Bankruptcy
+>
+> 603 Economic Relations---Property (including liquor, gaming, and
+> hospitality)
+>
+> 604 Economic Relations---Intellectual property
+>
+> 605 Economic Relations---Competition and consumer law
+>
+> 606 Economic Relations---Taxation
+>
+> 607 Economic Relations---Banking and finance
+>
+> 608 Economic Relations---Succession
+>
+> 701 Employment and Industrial Relations
+>
+> 801 Admiralty and Maritime
+>
+> 901 Procedure and Ethics---Civil procedure/litigation
+>
+> 902 Procedure and Ethics---Evidence
+>
+> 903 Procedure and Ethics---Statutory interpretation (Acts
+> Interpretation Act)
+>
+> 904 Procedure and Ethics---Legal profession (ethics)
+>
+> 905 Procedure and Ethics---Inherent power of the Court
+>
+> 1001 Miscellaneous ---International law
+>
+> 1002 Miscellaneous ---Family law
+>
+> 1003 Miscellaneous ---Migration (non-refugee)
+>
+> 1004 Miscellaneous ---Environmental law
+>
+> 1005 Miscellaneous ---Vulnerable persons (e.g. child protection,
+> disabled persons)
+>
+> 1101 Costs---Costs
+
+A21 varJudicialReview
+
+\[9\] distinct values
+
+> varJudicialReview is used in conjunction with:
+
+*judicialReview*
+
+> **Values**:
+>
+> 1 judicial review
+>
+> 2 judicial review of federal statute vis-à-vis federal Constitution
+>
+> 3 judicial review of federal executive action vis-à-vis federal
+> Constitution
+>
+> 4 judicial review of state statute vis-à-vis federal Constitution
+>
+> 5 judicial review of state executive action vis-à-vis federal
+> Constitution
+>
+> 6 judicial review of state statute vis-à-vis state Constitution
+>
+> 7 judicial review of state executive action vis-à-vis state
+> Constitution
+>
+> 8 judicial review of local government action vis-à-vis federal
+> Constitution
+>
+> 9 judicial review of local government action vis-à-vis federal
+> Constitution
+
+A22 varJurisdictionGeneral
+
+\[6\] distinct values
+
+> varJurisdictionGeneral is used in conjunction with:
+>
+> *jurisdictionGeneral*
+>
+> **Values:**
+
+1 special leave
+
+2 appeal as of right
+
+3 original jurisdiction
+
+4 reference
+
+5 removal
+
+6 other
+
+A23 varJurisdictionSpecific
+
+\[13\] distinct values
+
+> varJurisdictionSpecific is used in conjunction with:
+>
+> *jurisdictionSpecific*
+>
+> **Values:**
+>
+> 1 leave (appellate)---from High Court justice exercising original
+> jurisdiction
+>
+> 2 special leave (appellate)---from any court exercising original
+> jurisdiction upon remittal from HCA
+>
+> 3 special leave (appellate)---from lower federal court
+>
+> 4 special leave (appellate)---from state or territory supreme court
+>
+> 5 special leave (appellate)---other
+>
+> 6 removal from lower court (pursuant to Sec 40, Judiciary Act)
+>
+> 7 appeal as of right
+>
+> 8 original (Constitution, section 75)
+>
+> 9 original---all matters arising under the Constitution or involving
+> its interpretation (Judiciary Act sec 30, pursuant to Sec 76)
+>
+> 10 original---trials of indictable offenses against the laws of the
+> Commonwealth (Judiciary Act sec 30, pursuant to Sec 76)
+>
+> 11 reference---matter referred to full court by single justice
+> (Judiciary Act sec 18)
+>
+> 12 special---Court of Disputed Returns
+>
+> 13 other
+
+A24 varJustice
+
+\[56\] distinct values
+
+> varJustices is used in conjunction with:
+>
+> *justice*
+>
+> *justiceName*
+>
+> *justicespecialleave*
+>
+> **Values:**
+>
+> 1 Griffith2 Barton3 O\'Connor4 Isaacs5 Higgins6 Duffy7 Powers8
+> Piddington9 Rich10 Knox11 Starke12 Dixon13 Evatt14 McTiernan15
+> Latham16 Williams17 Webb18 Fullagar19 Kitto20 Taylor21 Menzies22
+> Windeyer23 Owen24 Barwick25 Walsh26 Gibbs27 Stephen28 Mason29 Jacobs30
+> Murphy31 Aickin32 Wilson33 Brennan34 Deane35 Dawson36 Toohey37
+> Gaudron38 McHugh39 Gummow40 Kirby41 Hayne42 Callinan43 Gleeson, M44
+> Heydon45 Crennan46 Kiefel47 French48 Bell49 Gageler50 Keane51 Nettle52
+> Gordon53 Edelman
+>
+> 54 Steward
+>
+> 55 Gleeson, J
+
+A25 varJusticeDirection
+
+\[3\] distinct values
+
+> varJusticeDirection is used in conjunction with:
+
+*direction*
+
+> **Values:**
+>
+> 1 conservative
+>
+> 2 liberal
+>
+> 3 unspecifiable
+
+A26 varJusticeGender
+
+\[2\] distinct values
+
+> varJusticeGender is used in conjunction with:
+
+*gender*
+
+**Values:**
+
+1 female justice
+
+2 male justice
+
+***Justice Gender Codes***
+
+> 2 Brennan2 Deane2 Dawson2 Toohey1 Gaudron2 McHugh2 Gummow2 Kirby2
+> Hayne2 Callinan2 Gleeson, M2 Heydon1 Crennan1 Kiefel2 French1 Bell2
+> Gageler2 Keane2 Nettle1 Gordon2 Edelman
+>
+> 2 Steward
+>
+> 1 Gleeson, J
+
+A27 varIdeology
+
+\[23\] distinct values
+
+varIdeology is used in conjunction with:
+
+*rlsIdeologyScore*
+
+> 0.524 Brennan0.731 Deane0.150 Dawson0.823 Toohey0.823 Gaudron0.810
+> McHugh0.220 Gummow0.849 Kirby0.256 Hayne0.055 Callinan0.148
+> MGleeson0.096 Heydon0.329 Crennan0.228 Kiefel0.616 French0.759
+> Bell0.833 Gageler0.270 Keane0.292 Nettle0.500 Gordon0.382 Edelman
+>
+> 0.080 Steward
+>
+> 0.080 JGleeson
+
+A28 varJusticeMajority
+
+> \[2\] distinct values
+>
+> varJusticeMajority is used in conjunction with:
+>
+> *majority*
+>
+> **Values:**
+>
+> 1 dissent
+>
+> 2 majority
+
+A29 varJusticePM
+
+\[2\] distinct values
+
+> varJusticePM is used in conjunction with:
+
+*appPMParty*
+
+**Values:**
+
+> 1 justice appointed by a liberal party Prime Minister
+>
+> 2 justice was appointed by a labor party Prime Minister
+
+***Justice Appointing Party Codes***
+
+> 1 Brennan1 Deane1 Dawson2 Toohey2 Gaudron2 McHugh2 Gummow2 Kirby1
+> Hayne1 Callinan1 Gleeson, M1 Heydon1 Crennan1 Kiefel2 French2 Bell2
+> Gageler2 Keane1 Nettle1 Gordon1 Edelman
+>
+> 1 Steward
+>
+> 1 Gleeson, J
+>
+> 2 Jagot
+
+A30 varLawArea
+
+\[10\] distinct values
+
+> varLawArea is used in conjunction with:
+>
+> *lawType1*
+>
+> *lawType2*
+>
+> *lawType3*
+>
+> **Values:**
+>
+> 1 Federal Constitution
+>
+> 2 Federal statute
+>
+> 3 Federal regulation
+>
+> 4 Court rules
+>
+> 5 Common law (federal)
+>
+> 6 State constitution
+>
+> 7 State or local statute or regulation
+>
+> 8 Common law (state)
+>
+> 9 No legal provision
+>
+> 10 Other
+
+A31 varLegalProvisions
+
+\[1051\] distinct values
+
+varLegalProvisions is used in conjunction with:
+
+*lawSupp1*
+
+*lawSupp2*
+
+*lawSupp3*
+
+**Values:**
+
+> **Federal Constitution**
+>
+> Note: the specific trumps the general. For example, if the issue
+> involves the interpretation of Section 75(v), then the code 109
+> (specific code) rather than 128 (general Chapter III code) is used.
+>
+> 100 Constitution, Sections 7-10, Composition of Senate
+>
+> 101 Constitution, Section 24, 31-31, Composition of House of
+> Representatives
+>
+> 102 Constitution, Sections 7-10 and 24, 30-31, Composition of Both
+> Senate and House of Representatives
+>
+> 103 Constitution, Section 44, Disqualification of Member or Senator
+>
+> 104 Constitution, Section 51 Legislative Power
+>
+> 105 Constitution, Section 52-56, Legislative Power Other than Section
+> 51
+>
+> 106 Constitution, Section 61, Executive Power
+>
+> 107 Constitution, Section 71, Judicial Power
+>
+> 108 Constitution, Section 73-74, Appellate Jurisdiction
+>
+> 109 Constitution, Section 75-76, Original Jurisdiction
+>
+> 110 Constitution, Section 77, Power to Define Jurisdiction of Courts
+> Other than High Court
+>
+> 111 Constitution, Section 80, Right to Trial by Jury
+>
+> 112 Constitution, Sections 81-83, Appropriations
+>
+> 113 Constitution, Section 90, Power over Customs, Excise, and Bounty
+>
+> 114 Constitution, Section 92, Freedom of Interstate Trade
+>
+> 115 Constitution, Section 96, Grant Power
+>
+> 116 Constitution, Section 109, Inconsistency of Laws
+>
+> 117 Constitution, Section 116, Religious Liberty
+>
+> 118 Constitution, Section 117, Rights of Residents in States
+>
+> 119 Constitution, Section 122, Government of Territories
+>
+> 120 Constitution, Section 128, Amendment of Constitution
+>
+> 121 Constitution, Implied Freedom of Political Communication
+>
+> 122 Constitution, Chapter I, Part I, General
+>
+> 123 Constitution, Chapter I, Part II, Senate
+>
+> 124 Constitution, Chapter I, Part III, House of Representatives
+>
+> 125 Constitution, Chapter I, Part IV, Both Houses
+>
+> 126 Constitution, Chapter I, Part V, Legislative Power Other than
+> Sections 51-57
+>
+> 127 Constitution, Chapter II, Executive Government Other than Section
+> 61
+>
+> 128 Constitution, Chapter III Judicial Power, General
+>
+> 129 Constitution, Chapter IV, Finance and Trade General
+>
+> 130 Constitution, Chapter V, States, General
+>
+> 131 Constitution, Other
+>
+> **Federal statute**
+>
+> ***Commonly Cited Legislation***
+>
+> 200 A New Tax System (Goods and Services Tax) Act 1999 (Cth)
+>
+> 201 Aboriginal and Torres Strait Islander Heritage Protection Act
+> 1984 (Cth)
+>
+> 202 Appropriation Act (Cth), any version
+>
+> 203 Australia Act 1986 (Cth)
+>
+> 204 Australian Crime Commission Act 2002 (Cth)
+>
+> 205 Australian Securities and Investments Commission Act 2001 (Cth),
+> or related prior version
+>
+> 206 Bankruptcy Act 1966 (Cth)
+>
+> 207 Broadcasting Services Act 1992 (Cth)
+>
+> 208 Commonwealth Electoral Act 1918 (Cth)
+>
+> 209 Copyright Act 1968 (Cth)
+>
+> 210 Corporations Act 1989 (Cth)
+>
+> 211 Corporations Act 2001 (Cth)
+>
+> 212 Corporations Law 1989 (Cth)
+>
+> 213 Crimes Act 1914 (Cth)
+>
+> 214 Customs Act 1901 (Cth)
+>
+> 215 Designs Act 1906 (Cth)
+>
+> 216 Excise Act 1901 (Cth)
+>
+> 217 Extradition Act 1988 (Cth)
+>
+> 218 Fair Work Act 2009 (Cth)
+>
+> 219 Family Law Act 1975 (Cth)
+>
+> 220 Freedom of Information Act 1982 (Cth)
+>
+> 221 Income Tax Assessment Act 1936 (Cth)
+>
+> 222 Income Tax Assessment Act 1997 (Cth)
+>
+> 223 Industrial Relations Act 1988 (Cth)
+>
+> 224 Insurance Act 1973 (Cth)
+>
+> 225 Insurance Contracts Act 1984 (Cth)
+>
+> 226 Lands Acquisition Act 1955 or 1989 (Cth)
+>
+> 227 Marriage Act 1961 (Cth)
+>
+> 228 Migration Act 1958 (Cth)
+>
+> 229 Native Title Act 1993 (Cth)
+>
+> 230 Navigation Act 1912 (Cth)
+>
+> 231 Patents Act 1952 or 1990 (Cth)
+>
+> 232 Safety, Rehabilitation and Compensation Act 1988 (Cth)
+>
+> 233 Social Security (Administration) Act 1999 (Cth), or other social
+> security legislation
+>
+> 234 Telecommunications Act 1997 (Cth)
+>
+> 235 Trade Marks Act 1955 or 1995 (Cth)
+>
+> 236 Trade Practices Act 1974 (Cth)
+>
+> 237 Veterans\' Entitlements Act 1986 (Cth)
+>
+> 238 Workplace Relations Act 1996 (Cth)
+>
+> 239 Workplace Relations Amendment (Work Choices) Act 2005 (Cth)
+>
+> 240 Criminal Code (Cth)
+>
+> ***Less Common Legislation, Category Coding***
+>
+> 250 Aboriginal and Indigenous Affairs
+>
+> 251 Admiralty and Maritime
+>
+> 252 Agriculture
+>
+> 253 Aviation
+>
+> 254 Commonwealth authorities and commissions, establishment
+> legislation
+>
+> 255 Communication, generally conceived (including advertising etc)
+>
+> 256 Customs and excise
+>
+> 257 Crimes, including legislation relating to DPP, proceeds of crime
+>
+> 258 Defense legislation, including defense force management
+>
+> 259 Migration other, including deportation and extradition
+>
+> 260 Discrimination
+>
+> 261 Economic general
+>
+> 262 Education
+>
+> 263 Elections, including member qualifications and entitlements
+>
+> 264 Family and children
+>
+> 265 Health
+>
+> 266 Insurance
+>
+> 267 Mining and land management
+>
+> 268 Taxation
+>
+> 269 Territory management and governance, including independence
+> legislation
+>
+> 270 Workplace relations, including superannuation and OH&S
+>
+> 271 Other
+>
+> **3 Federal regulation**
+>
+> 300 Bankruptcy
+>
+> 301 Customs
+>
+> 302 Corporations
+>
+> 303 Criminal
+>
+> 304 Defense
+>
+> 305 Environment
+>
+> 306 Extradition
+>
+> 307 Family Law
+>
+> 308 Migration
+>
+> 309 National Security
+>
+> 310 Tax
+>
+> 311 Trade Practices
+>
+> 312 Other
+>
+> **4 Legislation and Rules Relating to Courts and Tribunal
+> Establishment, governance, and procedures**
+
+\*Add relevant two digit state code to end of 3 digit legislation code:
+
+01 Federal
+
+02 Australian Capital Territory
+
+03 NSW
+
+04 NT
+
+05 Qld
+
+06 South Australia
+
+07 Tasmania
+
+08 Victoria
+
+09 Norfolk Island
+
+10 Nauru
+
+11 Western Australia
+
+Example: Supreme Court Act for NSW would be coded as 42003
+
+> ***Cth***
+>
+> 401 High Court of Australia Act, all versions
+>
+> 402 High Court of Australia Rules, all versions
+>
+> 403 Federal Court of Australia Act, all versions
+>
+> 404 Federal Court of Australia Rules, all versions
+>
+> 405 Act Interpretation Act (Cth), all versions
+>
+> 406 Administrative Tribunal Act, all versions
+>
+> 407 Administrative Decisions (Judicial Review) Act, all versions
+>
+> 408 Criminal Appeal Act (Cth), all versions
+>
+> 409 Evidence Act (Cth), all versions
+>
+> 410 Federal Proceedings (Costs) Act (Cth), all versions
+>
+> 411 Foreign Judgments Act (Cth), all versions
+>
+> 412 Judicial Act (Cth), all versions
+>
+> 413 Juries Act (Cth), all versions
+>
+> 414 Nauru (High Court Appeals) Act, all versions
+>
+> 415 Territory courts legislation, all versions
+>
+> 416 Legislation relating to costs of proceedings
+>
+> 417 Legislation relating to service and execution of process
+>
+> 418 Foreign States Immunities Act (Cth), all versions
+>
+> 419 Other
+>
+> ***State***
+>
+> 420 Supreme Court Act, any version
+>
+> 421 Lower court legislation, any level, any version
+>
+> 422 Court rules, any level, any version
+>
+> 423 Legislation or rules relating to tribunal and/or administrative,
+> any version
+>
+> 424 Criminal procedure legislation or rules, any version, including
+> criminal appeals acts
+>
+> 425 Civil procedure legislation or rules, any version, including civil
+> appeals acts and limitation of actions
+>
+> 426 Evidence legislation or rules, any version
+>
+> 427 Interpretation legislation or rules, any version
+>
+> 428 Juries legislation, any version
+>
+> 429 Legislation relating to costs of proceedings
+>
+> 430 Other relevant legislation or rules
+>
+> 431 Legislation relating to service and execution of process
+>
+> **5 Common law (federal)**
+
+N/A
+
+> **6 State constitution**
+>
+> 602 Australian Capital Territory Constitution (self-government
+> legislation)
+>
+> 603 New South Wales Constitution, any version
+>
+> 604 Northern Territory Constitution (self-government legislation)
+>
+> 605 Queensland Constitution, any version
+>
+> 606 South Australia, any version
+>
+> 607 Tasmania, any version
+>
+> 608 Victoria, any version
+>
+> 609 Norfolk Island, any version ((self-government legislation)
+>
+> 610 Nauru, any version (self-government legislation)
+>
+> 611 Western Australia, any version
+>
+> 612 Other
+>
+> **7 State or local statute or regulation**
+
+\*Add relevant two digit state code to end of 3 digit legislation code
+code:
+
+02 Australian Capital Territory
+
+03 NSW
+
+04 NT
+
+05 Qld
+
+06 South Australia
+
+07 Tasmania
+
+08 Victoria
+
+09 Norfolk Island
+
+10 Nauru
+
+11 Western Australia
+
+> 700 Aboriginal and Indigenous, legislation and regulations
+>
+> 701 Civil wrongs, including wrongs legislation, civil liability,
+> defamation, accident liability, compensation
+>
+> 702 Community regulation general, including roads acts, community
+> welfare, animals, police regulations
+>
+> 703 Corporations, including commercial activity, business regulations
+>
+> 704 Criminal law legislation and regulations, including parole,
+> witness protection, substantive crimes
+>
+> 705 Government legislation, including elections, FOI, anti-corruption,
+> police regulations
+>
+> 706 Environment
+>
+> 707 Families and children, including births, deaths, and marriages
+> legislation, succession law
+>
+> 708 Fishing and farming, and related legislation
+>
+> 709 Human rights, including discrimination legislation and legislation
+> relating to vulnerable persons
+>
+> 710 Land, development and planning legislation
+>
+> 711 Land, government entitlement
+>
+> 712 Land, non-government including conveyancing
+>
+> 713 Law reform
+>
+> 714 Legal profession
+>
+> 715 Local government, regulation of, legislation and regulations
+>
+> 716 Industry regulation
+>
+> 717 Morality legislation, including gambling, racing, alcohol,
+> firearms
+>
+> 718 Natural resources and mining, including water, coal, gas pipelines
+>
+> 719 Property, general, including property act, conveyancing, leases
+>
+> 720 Refugees and migration
+>
+> 721 Taxation, including stamp duty
+>
+> 722 Trade practices, including consumer legislation
+>
+> 723 Trusts
+>
+> 724 Workplace relations, broadly conceived, including superannuation
+>
+> 725 Other
+>
+> **8 Common law**
+
+N/A
+
+> **9 No legal provision**
+
+N/A
+
+> **10 Other**
+>
+> 1000 Foreign Statute
+>
+> 1001 Imperial Statute
+>
+> 1002 International Convention
+>
+> 1003 Treaty
+>
+> 1004 Other
+
+A32 varLowerCourtConsitutionalOutcome
+
+\[5\] distinct values
+
+varLowerCourtConstitutionalOutcome is used in conjunction with:
+
+*lcConDecision*
+
+**Values:**
+
+> 1 lower held law constitutional
+>
+> 2 lower court held law unconstitutional (void)
+>
+> 3 lower court narrowed scope of law in order to uphold as
+> constitutional
+>
+> 4 lower court didn't consider constitutionality of law
+>
+> 5 no lower court decision in the matter (e.g., original jurisdiction,
+> Court of Disputed Returns etc)
+
+A33 varLowerCourtDisposition
+
+\[3\] distinct values
+
+varLowerCourtDisposition is used in conjunction with:
+
+*lcDisposition*
+
+**Values:**
+
+> 1 Appeal/application allowed, in whole or in part, and/or order below
+> set aside and/or varied in whole or in part, and/or matter remitted
+>
+> 2 Appeal/application dismissed
+
+3 Other disposition
+
+A34 varLowerCourtDissent
+
+\[2\] distinct values
+
+varLowerCourtDissent is used in conjunction with:
+
+*lcDissent*
+
+**Values:**
+
+1 No
+
+2 Yes
+
+A35 varMultipleMatters
+
+\[2\] distinct values
+
+varMultipleMatters is used in conjunction with:
+
+*multipleMatters*
+
+**Values:**
+
+1 case does not involve a decision in multiple matters
+
+2 case does involve two or more matters
+
+A36 varNaturalCourt
+
+\[18\] distinct values
+
+> varNaturalCourt is used in conjunction with:
+>
+> *naturalCourtSpecialLeave*
+>
+> *naturalCourtOralArgument*
+>
+> *naturalCourtOpinion*
+>
+> **Values:**
+
+1001 Brennan 1 (21-Apr-95-5-Feb-96)
+
+> 33 Brennan
+>
+> 34 Deane
+>
+> 35 Dawson
+>
+> 36 Toohey
+>
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+
+1002 Brennan 2 (6-Feb-96-21 Sep-97)
+
+> 33 Brennan
+>
+> 35 Dawson
+>
+> 36 Toohey
+>
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+
+1003 Brennan 3 (22-Sep-97-2-Feb-98)
+
+> 33 Brennan
+>
+> 36 Toohey
+>
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+
+1004 Brennan 4 (3-Feb-98-21-May-98)
+
+33 Brennan
+
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 42 Callinan
+
+1101 Gleeson 1 (22-May-98-10-Feb-03)
+
+> 43 Gleeson
+>
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 42 Callinan
+
+1102 Gleeson 2 (11-Feb-03-7-Nov-05)
+
+> 43 Gleeson
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 42 Callinan
+>
+> 44 Heydon
+
+1103 Gleeson 3 (8-Nov-05-2-Sep-07)
+
+> 43 Gleeson
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 42 Callinan
+>
+> 44 Heydon
+>
+> 45 Crennan
+
+1104 Gleeson 4 (3-Sep-07-31-Aug-08)
+
+> 43 Gleeson
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 44 Heydon
+>
+> 45 Crennan
+>
+> 46 Kiefel
+
+1201 French 1 (1-Sep-08-2-Feb-09)
+
+> 47 French
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 44 Heydon
+>
+> 45 Crennan
+>
+> 46 Kiefel
+
+1202 French 2 (3-Feb-09-8-Oct-12)
+
+> 47 French
+>
+> 39 Gummow
+>
+> 41 Hayne
+>
+> 44 Heydon
+>
+> 45 Crennan
+>
+> 46 Kiefel
+>
+> 48 Bell
+
+1203 French 3 (9-Oct-12-02-Mar-13)
+
+> 47 French
+>
+> 41 Hayne
+>
+> 44 Heydon
+>
+> 45 Crennan
+>
+> 46 Kiefel
+>
+> 48 Bell49 Gageler
+
+1204 French 4 (3-Mar-13-2-Feb-15)
+
+> 47 French
+>
+> 41 Hayne
+>
+> 45 Crennan
+>
+> 46 Kiefel
+>
+> 48 Bell49 Gageler50 Keane
+
+1205 French 5 (3-Feb-15-8-Jun-15)
+
+> 47 French
+>
+> 41 Hayne
+>
+> 46 Kiefel
+>
+> 48 Bell49 Gageler50 Keane51 Nettle
+
+1206 French 6 (9-Jun-15-29-Jan-17)
+
+> 47 French
+>
+> 46 Kiefel
+>
+> 48 Bell49 Gageler50 Keane51 Nettle52 Gordon
+
+1301 Kiefel 1 (30-Jan-17-30-Nov-2020)
+
+46 Kiefel
+
+> 48 Bell49 Gageler50 Keane51 Nettle52 Gordon53 Edelman
+
+1302 Kiefel 2 (01-Dec-20-28-02-21)
+
+> 46 Kiefel
+>
+> 48 Bell49 Gageler50 Keane52 Gordon53 Edelman
+>
+> 54 Steward
+
+1303 Kiefel 3 (01-03-21-16-10-22)
+
+> 46 Kiefel
+>
+> 49 Gageler50 Keane52 Gordon53 Edelman
+>
+> 54 Steward
+>
+> 55 Gleeson
+
+1304 Kiefel 4 (17-10-22-Current)
+
+> 46 Kiefel
+>
+> 49 Gageler52 Gordon53 Edelman
+>
+> 54 Steward
+>
+> 55 Gleeson
+>
+> 56 Jagot
+
+A37 varParties
+
+\[59\] distinct values
+
+varParties is used in conjunction with:
+
+*appellant*
+
+*respondent*
+
+**Values:**
+
+> 1 Bankrupt person or business, or business in reorganization
+>
+> 2 Buyer/purchaser
+>
+> 3 Corporation
+>
+> 4 Creditor
+>
+> 5 Criminal defendant, female
+>
+> 6 Criminal defendant, male
+>
+> 7 Criminal defendant, minority (non-white)
+>
+> 8 Distributor
+>
+> 9 Employer, including government where litigation in capacity as
+> employer
+>
+> 10 Federal government, including non-corporate and corporate entities,
+> and Commonwealth companies (e.g. NBN)
+>
+> 11 Federal government official
+>
+> 12 Foreign nation or instrumentality
+>
+> 13 Foreign non-government entity
+>
+> 14 Heir or beneficiary, or person claiming to be
+>
+> 15 Injured person, physical or emotional
+>
+> 16 Injured person, economic (including defamed person)
+>
+> 17 Insurance company
+>
+> 18 International entity
+>
+> 19 Investor
+>
+> 20 IP rights-holder (e.g. patent holder, author, copyright holder)
+>
+> 21 Journalist
+>
+> 22 Lawyer
+>
+> 23 Manufacturer
+>
+> 24 Medical professional, including doctor, dentist etc
+>
+> 25 Migrant, all classifications, including persons seeking to migrate
+> to Australia
+>
+> 26 Military personnel, including veterans
+>
+> 27 Military, including army, navy, airforce
+>
+> 28 Minority, female
+>
+> 29 Minority, male
+>
+> 30 Non-profit organization or association
+>
+> 31 Parent
+>
+> 32 Prisoner or inmate of penal institution
+>
+> 33 Professional association
+>
+> 34 Public interest group (including environmental, social rights etc)
+>
+> 35 Real property developer
+>
+> 36 Real property holder, corporation
+>
+> 37 Real property holder, individual or collective of individuals
+>
+> 38 Religious person
+>
+> 39 Small business
+>
+> 40 State government (including local government entities, e.g., city
+> council)
+>
+> 41 State government official (including local government officials,
+> e.g., city councillor)
+>
+> 42 Stockholder, bondholder, or shareholder
+>
+> 43 Student
+>
+> 44 Taxpayer
+>
+> 45 Tenant or lessee
+>
+> 46 Unemployed person, including applicant for unemployment benefits
+>
+> 47 Unidentifiable
+>
+> 48 Union
+>
+> 49 Utility company
+>
+> 50 Voter
+>
+> 51 Vulnerable person (defined as child, disabled person (mental or
+> physical), elderly person, indigent person, etc)
+>
+> 52 Other
+>
+> 53 Company director
+>
+> 54 Person discriminating against another in discrimination action
+>
+> 55 Spouse
+>
+> 56 Individual, unable to be characterised by any other designation in
+> party list
+>
+> 57 Fiduciary (including trustee)
+>
+> 58 Body corporate
+>
+> 59 Guarantor
+
+A38 varPartyWinning
+
+\[3\] distinct values
+
+> varPartyWinning is used in conjunction with:
+>
+> *partyWinning*
+>
+> **Values:**
+>
+> 0 no favourable disposition for appealing/petitioning party apparent
+>
+> 1 appealing/petitioning party received a favourable disposition
+>
+> 2 favourable disposition for petitioning party unclear
+
+A39 varPoliticalPower
+
+\[5\] distinct values
+
+varPoliticalPower is used in conjunction with:
+
+> *politicalPowerOralArgument*
+>
+> *politicalPowerSpecialLeave*
+>
+> *politicalPowerDecision*
+
+**Values**:
+
+1 Coalition House/Coalition Senate
+
+2 Coalition House/Not Coalition Senate
+
+3 Labour House/Labour Senate
+
+4 Labour House/Not Labour Senate
+
+5 Minority Labour House/Not Labour Senate
+
++-------------------------+---------------------+----------------------+
+|                         | > **Party in        |                      |
+|                         | > Control**         |                      |
++:========================+:====================+:=====================+
+| > **Election**          | > **House**         | > **Senate**         |
++-------------------------+---------------------+----------------------+
+| > Dec 1, 1984           | > Labor             | > Not Labor          |
++-------------------------+---------------------+----------------------+
+| > July 11, 1987         | > Labor             | > Not Labor          |
++-------------------------+---------------------+----------------------+
+| > Mar 24, 1990          | > Labor             | > Not Labor          |
++-------------------------+---------------------+----------------------+
+| > Mar 13, 1993          | > Labor             | > Not Labor          |
++-------------------------+---------------------+----------------------+
+| > Oct 3, 1998           | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Nov 10, 2001          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Oct 9, 2004           | > Coalition         | > Coalition          |
++-------------------------+---------------------+----------------------+
+| > Nov 24, 2007          | > Labor             | > Not Labor          |
++-------------------------+---------------------+----------------------+
+| > Aug 21, 2010          | > Minority Labour   | > Not Labour Senate  |
+|                         | > House             |                      |
++-------------------------+---------------------+----------------------+
+| > Sept 7, 2013          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > July 2, 2016          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > May 18, 2019          | > Coalition         | > Not Coalition      |
+| >                       | >                   | >                    |
+| > May 21, 2022          | > Labor             | > Not Labor          |
++-------------------------+---------------------+----------------------+
+
+A40 varPreliminarySpecialLeaveHearing
+
+\[2\] distinct values
+
+varPreliminarySpecialLeaveHearing is used in conjunction with
+
+*prelimSLHearing*
+
+**Values:**
+
+1 There was a preliminary special leave hearing on the application
+
+> 2 There was no preliminary special leave hearing, the case was
+> referred directly to full court on special leave question
+
+A41 varPrimeMinister
+
+\[37\] distinct values
+
+varPrimeMinister is used in conjunction with:
+
+> *primeMinisterOralArgument*
+>
+> *primeMinisterrSL*
+>
+> *primeMinisterHcDecision*
+
+Values:
+
+1 Barton (01.01.1901 -- 24.09.1903)
+
+> 2 Deakin1 (24.09.1903 -- 27.04.1904)
+>
+> 3 Watson (27.04.1904 -- 17.08.1904)
+>
+> 4 Reid (18.08.1904 -- 05.07.1905)
+>
+> 5 Deakin 2 (05.07.1905 -- 13.11.1908)
+>
+> 6 Fisher 1 (13.11.1908 -- 02.06.19090
+>
+> 7 Deakin 3 (02.06.1909 -- 29.04.1910)
+>
+> 8 Fisher 2 (29.04.1910 -- 24.06.1913)
+>
+> 9 Cook (24.06.1913 -- 17.09.1914)
+>
+> 10 Fisher 3 (17.09.1914 -- 27.10.1915)
+>
+> 11 Hughes (27.10.1915 -- 09.02.1923)
+>
+> 12 Bruce (09.02.1923 -- 22.10.1929)
+>
+> 13 Scullin (22.10.1929 -- 06.01.1932)
+>
+> 14 Lyons (06.01.1932 -- 07.04.1939)
+>
+> 15 Page (07.04.1939 -- 26.04.1939)
+>
+> 16 Menzies 1 (26.04.1939 -- 29.08.194)
+>
+> 17 Fadden (29.08.1941 -- 07.10.1941)
+>
+> 18 Curtin (07.10.1941 -- 05.07.1945)
+>
+> 19 Forde (06.07.1945 -- 13.07.1945)
+>
+> 20 Chifley (13.07.1945 -- 19.12.1949)
+>
+> 21 Menzies 2 (19.12.1949 -- 26.01.1966)
+>
+> 22 Holt (26.01.1966 -- 19.12.1967)
+>
+> 23 McEwen (19.12.1967 -- 10.01.1968)
+>
+> 24 Gorton (10.01.1968 -- 10.03.1971)
+>
+> 25 McMahon(10.03.1971 -- 05.12.1972)
+>
+> 26 Whitlam (05.12.1972 -- 11.11.1975)
+>
+> 27 Fraser (11.11.1975 -- 11.03.1983)
+>
+> 28 Hawke (11.03.1983 -- 20.12.1991)
+>
+> 29 Keating (20.12.1991 -- 11.03.1996)
+>
+> 30 Howard (11.03.1996 -- 3.12.2007)
+>
+> 31 Rudd 1 (03.12.2007 -- 24.06.2010)
+>
+> 32 Gillard (24.06.2010 -- 27.06.2013)
+>
+> 33 Rudd 2 (27.06.2013 -- 18.09.2013)
+>
+> 34 Abbott (18.09.2013 -- 15.09.2015)
+>
+> 35 Turnbull (15.09.2015 -- 24.08.2018)
+>
+> 36 Morrison (24.08.2018 -- 23.05.2022)
+>
+> 37 Albanese (23.05.2022 -- present)
+
+A42 varRegistry
+
+\[8\] distinct values
+
+> varRegistry is used in conjunction with:
+
+*registry*
+
+> **Values:**
+>
+> 1 Adelaide
+>
+> 2 Brisbane
+>
+> 3 Canberra
+>
+> 4 Darwin
+>
+> 5 Hobart
+>
+> 6 Melbourne
+>
+> 7 Perth
+>
+> 8 Sydney
+
+A43 varSG
+
+\[2\] distinct values
+
+> varSG is used in conjunction with:
+>
+> *cthSGRepOralArgument*
+
+**Values:**
+
+1 Commonwealth Solicitor-General appeared in the case
+
+2 Commonwealth Solicitor-General did not appear in the case
+
+A44 varSGParty
+
+\[4\] distinct values
+
+> varSGParty is used in conjunction with:
+>
+> *cthSGRepOralArgument1*
+>
+> *cthSGRepOralArgument2*
+
+**Values:**
+
+1 appellant
+
+2 respondent
+
+3 intervener
+
+4 amicus
+
+A45 varSpecialLeaveMethod
+
+\[2\] distinct values
+
+> varSpecialLeaveMethod is used in conjunction with:
+>
+> *varSpecialLeaveMethod*
+>
+> **Values:**
+>
+> 1 Oral hearing
+>
+> 2 Papers
+
+A46 varSpecialLeaveOutcomeGeneral
+
+\[2\] distinct values
+
+> varSpecialLeaveOutomeGeneral is used in conjunction with:
+>
+> *panelSLOutcomeGeneral*
+>
+> **Values:**
+
+1 Denied
+
+2 Granted
+
+A47 varSpecialLeavePanel
+
+\[2\] distinct values
+
+> varSpecialLeavePanell is used in conjunction with:
+>
+> *panelSLDecision*
+
+**Values:**
+
+1 a decision on special leave was not made by the full panel
+
+2 a decision on special leave was made by the full panel
+
+A48 varSpecialLeavePanelPreliminary
+
+\[2\] distinct values
+
+> varPreliminarySpecialLeavePanel is used in conjunction with:
+>
+> *preliminarySLPanel*
+
+**Values:**
+
+1 No
+
+2 Yes
+
+A49 varSpecialLeaveOutcomePreliminary
+
+\[5\] distinct values
+
+> varSpecialLeaveOutomePreliminary is used in conjunction with:
+>
+> *varprelimSLOutomce*
+>
+> **Values:**
+>
+> 1 Special leave granted
+>
+> 2 Special leave referred to full court
+>
+> 3 Appeal and special leave determined concurrently
+>
+> 4 Special leave refused
+>
+> 5 Special leave refused with costs
+
+A50 varSpecialLeaveOutcomeSpecific
+
+\[7\] distinct values
+
+varSpecialLeaveOutcomeSpecific is used in conjunction with:
+
+*panelSLOutcomeSpecific*
+
+**Values:**
+
+1 Special leave denied (refused)
+
+2 Special leave revoked
+
+3 Special leave granted, heard instanter, appeal dismissed
+
+4 Special leave granted, heard instaner, appeal allowed
+
+5 Special leave granted, appeal allowed
+
+6 Special leave granted, appeal dismissed
+
+7 Other
+
+A51 varStates
+
+\[12\] distinct values
+
+> varStates is used in conjunction with:
+>
+> *appellantState*
+>
+> *respondentState*
+>
+> *adminActionState*
+>
+> *caseOriginState*
+>
+> *caseSourceState*
+
+*authorityDecision1State*
+
+*authorityDecision2State*
+
+*authorityDecision3State*
+
+> **Values:**
+>
+> 1 Australia (federal actor)
+>
+> 2 Australian Capital Territory
+>
+> 3 New South Wales
+>
+> 4 Northern Territory
+>
+> 5 Queensland
+>
+> 6 South Australia
+>
+> 7 Tasmania
+>
+> 8 Victoria
+>
+> 9 Norfolk Island
+>
+> 10 Nauru
+>
+> 11 Western Australia
+>
+> 12 Other
+
+A52 varTerm
+
+\[37\] distinct values
+
+> varTerm is used in conjunction with:
+>
+> *termSL*
+
+**Values:**
+
+1 1986-1987
+
+2 1987-1988
+
+3 1988-1989
+
+4 1989-1990
+
+5 1990-1991
+
+6 1991-1992
+
+7 1992-1993
+
+8 1993-1994
+
+9 1994-1995
+
+10 1995-1996
+
+11 1996-1997
+
+12 1997-1998
+
+13 1998-1999
+
+14 1999-2000
+
+15 2000-2001
+
+16 2001-2002
+
+17 2002-2003
+
+18 2003-2004
+
+19 2004-2005
+
+20 2005-2006
+
+21 2006-2007
+
+22 2007-2008
+
+23 2008-2009
+
+24 2009-2010
+
+25 2010-2011
+
+26 2011-2012
+
+27 2012-2013
+
+28 2013-2014
+
+29 2014-2015
+
+30 2015-2016
+
+31 2016-2017
+
+32 2017-2018
+
+33 2018-2019
+
+34 2019-2020
+
+35 2020-2021
+
+36 2021-2022
+
+37 2022-2023
+
+A53 varVote
+
+\[12\] distinct values
+
+> varVote is used in conjunction with:
+>
+> *vote*
+
+**Values:**
+
+1 wrote the opinion of the Court (i.e. majority opinion)
+
+2 wrote opinion for plurality opinion of Court majority
+
+3 participated in opinion of the Court (i.e. majority opinion)
+
+4 participated in plurality opinion of Court majority
+
+5 wrote substantive concurring opinion
+
+6 participated in substantive concurring opinion
+
+7 wrote formal concurring opinion
+
+8 participated in formal concurring opinion
+
+9 wrote dissenting opinion
+
+10 participated in dissenting opinion
+
+11 judgment of the Court (unanimous, single judgment)
+
+12 other
+
+
+## Citation
+
+If you use this data, please cite:
+
+Leslie, P., Robinson, Z., Smyth, R., & Jacobi, T. (2026). Supporting comparative studies of
+judicial behavior: Introducing the Australian High Court Database. *Journal of Law & Empirical
+Analysis*, *3*(1), 251--263. <https://doi.org/10.1177/2755323X261438254>
+
+```bibtex
+@article{leslie2026hcdb,
+  author  = {Pat Leslie and Zo\"{e} Robinson and Russell Smyth and Tonja Jacobi},
+  title   = {Supporting Comparative Studies of Judicial Behavior: Introducing the Australian High Court Database},
+  journal = {Journal of Law \& Empirical Analysis},
+  year    = {2026},
+  volume  = {3},
+  number  = {1},
+  pages   = {251--263},
+  doi     = {10.1177/2755323X261438254}
+}
+```

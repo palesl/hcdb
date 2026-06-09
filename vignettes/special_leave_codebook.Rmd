@@ -1,0 +1,2042 @@
+---
+title: "Special Leave Codebook"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Special Leave Codebook}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+**HCDB Special Leave Codebook (special_leave)**
+
+**Contents**
+
+Introduction
+
+1\. HCDBSL ID
+
+2\. Case Name
+
+3\. Case Number
+
+4\. Special Leave Citation
+
+5\. Multiple Matters
+
+6\. Number of Multiple Matters
+
+7\. Multiple Matters HCSLDB Identification 1
+
+8\. Multiple Matters HCSLDB Identification 2
+
+9\. Multiple Matters HCSLDB Identification 3
+
+10\. Multiple Matters HCSLDB Identification 4
+
+11\. Multiple Matters HCSLDB Identification 5
+
+12\. Multiple Matters HCSLDB Identification 6
+
+13\. Multiple Matters HCSLDB Identification 7
+
+14\. Multiple Matters HCSLDB Identification 8
+
+15\. Number of Appellants
+
+16\. Number of Respondents
+
+17\. Case Type
+
+18\. Primary Issue Area
+
+19\. Primary Issue Sub Area
+
+20\. Secondary Issue Area
+
+21\. Secondary Issue Sub Area
+
+22\. Manner in which Court takes Jurisdiction General
+
+23\. Manner in which Court takes Jurisdiction Specific
+
+24\. Case Source Cite
+
+25\. Source of Case General
+
+26\. Source of Case Specific
+
+27\. Source of Case State
+
+28\. Date of Lower Court Decision
+
+29\. Lower Court Disposition
+
+30\. Lower Court Dissent
+
+31\. Lower Court Panel Size
+
+32\. Number of Lower Court Dissents
+
+33\. Special Leave Method
+
+34\. Number of Justices on Special Leave Panel
+
+35\. Justice Granting Special Leave 1
+
+36\. Justice Granting Special Leave 2
+
+37\. Justice Granting Special Leave 3
+
+38\. Special Leave Location
+
+39\. Special Leave Date
+
+40\. Special Leave Outcome
+
+41\. HCDB ID
+
+42\. Natural Court
+
+43\. Term of Court Special Leave
+
+44\. Chief Justice at Special Leave
+
+45\. Prime Minister on Date of Decision
+
+46\. Political Power on Date of Special Leave Decision
+
+47\. Oral Argument Link
+
+48\. Notes
+
+Appendix
+
+Introduction
+
+This document reflects the coding rules for the High Court Special Lave
+Database.
+
+1.  HCDBSL ID
+
+Variable Label: HCSLDBId
+
+The Special Leave ID is the HCSLDB unique internal identification
+number. The Case ID contains 7 digits; the first four digits are the
+year, as the year is reflective of the Term of the High Court, the next
+three are the special leave petition within the year (determined in date
+order of the date of decision), starting at 001 and counting up. For
+example, the HCSLDB ID for the fifth special leave petition heard in
+2015 will 2015005.
+
+\--*End Content for Variable HCSLDB ID---*
+
+2.  Case Name
+
+Variable Label: caseName
+
+This is the name of the case. The case name is associated with the case
+number, therefore where cases are consolidated the case name is not that
+of the lead case but rather the particular case. Case names have been
+scraped into the spreadsheet and coders should check each case name.
+
+\--*End Content for Variable Case Name\--*
+
+3.  Case Number
+
+Variable Label: caseNumber
+
+This variable contains the case number that the High Court has assigned
+to the case (i.e. docket number). Case numbers are assigned by the state
+in which the case is filed (and the state in which the case is filed in
+the High Court is the state where the case was heard prior to the High
+Court appeal), and then numerically in the order in which they were
+filed. For example, the first case filed in Sydney in 2017 will have the
+case number S1, the third case filed in Perth will have the case number
+P3, and so on.
+
+The Court can consolidate a number of cases, each with its own case
+number, under special leave citation. **Every case number must have its
+own entry (i.e. row) in the dataset.** Note that multiple case numbers
+under a single case citation will almost always contain the same
+issue(s) as the lead case, and the only difference will be the parties
+to the case, and the origin and source of the case.
+
+For dispositions on the papers, the case numbers are already in the
+excel file, but may have multiple case numbers on one row that you need
+to remedy. For hearings, the case number(s) will appear at the top of
+the hearing transcript.
+
+Coders: If you see multiple case numbers in a single case number
+cell/row, you will need to create a new row for each case number.
+
+\--*End Content for Variable Case Number\--*
+
+4.  Special Leave Citation
+
+Variable Label: specialLeaveCite
+
+The special leave citation appears in one of two forms:
+
+-   "HCATrans": indicating that special leave was granted or denied in
+    oral argument
+
+-   "HCASL": indicating that special leave was granted or denied on the
+    papers
+
+Citations were scraped into the excel file, so just cross check their
+accuracy.
+
+\--*End Content for Variable Special Leave Cite\--*
+
+5.  Multiple Matters
+
+Variable Label: multipleMatters
+
+This variable identifies whether the special leave case relates to a
+single matter (case) or multiple matters. If the decision issued by the
+Court relates to more than one matter, as identified by the presence of
+more than one matter number, coders should code the matter as a multiple
+matter.
+
+Values:
+
+-   1 = not a multiple matter (i.e. a single matter case)
+
+-   2 = is a multiple matter (i.e. 2 or more matters decided together
+    under one special leave citation)
+
+\--*End Content for Variable Multiple Matters---*
+
+6.  Number of Multiple Matters
+
+Variable Label: numMultipleMatters
+
+Normalizations: N/A
+
+Coders should hard code the total number of matters decided in the
+decision issues by the Court, including the matter being coded. For
+example, if the decision lists 3 matter numbers under one medium neutral
+citation, then "3" should be coded for this variable.
+
+\--*End Content for Variable Number of Multiple Matters---*
+
+7.  Multiple Matters HCSLDB Identification 1
+
+8.  Multiple Matters HCSLDB Identification 2
+
+9.  Multiple Matters HCSLDB Identification 3
+
+10. Multiple Matters HCSLDB Identification 4
+
+11. Multiple Matters HCSLDB Identification 5
+
+12. Multiple Matters HCSLDB Identification 6
+
+13. Multiple Matters HCSLDB Identification 7
+
+14. Multiple Matters HCSLDB Identification 8
+
+Variable Label: multipleMatterHCSLDBID
+
+Normalizations: N/A
+
+These 8 variables identify the HCSLDBID of all matters that were decided
+in the same decision of the Court. Each related matter should be coded
+by HCSLDBID and any irrelevant cells coded as 999.
+
+\--*End Content for Variable Multiple Matters HCSLDB Identification---*
+
+15. Number of Appellants
+
+Variable Label: numberAppellants
+
+Normalizations: N/A
+
+Denotes the number of appellants.
+
+Values:
+
+-   1 = 1 appellant
+
+-   1 = 2 appellants (appears as "& Anor" on left hand side of the case
+    name)
+
+-   3 = 3 or more appellants (appears as "& Ors" on left hand side of
+    the case name)
+
+\--*End Content for Variable Number of Appellants \--*
+
+16. Number of Respondents
+
+Variable Label: NumberRespondents
+
+Normalizations: N/A
+
+Denotes the number of respondents.
+
+Values:
+
+-   1 = 1 respondent
+
+-   1 = 2 respondent (appears as "& Anor" on right hand side of the case
+    name)
+
+-   3 = 3 or more respondent (appears as "& Ors" on right hand side of
+    the case name)
+
+\--*End Content for Variable Number of Respondents---*
+
+17. Case Type
+
+Variable Label: caseType
+
+Normalizations: N/A
+
+This variable denotes the broad case type, immigration (where case is
+brought by or against the Minister for Immigration (etc)), criminal
+(where the case is brought by or against the Queen/R), or civil (all
+other cases).
+
+Values:
+
+-   1 = Immigration
+
+-   2 = Criminal
+
+-   3 = Civil
+
+\--*End Content for Variable Case Type\--*
+
+18. Primary Issue Area
+
+Variable Label: primaryIssueArea
+
+There are two variables relating to identification of the issue
+considered by the Court in the matter. The difference between the two
+variables is in the level of generality at which the issue is coded. For
+special leave matters that proceeded by hearing, you should capture the
+issue coding via the transcript. For special leave matters that were
+determined on the papers you will need to capture the issue codes based
+on the lower court decision.
+
+Further, unlike other jurisdictions, which grant final court review on
+extremely specific questions, final court review in Australia tends to
+be more generalized. For that reason, we have included capacity for a
+primary issue area and its related sub area and issue, and a secondary
+issue area and its related sub area and issue. Coders should code the
+issue of primary important in the primary variable, and include a
+secondary issue only when necessary to capture the issues raised by the
+case.
+
+At the most general level is the variable issueArea, which consists of a
+universe of 10 substantive issue codes. The narrower issueSubArea
+comprises a number of sub areas associated with the broader issue code.
+
+Below is a list of both the broad level issueArea variable and the
+narrower issueSubArea. The issue sub areas are ordered and coded by
+their larger issue area. For example, Common Law is coded as "1" under
+the issueArea variable, and Common Law---Torts is coded as "101," Common
+Law---Contract as "102," and so on, under the issueSubArea variable. In
+2 issue sub areas, the sub areas are identical to the broader issue area
+because of the discrete nature of the general area.
+
+The relevant codes appear in brackets. For example, a negligence case
+would be coded as 1 for the issue area and 101 as the issue sub area.
+
++--------------------------+-------------------------------------------+
+| Issue Area               | Issue Sub Area                            |
++:=========================+:==========================================+
+| Common Law (includes     | Tort \[101\]                              |
+| traditional common law   |                                           |
+| areas now governed by    | Contract \[102\]                          |
+| statute) \[1\]           |                                           |
+|                          | Equity \[103\]                            |
+|                          |                                           |
+|                          | Trusts \[104\]                            |
++--------------------------+-------------------------------------------+
+| Public Law---Federal     | Constitutional law \[201\]                |
+| \[2\]                    |                                           |
+|                          | Administrative law \[202\]                |
++--------------------------+-------------------------------------------+
+| Public Law---State \[3\] | Constitutional law \[301\]                |
+|                          |                                           |
+|                          | Administrative law \[302\]                |
++--------------------------+-------------------------------------------+
+| Civil Rights             | Statutory rights \[401\]                  |
+| (non-constitutional)     |                                           |
+| \[4\]                    | State bills of rights \[402\]             |
+|                          |                                           |
+|                          | Common law rights \[403\]                 |
+|                          |                                           |
+|                          | Indigenous rights (including native       |
+|                          | title) \[404\]                            |
+|                          |                                           |
+|                          | Refugees \[405\]                          |
++--------------------------+-------------------------------------------+
+| Criminal Law and         | Federal criminal law \[501\]              |
+| Procedure \[5\]          |                                           |
+|                          | Federal criminal procedure \[502\]        |
+|                          |                                           |
+|                          | State criminal law \[503\]                |
+|                          |                                           |
+|                          | State criminal procedure \[504\]          |
++--------------------------+-------------------------------------------+
+| Economic Relations \[6\] | Corporate and business \[601\]            |
+|                          |                                           |
+|                          | Bankruptcy and insolvency \[602\]         |
+|                          |                                           |
+|                          | Property \[603\]                          |
+|                          |                                           |
+|                          | Intellectual property \[604\]             |
+|                          |                                           |
+|                          | Consumer and competition \[605\]          |
+|                          |                                           |
+|                          | Taxation \[606\]                          |
+|                          |                                           |
+|                          | Succession (wills and estates) \[607\]    |
++--------------------------+-------------------------------------------+
+| Employment and           | Employment and industrial relations       |
+| Industrial Relations     | \[701\]                                   |
+| \[7\]                    |                                           |
++--------------------------+-------------------------------------------+
+| Admiralty and Maritime   | Admiralty and maritime \[801\]            |
+| \[8\]                    |                                           |
++--------------------------+-------------------------------------------+
+| Procedure and Ethics     | Civil procedure/litigation \[901\]        |
+| \[9\]                    |                                           |
+|                          | Evidence \[902\]                          |
+|                          |                                           |
+|                          | Statutory interpretation (Acts            |
+|                          | Interpretation Act) \[903\]               |
+|                          |                                           |
+|                          | Legal profession (ethics) \[904\]         |
+|                          |                                           |
+|                          | Inherent power of the Court \[905\]       |
++--------------------------+-------------------------------------------+
+| Miscellaneous \[10\]     | International law \[1001\]                |
+|                          |                                           |
+|                          | Family law \[1002\]                       |
+|                          |                                           |
+|                          | Migration (non-refugee) \[1003\]          |
+|                          |                                           |
+|                          | Environmental law \[1004\]                |
+|                          |                                           |
+|                          | Vulnerable persons (e.g. child            |
+|                          | protection, disabled persons etc)         |
+|                          | \[1005\]                                  |
++--------------------------+-------------------------------------------+
+| Costs \[11\]             | Costs \[1101\]                            |
++--------------------------+-------------------------------------------+
+
+\--*End Content for Variable Primary Issue Area---*
+
+19. Primary Issue Sub Area
+
+Variable Label: primaryIssueSubArea
+
+See variable primaryIssueArea.
+
+\--*End Content for Variable Primary Issue Sub Area---*
+
+20. Secondary Issue Area
+
+Variable Label: secondaryIssueArea
+
+See variable primaryIssueArea
+
+\--*End Content for Variable Issue Area---*
+
+21. Secondary Issue Sub Area
+
+Variable Label: SecondaryIssueSubArea
+
+See variable primaryIssueArea.
+
+\--*End Content for Variable Issue Sub Area---*
+
+22. Manner in which Court takes Jurisdiction
+    General
+
+Variable Label: jurisdictionGeneral
+
+The variable varJurisdictionGeneral and the subsequent variable
+varJurisdictionSpecific are concerned with the way in which the Court
+undertakes to hear a case it has been asked to consider.
+
+The first jurisdictional variable, varJurisdictionGeneral, identifies
+the general way in which the Court took jurisdiction. That is, this
+variable identifies whether the Court is hearing the case as a result of
+an appeal as of right, special leave, original jurisdiction, or
+reference question by a single High Court justice. The option "other"
+has also been included. **The only relevant variables for the special
+leave dataset will be "special leave" and "removal."**
+
+The second jurisdictional variable, varJurisdictionSpecific, identifies
+the specific way in which the Court took jurisdiction. Therefore, it
+disaggregates each of the general categories into more detailed
+categories of jurisdiction.
+
+**Values:**
+
+-   1 = special leave
+
+-   2 = appeal as of right \[not relevant for special leave dataset\]
+
+-   3 = original jurisdiction \[not relevant for special leave dataset\]
+
+-   4 = reference \[not relevant for special leave dataset\]
+
+-   5 = removal
+
+-   6 = other
+
+\--*End Content for Variable Manner in which Court takes Jurisdiction
+General---*
+
+23. Manner in which Court takes Jurisdiction
+    Specific
+
+Variable Label: jurisdictionSpecific
+
+Code the relevant variable that reflects the court from which the case
+has been appealed. For the special leave dataset the relevant values
+will be 1, 2, 3, 4, 5, or 6.
+
+**Values:**
+
+-   1 = leave (appellate)---from High Court justice exercising original
+    jurisdiction
+
+-   2 = special leave (appellate)---from any court exercising original
+    jurisdiction upon remittal from HCA
+
+-   3 = special leave (appellate)---from lower federal court
+
+-   4 = special leave (appellate)---from state or territory supreme
+    court
+
+-   5 = special leave (appellate)---other
+
+-   6 = removal from lower court (pursuant to Sec 40, Judiciary Act)
+
+-   7 = appeal as of right \[not relevant for special leave dataset\]
+
+-   8 = original (Constitution, section 75) \[not relevant for special
+    leave dataset\]
+
+-   9 = original---all matters arising under the Constitution or
+    involving its interpretation (Judiciary Act sec 30, pursuant to
+    Sec 76) \[not relevant for special leave dataset\]
+
+-   10 = original---trials of indictable offenses against the laws of
+    the Commonwealth (Judiciary Act sec 30, pursuant to Sec 76) \[not
+    relevant for special leave dataset\]
+
+-   11 = reference---matter referred to full court by single justice
+    (Judiciary Act sec 18) \[not relevant for special leave dataset\]
+
+-   12 = special---Court of Disputed Returns \[not relevant for special
+    leave dataset\]
+
+-   13 = other \[not relevant for special leave dataset\]
+
+See variable varJurisdictionGeneral.
+
+\--*End Content for Variable Manner in which Court takes Jurisdiction
+Specific\--*
+
+24. Case Source Cite
+
+Variable Label: sourceCite
+
+Coders should hard code the medium neutral citation for the decision of
+the court from which the matter was appealed. For special leave
+dispositions on the papers this has been scraped into the dataset,
+however for special leave dispositions via hearing, you will need to
+search Austlii for the lower court opinions and citation.
+
+\--*End Content for Variable Case Source Cite---*
+
+25. Source of Case General
+
+Variable Label: caseSourceGeneral
+
+Normalizations: varCaseSourcesGeneral (7)
+
+This variable identifies the general level of court whose decision the
+High Court reviewed. It is a generalized version of the variable
+caseSourceSpecific. In some years I have translated the scraped data
+from the dispositions into the relevant codes, in other years the court
+information for the scraped dispositions appears in the notes column.
+
+**Values:**
+
+-   1 = Federal court---trial level
+
+-   2 = Federal court---appellate level
+
+-   3 = State supreme court---trial level
+
+-   4 = State supreme court---appellate level
+
+-   5 = State district court (county court)
+
+-   6 = State local court (magistrates court)
+
+-   7 = State speciality court
+
+\--*End Content for Variable Source of Case General---*
+
+26. Source of Case Specific
+
+Variable Label: caseSourceSpecific
+
+This variable identifies the specific court whose decision the High
+Court reviewed. The difference between this variable and the prior
+variable (caseSourceSpecific), then, is the level of generality. This
+variable identifies the specific court, rather than the general level of
+the source court in the judicial system.
+
+Note to coders: if the specific court in which the case originated is
+not listed in varCaseSourceSpecific, enter the code for "other" and note
+the court name in the notes column.
+
+**Values:**
+
+-   1 Family Court of Australia---Single Judge
+
+-   2 Federal Magistrates Court
+
+-   3 Federal Circuit Court of Australia
+
+-   4 Federal Court of Australia---Single Judge
+
+-   5 Federal Court of Australia---Full Court
+
+-   6 Australian Industrial Court
+
+-   7 Australia Military Court
+
+-   8 Commonwealth Court of Conciliation and Arbitration
+
+-   9 Commonwealth Industrial Court
+
+-   10 Federal Court of Bankruptcy
+
+-   11 Industrial Relations Court of Australia
+
+-   12 Supreme Court of New South Wales---Common Law Division
+
+-   13 Supreme Court of New South Wales---Equity Division
+
+-   14 Supreme Court of New South Wales---Court of Appeal
+
+-   15 Supreme Court of New South Wales---Court of Criminal Appeal
+
+-   16 Land and Environment Court of New South Wales
+
+-   17 District Court of New South Wales
+
+-   18 Local Court of New South Wales
+
+-   19 New South Wales Industrial Court
+
+-   20 The Children's Court of New South Wales
+
+-   21 New South Wales Dust Diseases Tribunal
+
+-   22 Drug Court of New South Wales
+
+-   23 New South Wales Chief Industrial Magistrate's Court
+
+-   24 New South Wales Coroner's Court
+
+-   25 Supreme Court of Queensland---Court of Appeal
+
+-   26 Supreme Court of Queensland---Trial Division (Criminal)
+
+-   27 Supreme Court of Queensland---Trial Division (Civil)
+
+-   28 Industrial Court of Queensland
+
+-   29 Queensland Planning and Environment Court
+
+-   30 Queensland Land Appeal Court
+
+-   31 District Court of Queensland
+
+-   32 Magistrates Court of Queensland
+
+-   33 Queensland Children's Court
+
+-   34 Queensland Mental Health Court
+
+-   35 Queensland Murri Court
+
+-   36 Queensland Domestic Violence Court
+
+-   37 Queensland Drug and Alcohol Court
+
+-   38 Queensland Coroner's Court
+
+-   39 Supreme Court of Victoria---Court of Appeals
+
+-   40 Supreme Court of Victoria---Trial Court Common Law Division
+
+-   41 Supreme Court of Victoria---Trial Court Commercial Division
+
+-   42 Supreme Court of Victoria---Trial Court Criminal Division
+
+-   43 County Court of Victoria
+
+-   44 Magistrates' Court of Victoria
+
+-   45 Children's Court of Victoria
+
+-   46 Victorian Coroner's Court
+
+-   47 Supreme Court of South Australia---Trial Division
+
+-   48 Supreme Court of South Australia---Criminal Appeal Division
+
+-   49 Supreme Court of South Australia---Civil Appeal Division
+
+-   50 District Court of South Australia
+
+-   51 Magistrates Court of South Australia
+
+-   52 Environment, Resources, and Development Court of South Australia
+
+-   53 South Australia Industrial Relations Court
+
+-   54 Wardens Court of South Australia
+
+-   55 Youth Court of South Australia
+
+-   56 South Australia Coroner's Court
+
+-   57 Supreme Court of Western Australia---Court of Appeals
+
+-   58 Supreme Court of Western Australia---General (Trial) Division
+
+-   59 Family Court of Western Australia
+
+-   60 District Court of Western Australia
+
+-   61 Magistrates Court of Western Australia
+
+-   62 Aboriginal Community Court of Western Australia
+
+-   63 Children's Court of Western Australia
+
+-   64 Drug Court of Western Australia
+
+-   65 Geraldton Family Violence Court, Western Australia
+
+-   66 Western Australia Coroner's Court
+
+-   67 Supreme Court of Tasmania---Criminal Division
+
+-   68 Supreme Court of Tasmania---Civil Division
+
+-   69 Supreme Court of Tasmania---Court of Appeals
+
+-   70 Magistrates Court of Tasmania
+
+-   71Tasmanian Coroner's Court
+
+-   72 Supreme Court of the Northern Territory---Court of Appeal
+
+-   73 Supreme Court of the Northern Territory---Court of Criminal
+    Appeal
+
+-   74 Supreme Court of the Northern Territory---Civil Trial
+
+-   75 Supreme Court of the Northern Territory---Criminal Trial
+
+-   76 Northern Territory Local Court (Magistrate's Court)
+
+-   77 Coroner's Court of the Northern Territory
+
+-   78 Supreme Court of the Australian Capital Territory
+
+-   79 Supreme Court of the Australian Capital Territory---Court of
+    Appeal
+
+-   80 Magistrates Court of the Australian Capital Territory
+
+-   81 Coroner's Court of the Australian Capital Territory
+
+-   82 Supreme Court of Norfolk Island
+
+-   83 Court of Petty Sessions for Norfolk Island
+
+-   84 Nauru Supreme Court
+
+-   85 Other
+
+-   86 Family Court of Australia---Full Court
+
+-   87 Warden's Court of Western Australia
+
+-   88 Nauru District Court
+
+\--*End Content for Variable Source of Case Specific\--*
+
+27. Source of Case State
+
+Variable Label: caseSourceState
+
+Normalizations: varStates (11)
+
+This variable is to be used in conjunction with the variable
+caseSourceGeneral, as it will identify the associated state. If the
+source of the case is a state court, this variable identifies the state.
+If the case originated in the federal system, use the designated state
+code for federal.
+
+**Values:**
+
+-   1 Australia (federal actor)
+
+-   2 Australian Capital Territory
+
+-   3 New South Wales
+
+-   4 Northern Territory
+
+-   5 Queensland
+
+-   6 South Australia
+
+-   7 Tasmania
+
+-   8 Victoria
+
+-   9 Norfolk Island
+
+-   10 Nauru
+
+-   11 Western Australia
+
+\--*End Content for Variable Source of Case State\--*
+
+28. Date of Lower Court Decision
+
+Variable Label: dateLcDecision
+
+Normalizations: N/A
+
+Hard code the date of the lower court (source court) opinion using the
+format YYYYMMDD (e.g., 14 February 2014 will be 20140214).
+
+\--*End Content for Variable Date of Lower Court Decision\--*
+
+29. Lower Court Disposition
+
+Variable Label: lcDisposition
+
+This case denotes the disposition of the lower court. The disposition
+will reflect the orders of the majority of the court.
+
+**Values:**
+
+-   1 Appeal/application allowed
+
+-   2 Appeal/application allowed, order below set aside and/or varied
+
+-   3 Appeal/application allowed, order below set aside and/or varied in
+    part
+
+-   4 Appeal/application allowed, order below set aside and/or varied,
+    matter remitted
+
+-   5 Appeal/application allowed, order below set aside and/or varied in
+    part, matter remitted
+
+-   6 Appeal/application dismissed
+
+-   7 Appeal/application allowed, remit for further determination
+
+-   8 Appeal/application allowed in part, remit for further
+    determination
+
+-   9 Appeal/application allowed in part, order below set aside and/or
+    varied
+
+-   10 Appeal/application allowed in part, order below set aside and/or
+    varied in part
+
+-   11 Appeal/application allowed in part, order below set aside and/or
+    varied, matter remitted
+
+-   12 Appeal/application allowed in part, order below set aside and/or
+    varied in part, matter remitted
+
+<!-- -->
+
+-   13 Special leave revoked
+
+<!-- -->
+
+-   14 Appeal granted and appeal allowed instantia
+
+-   15 Other disposition
+
+-   16 Questions answered (special case, case referred, etc)
+
+-   17 Special leave denied by enlarged bench
+
+\--*End Content for Variable Lower Court Disposition---*
+
+30. Lower Court Dissent
+
+Variable Label: lcDissent
+
+This variable denotes whether there was a dissent in the court
+below---i.e. whether there was a dissent in the decision that the HCA is
+hearing a special leave application on. This variable captures dissent
+from the outcome only (i.e. orders), not divergence in opinion on points
+of law.
+
+Values:
+
+-   1 No
+
+-   2 Yes
+
+\--*End Content for Variable Lower Court Dissent\--*
+
+31. Lower Court Panel Size
+
+Variable Label: lcPanelSize
+
+Coders are to hard code the number of judges issuing the decision of the
+court whose decision the HCA is reviewing.
+
+\--*End Content for Variable Lower Court Panel Size\--*
+
+32. Number of Lower Court Dissents
+
+Variable Label: lcDissentNum
+
+Coders are to hard code the number of judges dissenting from the outcome
+(orders) of the court issuing the decision being reviewed by the HCA.
+Where there are no dissents, enter 0.
+
+\--*End Content for Variable Lower Court Dissent Number\--*
+
+33. Special Leave Method
+
+Variable Label: specialLeaveMethod
+
+Normalizations: varSpecialLeaveMethod (2)
+
+This variable identifies whether the Court heard the special leave
+application on the papers or after an oral hearing. This is indicated by
+the special leave citation, where "HCASL" indicates on the papers and
+"HCATrans" indicates oral hearing.
+
+Values:
+
+-   1 Oral hearing
+
+-   2 Papers
+
+\--*End Content for Variable Special Leave Method---*
+
+34. Number of Justices on Special Leave Panel
+
+Variable Label: numJusticesSL
+
+Hard code the number of justices hearing special leave. Normally this
+will be either 2 or 3 justices. In the event there are more (unusual),
+make a note in the notes column with how many and who they are.
+
+\--*End Content for Variable Number of Justices on Special Leave
+Panel\--*
+
+35. Justice Granting Special Leave 1
+
+Variable Label: justiceSpecialLeave1
+
+In Australia, the grant or denial of a petition for special leave is
+determined by two justices. This variable identifies the first of two
+justices that make the decision to grant special leave in the case. The
+subsequent variables, justiceSpecialLeave2 and justiceSpecialLeave3
+identify additional justices that make the decision to grant special
+leave. This variable is relevant for both written and oral grant or
+denial of special leave.
+
+**Values:**
+
+> 01 Griffith
+>
+> 02 Barton
+>
+> 03 O\'Connor
+>
+> 04 Isaacs
+>
+> 05 Higgins
+>
+> 06 Duffy
+>
+> 07 Powers
+>
+> 08 Piddington09 Rich10 Knox11 Starke12 Dixon13 Evatt14 McTiernan15
+> Latham16 Williams17 Webb18 Fullagar19 Kitto20 Taylor21 Menzies22
+> Windeyer23 Owen24 Barwick25 Walsh26 Gibbs27 Stephen28 Mason29 Jacobs30
+> Murphy31 Aickin32 Wilson33 Brennan34 Deane35 Dawson36 Toohey37
+> Gaudron38 McHugh39 Gummow40 Kirby41 Hayne42 Callinan43 Gleeson44
+> Heydon45 Crennan46 Kiefel47 French48 Bell49 Gageler50 Keane51 Nettle52
+> Gordon53 Edelman
+
+\--*End Content for Variable Justice Granting Special Leave 1---*
+
+36. Justice Granting Special Leave 2
+
+Variable Label: justiceSpecialLeave2
+
+See variable justiceSpecialLeave1.
+
+\--*End Content for Variable Justices Granting Special Leave 2---*
+
+37. Justice Granting Special Leave 3
+
+Variable Label: justiceSpecialLeave2
+
+See variable justiceSpecialLeave1.
+
+\--*End Content for Variable Justices Granting Special Leave 3---*
+
+38. Special Leave Location
+
+Variable Label: specialLeaveLocation
+
+Special leave hearings occur in various locations (i.e. "registries").
+This variable identifies the location in which the special leave hearing
+occurred. This variable will be blank if special leave was granted on
+the papers (i.e., without a hearing) unless the notice of grant of
+special leave is marked as originating from a specific registry. If the
+hearing was via videolink, the location should be listed as where the
+leave application was filed.
+
+For the special leave via hearing, this information will be noted at the
+start of the transcript. For special leave by disposition (papers), this
+will be noted on the disposition list. The disposition lists can be
+found at
+<http://www.hcourt.gov.au/registry/special-leave-applications-results-2019>
+
+Values:
+
+-   1 Adelaide
+
+-   2 Brisbane
+
+-   3 Canberra
+
+-   4 Darwin
+
+-   5 Hobart
+
+-   6 Melbourne
+
+-   7 Perth
+
+-   8 Sydney
+
+\--*End Content for Variable Special Leave Location\--*
+
+39. Special Leave Date
+
+Variable Label: specialLeaveDate
+
+Normalizations:
+
+This variable contained the year, month, and day that the Court
+announced its decision in the case. Hard code the date of the special
+leave decision using the format YYYYMMDD (e.g., 14 February 2014 will be
+20140214).
+
+\--*End Content for Variable Reason for Special Leave Date\--*
+
+40. Special Leave Outcome
+
+Variable Label: specialLeaveOutcome
+
+This variable identifies the outcome of the preliminary special leave or
+removal panel. Outcomes are denoted on the transcript at the end (be
+sure to ensure whether special leave was refused with costs or not)
+where it is a hearing, otherwise the scraping should have picked up the
+outcome and I have modified to the relevant code, but do cross check the
+coding.
+
+Values:
+
+-   1 Special leave granted
+
+-   2 Special leave referred to full court
+
+-   3 Appeal and special leave determined concurrently
+
+-   4 Special leave refused
+
+-   5 Special leave refused with costs
+
+\--*End Content for Variable Reason for Special Leave Outcome\--*
+
+41. HCDB ID
+
+Variable Label: HCDBID
+
+Only relevant if granted. Leave blank and I will backfill later.
+
+\--*End Content for Variable Reason for Special Leave Outcome\--*
+
+42. Natural Court
+
+Variable Label: naturalCourtSpecialLeave
+
+This variable identifies the natural court that was responsible for the
+decision. Natural court refers to the period during which no personnel
+change occurs on the Court. Each natural court begins on the date of
+swearing in of a new justice or chief justice. The courts are numbered
+consecutively by chief justice, and the relevant period is noted next to
+the values in the normalizations.
+
+1001 Brennan 1 (21-Apr-95-5-Feb-96)
+
+> 33 Brennan
+>
+> 34 Deane
+>
+> 35 Dawson
+>
+> 36 Toohey
+>
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+
+1002 Brennan 2 (6-Feb-96-21 Sep-97)
+
+> 33 Brennan
+>
+> 35 Dawson
+>
+> 36 Toohey
+>
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+
+1003 Brennan 3 (22-Sep-97-2-Feb-98)
+
+> 33 Brennan
+>
+> 36 Toohey
+>
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+
+1004 Brennan 4 (3-Feb-98-21-May-98)
+
+33 Brennan
+
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 42 Callinan
+
+1101 Gleeson 1 (22-May-98-10-Feb-03)
+
+> 43 Gleeson
+>
+> 37 Gaudron
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 42 Callinan
+
+1102 Gleeson 2 (11-Feb-03-7-Nov-05)
+
+> 43 Gleeson
+>
+> 38 McHugh
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 42 Callinan
+>
+> 44 Heydon
+
+1103 Gleeson 3 (8-Nov-05-2-Sep-07)
+
+> 43 Gleeson
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 42 Callinan
+>
+> 44 Heydon
+>
+> 45 Crennan
+
+1104 Gleeson 4 (3-Sep-07-31-Aug-08)
+
+> 43 Gleeson
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 44 Heydon
+>
+> 45 Crennan
+>
+> 46 Kiefel
+
+1201 French 1 (1-Sep-08-2-Feb-09)
+
+> 47 French
+>
+> 39 Gummow
+>
+> 40 Kirby
+>
+> 41 Hayne
+>
+> 44 Heydon
+>
+> 45 Crennan
+>
+> 46 Kiefel
+
+1202 French 2 (3-Feb-09-8-Oct-12)
+
+> 47 French
+>
+> 39 Gummow
+>
+> 41 Hayne
+>
+> 44 Heydon
+>
+> 45 Crennan
+>
+> 46 Kiefel
+>
+> 48 Bell
+
+1203 French 3 (9-Oct-12-02-Mar-13)
+
+> 47 French
+>
+> 41 Hayne
+>
+> 44 Heydon
+>
+> 45 Crennan
+>
+> 46 Kiefel
+>
+> 48 Bell49 Gageler
+
+1204 French 4 (3-Mar-13-2-Feb-15)
+
+> 47 French
+>
+> 41 Hayne
+>
+> 45 Crennan
+>
+> 46 Kiefel
+>
+> 48 Bell49 Gageler50 Keane
+
+1205 French 5 (3-Feb-15-8-Jun-15)
+
+> 47 French
+>
+> 41 Hayne
+>
+> 46 Kiefel
+>
+> 48 Bell49 Gageler50 Keane51 Nettle
+
+1206 French 6 (9-Jun-15-29-Jan-17)
+
+> 47 French
+>
+> 46 Kiefel
+>
+> 48 Bell49 Gageler50 Keane51 Nettle52 Gordon
+
+1301 Kiefel 1 (30-Jan-17-Current)
+
+46 Kiefel
+
+> 48 Bell49 Gageler50 Keane51 Nettle52 Gordon53 Edelman
+
+\--*End Content for Variable Natural Court Special Leave\--*
+
+43. Term of Court Special Leave
+
+Variable Label: termSL
+
+This variable identifies the term in which the Court handed down its
+decision. This will be the year in which the case was decided.
+
+\--*End Content for Variable Term of Court---*
+
+44. Chief Justice at Special Leave
+
+Variable Label: chiefSL
+
+This variable identifies the chief justice during whose tenure the case
+was decided.
+
+Values:
+
+> 1 Griffith
+>
+> 2 Knox
+>
+> 3 Isaacs
+>
+> 4 Duffy
+>
+> 5 Latham
+>
+> 6 Dixon
+>
+> 7 Barwick
+>
+> 8 Gibbs
+>
+> 9 Mason
+>
+> 10 Brennan
+>
+> 11 Gleeson
+>
+> 12 French
+>
+> 13 Kiefel
+
+\--*End Content for Variable Chief Justice\--*
+
+45. Prime Minister on Date of Decision
+
+Variable Label: pmSL
+
+This variable indicates the Prime Minister on the date of the decision.
+Where a Prime Minister served multiple consecutive terms, this is not
+specifically disaggregated. However, where a Prime Minister was
+re-elected following a period of non-service, this is specified. For
+example, while John Howard served multiple consecutive terms as Prime
+Minister, he has only one entry "Howard," whereas Alfred Deakin served
+multiple non-consecutive terms and has three entries, "Deakin 1,"
+"Deakin 2," and "Deakin 3."
+
+Values:
+
+1 Barton (01.01.1901 -- 24.09.1903)
+
+> 2 Deakin1 (24.09.1903 -- 27.04.1904)
+>
+> 3 Watson (27.04.1904 -- 17.08.1904)
+>
+> 4 Reid (18.08.1904 -- 05.07.1905)
+>
+> 5 Deakin 2 (05.07.1905 -- 13.11.1908)
+>
+> 6 Fisher 1 (13.11.1908 -- 02.06.19090
+>
+> 7 Deakin 3 (02.06.1909 -- 29.04.1910)
+>
+> 8 Fisher 2 (29.04.1910 -- 24.06.1913)
+>
+> 9 Cook (24.06.1913 -- 17.09.1914)
+>
+> 10 Fisher 3 (17.09.1914 -- 27.10.1915)
+>
+> 11 Hughes (27.10.1915 -- 09.02.1923)
+>
+> 12 Bruce (09.02.1923 -- 22.10.1929)
+>
+> 13 Scullin (22.10.1929 -- 06.01.1932)
+>
+> 14 Lyons (06.01.1932 -- 07.04.1939)
+>
+> 15 Page (07.04.1939 -- 26.04.1939)
+>
+> 16 Menzies 1 (26.04.1939 -- 29.08.194)
+>
+> 17 Fadden (29.08.1941 -- 07.10.1941)
+>
+> 18 Curtin (07.10.1941 -- 05.07.1945)
+>
+> 19 Forde (06.07.1945 -- 13.07.1945)
+>
+> 20 Chifley (13.07.1945 -- 19.12.1949)
+>
+> 21 Menzies 2 (19.12.1949 -- 26.01.1966)
+>
+> 22 Holt (26.01.1966 -- 19.12.1967)
+>
+> 23 McEwen (19.12.1967 -- 10.01.1968)
+>
+> 24 Gorton (10.01.1968 -- 10.03.1971)
+>
+> 25 McMahon(10.03.1971 -- 05.12.1972)
+>
+> 26 Whitlam (05.12.1972 -- 11.11.1975)
+>
+> 27 Fraser (11.11.1975 -- 11.03.1983)
+>
+> 28 Hawke (11.03.1983 -- 20.12.1991)
+>
+> 29 Keating (20.12.1991 -- 11.03.1996)
+>
+> 30 Howard (11.03.1996 -- 3.12.2007)
+>
+> 31 Rudd 1 (03.12.2007 -- 24.06.2010)
+>
+> 32 Gillard (24.06.2010 -- 27.06.2013)
+>
+> 33 Rudd 2 (27.06.2013 -- 18.09.2013)
+>
+> 34 Abbott (18.09.2013 -- 15.09.2015)
+>
+> 35 Turnbull (15.09.2015 -- 24.08.2018)
+>
+> 36 Morrison (24.08.2018 -- present)
+
+\--*End Content for Variable Prime Minister on Date of Decision\--*
+
+46. Political Power on Date of Special Leave
+    Decision
+
+Variable Label: politicalPowerSL
+
+This variable indicates the controlling political party in both the
+House of Representatives and the Senate on the date of the High Court SL
+decision. The normalizations contain both the coding options as well as
+the necessary information for political power in any given year.
+
+Values:
+
+1 Coalition House/Coalition Senate
+
+2 Coalition House/Not Coalition Senate
+
+3 Labour House/Labour Senate
+
+4 Labour House/Not Labour Senate
+
+5 Neither/Neither
+
++-------------------------+---------------------+----------------------+
+|                         | > Party in Control  |                      |
++:========================+:====================+:=====================+
+| > Election              | > House             | > Senate             |
++-------------------------+---------------------+----------------------+
+| > Dec 1, 1984           | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > July 11, 1987         | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Mar 24, 1990          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Mar 13, 1993          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Oct 3, 1998           | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Nov 10, 2001          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > Oct 9, 2004           | > Coalition         | > Coalition          |
++-------------------------+---------------------+----------------------+
+| > Nov 24, 2007          | > Labour            | > Not Labour         |
++-------------------------+---------------------+----------------------+
+| > Aug 21, 2010          | > Neither           | > Neither            |
++-------------------------+---------------------+----------------------+
+| > Sept 7, 2013          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+| > July 2, 2016          | > Coalition         | > Not Coalition      |
++-------------------------+---------------------+----------------------+
+
+\--*End Content for Variable Political Power on Date of High Court
+Decision\--*
+
+47. Oral Argument Link
+
+Variable Label: oralArgumentLink
+
+Link already scraped in where relevant. Where not relevant (i.e.
+disposition on the papers), code 999.
+
+\--*End Content for Variable Oral Argument Link---*
+
+48. Notes
+
+Variable Label: Notes
+
+Notes to the data
+
+\--*End Content for Variable Notes---*
+
+Appendix
+
+varLawArea
+
+9 distinct values
+
+**Values:**
+
+1 Federal Constitution
+
+2 Federal statute
+
+3 Federal regulation
+
+4 Court rules
+
+5 Common law (federal)
+
+6 State constitution
+
+7 State or local statute or regulation
+
+8 Common law (state)
+
+9 No legal provision
+
+10 Other
+
+varLegalProvisions
+
+**Values:**
+
+**1 Federal Constitution**
+
+Note: in making a coding decision for the provision of the Constitution,
+the specific trumps the general. For example, if the issue involves the
+interpretation of Section 75(v), code XXX (specific code) rather than
+XXX (general Chapter III code).
+
+100 Constitution, Sections 7-10, Composition of Senate
+
+101 Constitution, Section 24, 31-31, Composition of House of
+Representatives
+
+102 Constitution, Sections 7-10 and 24, 30-31, Composition of Both
+Senate and House of Representatives
+
+103 Constitution, Section 44, Disqualification of Member or Senator
+
+104 Constitution, Section 51 Legislative Power
+
+105 Constitution, Section 52-56, Legislative Power Other than Section 51
+
+106 Constitution, Section 61, Executive Power
+
+107 Constitution, Section 71, Judicial Power
+
+108 Constitution, Section 73-74, Appellate Jurisdiction
+
+109 Constitution, Section 75-76, Original Jurisdiction
+
+110 Constitution, Section 77, Power to Define Jurisdiction of Courts
+Other than High Court
+
+111 Constitution, Section 80, Right to Trial by Jury
+
+112 Constitution, Sections 81-83, Appropriations
+
+113 Constitution, Section 90, Power over Customs, Excise, and Bounty
+
+114 Constitution, Section 92, Freedom of Interstate Trade
+
+115 Constitution, Section 96, Grant Power
+
+116 Constitution, Section 109, Inconsistency of Laws
+
+117 Constitution, Section 116, Religious Liberty
+
+118 Constitution, Section 117, Rights of Residents in States
+
+119 Constitution, Section 122, Government of Territories
+
+120 Constitution, Section 128, Amendment of Constitution
+
+121 Constitution, Implied Freedom of Political Communication
+
+122 Constitution, Chapter I, Part I, General
+
+123 Constitution, Chapter I, Part II, Senate
+
+124 Constitution, Chapter I, Part III, House of Representatives
+
+125 Constitution, Chapter I, Part IV, Both Houses
+
+126 Constitution, Chapter I, Part V, Legislative Power Other than
+Sections 51-57
+
+127 Constitution, Chapter II, Executive Government Other than Section 61
+
+128 Constitution, Chapter III Judicial Power, General
+
+129 Constitution, Chapter IV, Finance and Trade General
+
+130 Constitution, Chapter V, States, General
+
+131 Constitution, Other
+
+**2 Federal statute**
+
+***Commonly Cited Legislation***
+
+200 A New Tax System (Goods and Services Tax) Act 1999 (Cth)
+
+201 Aboriginal and Torres Strait Islander Heritage Protection Act
+1984 (Cth)
+
+202 Appropriation Act (Cth), any version
+
+203 Australia Act 1986 (Cth)
+
+204 Australian Crime Commission Act 2002 (Cth)
+
+205 Australian Securities and Investments Commission Act 2001 (Cth), or
+related prior version
+
+206 Bankruptcy Act 1966 (Cth)
+
+207 Broadcasting Services Act 1992 (Cth)
+
+208 Commonwealth Electoral Act 1918 (Cth)
+
+209 Copyright Act 1968 (Cth)
+
+210 Corporations Act 1989 (Cth)
+
+211 Corporations Act 2001 (Cth)
+
+212 Corporations Law 1989 (Cth)
+
+213 Crimes Act 1914 (Cth)
+
+214 Customs Act 1901 (Cth)
+
+215 Designs Act 1906 (Cth)
+
+216 Excise Act 1901 (Cth)
+
+217 Extradition Act 1988 (Cth)
+
+218 Fair Work Act 2009 (Cth)
+
+219 Family Law Act 1975 (Cth)
+
+220 Freedom of Information Act 1982 (Cth)
+
+221 Income Tax Assessment Act 1936 (Cth)
+
+222 Income Tax Assessment Act 1997 (Cth)
+
+223 Industrial Relations Act 1988 (Cth)
+
+224 Insurance Act 1973 (Cth)
+
+225 Insurance Contracts Act 1984 (Cth)
+
+226 Lands Acquisition Act 1955 or 1989 (Cth)
+
+227 Marriage Act 1961 (Cth)
+
+228 Migration Act 1958 (Cth)
+
+229 Native Title Act 1993 (Cth)
+
+230 Navigation Act 1912 (Cth)
+
+231 Patents Act 1952 or 1990 (Cth)
+
+232 Safety, Rehabilitation and Compensation Act 1988 (Cth)
+
+233 Social Security (Administration) Act 1999 (Cth), or other social
+security legislation
+
+234 Telecommunications Act 1997 (Cth)
+
+235 Trade Marks Act 1955 or 1995 (Cth)
+
+236 Trade Practices Act 1974 (Cth)
+
+237 Veterans\' Entitlements Act 1986 (Cth)
+
+238 Workplace Relations Act 1996 (Cth)
+
+239 Workplace Relations Amendment (Work Choices) Act 2005 (Cth)
+
+240 Criminal Code (Cth)
+
+***Less Common Legislation, Category Coding***
+
+250 Aboriginal and Indigenous Affairs
+
+251 Admiralty and Maritime
+
+252 Agriculture
+
+253 Aviation
+
+254 Commonwealth authorities and commissions, establishment legislation
+
+255 Communication, generally conceived (including advertising etc)
+
+256 Customs and excise
+
+257 Crimes, including legislation relating to DPP, proceeds of crime
+
+258 Defense legislation, including defense force management
+
+259 Migration other, including deportation and extradition
+
+260 Discrimination
+
+261 Economic general
+
+262 Education
+
+263 Elections, including member qualifications and entitlements
+
+264 Family and children
+
+265 Health
+
+266 Insurance
+
+267 Mining and land management
+
+268 Taxation
+
+269 Territory management and governance, including independence
+legislation
+
+270 Workplace relations, including superannuation and OH&S
+
+271 Other
+
+**3 Federal regulation**
+
+300 Bankruptcy
+
+301 Customs
+
+302 Corporations
+
+303 Criminal
+
+304 Defense
+
+305 Environment
+
+306 Extradition
+
+307 Family Law
+
+308 Migration
+
+309 National Security
+
+310 Tax
+
+311 Trade Practices
+
+312 Other
+
+**4 Legislation and Rules Relating to Courts and Tribunal Establishment,
+governance, and procedures**
+
+\*Add relevant two digit state code to end of 3 digit legislation code:
+
+01 Federal
+
+02 Australian Capital Territory
+
+03 NSW
+
+04 NT
+
+05 Qld
+
+06 South Australia
+
+07 Tasmania
+
+08 Victoria
+
+09 Norfolk Island
+
+10 Nauru
+
+11 Western Australia
+
+Example: Supreme Court Act for NSW would be coded as 42003
+
+***Cth***
+
+401 High Court of Australia Act, all versions
+
+402 High Court of Australia Rules, all versions
+
+403 Federal Court of Australia Act, all versions
+
+404 Federal Court of Australia Rules, all versions
+
+405 Act Interpretation Act (Cth), all versions
+
+406 Administrative Tribunal Act, all versions
+
+407 Administrative Decisions (Judicial Review) Act, all versions
+
+408 Criminal Appeal Act (Cth), all versions
+
+409 Evidence Act (Cth), all versions
+
+410 Federal Proceedings (Costs) Act (Cth), all versions
+
+411 Foreign Judgments Act (Cth), all versions
+
+412 Judicial Act (Cth), all versions
+
+413 Juries Act (Cth), all versions
+
+414 Nauru (High Court Appeals) Act, all versions
+
+415 Territory courts legislation, all versions
+
+416 Legislation relating to costs of proceedings
+
+417 Legislation relating to service and execution of process
+
+***State***
+
+420 Supreme Court Act, any version
+
+421 Lower court legislation, any level, any version
+
+422 Court rules, any level, any version
+
+423 Legislation or rules relating to tribunal and/or administrative, any
+version
+
+424 Criminal procedure legislation or rules, any version, including
+criminal appeals acts
+
+425 Civil procedure legislation or rules, any version, including civil
+appeals acts and limitation of actions
+
+426 Evidence legislation or rules, any version
+
+427 Interpretation legislation or rules, any version
+
+428 Juries legislation, any version
+
+429 Legislation relating to costs of proceedings
+
+430 Other relevant legislation or rules
+
+431 Legislation relating to service and execution of process
+
+**5 Common law (federal)**
+
+N/A
+
+**6 State constitution**
+
+602 Australian Capital Territory Constitution (self-government
+legislation)
+
+603 New South Wales Constitution, any version
+
+604 Northern Territory Constitution (self-government legislation)
+
+605 Queensland Constitution, any version
+
+606 South Australia, any version
+
+607 Tasmania, any version
+
+608 Victoria, any version
+
+609 Norfolk Island, any version ((self-government legislation)
+
+610 Nauru, any version (self-government legislation)
+
+611 Western Australia, any version
+
+612 Other
+
+**7 State or local statute or regulation**
+
+\*Add relevant two digit state code to end of 3 digit legislation code
+code:
+
+02 Australian Capital Territory
+
+03 NSW
+
+04 NT
+
+05 Qld
+
+06 South Australia
+
+07 Tasmania
+
+08 Victoria
+
+09 Norfolk Island
+
+10 Nauru
+
+11 Western Australia
+
+700 Aboriginal and Indigenous, legislation and regulations
+
+701 Civil wrongs, including wrongs legislation, civil liability,
+defamation, accident liability, compensation
+
+702 Community regulation general, including roads acts, community
+welfare, animals, police regulations
+
+703 Corporations, including commercial activity, business regulations
+
+704 Criminal law legislation and regulations, including parole, witness
+protection, substantive crimes
+
+705 Government legislation, including elections, FOI, anti-corruption,
+police regulations
+
+706 Environment
+
+707 Families and children, including births, deaths, and marriages
+legislation, succession law
+
+708 Fishing and farming, and related legislation
+
+709 Human rights, including discrimination legislation and legislation
+relating to vulnerable persons
+
+710 Land, development and planning legislation
+
+711 Land, government entitlement
+
+712 Land, non-government including conveyancing
+
+713 Law reform
+
+714 Legal profession
+
+715 Local government, regulation of, legislation and regulations
+
+716 Industry regulation
+
+717 Morality legislation, including gambling, racing, alcohol, firearms
+
+718 Natural resources and mining, including water, coal, gas pipelines
+
+719 Property, general, including property act, conveyancing, leases
+
+720 Refugees and migration
+
+721 Taxation, including stamp duty
+
+722 Trade practices, including consumer legislation
+
+723 Trusts
+
+724 Workplace relations, broadly conceived, including superannuation
+
+725 Other
+
+**8 Common law (state)**
+
+N/A
+
+**9 No legal provision**
+
+N/A
+
+**10 Other**
+
+1000 Foreign Statute
+
+1001 Imperial Statute
+
+1002 International Convention
+
+1003 Treaty
+
+1004 Other
+
+
+## Citation
+
+If you use this data, please cite:
+
+Leslie, P., Robinson, Z., Smyth, R., & Jacobi, T. (2026). Supporting comparative studies of
+judicial behavior: Introducing the Australian High Court Database. *Journal of Law & Empirical
+Analysis*, *3*(1), 251--263. <https://doi.org/10.1177/2755323X261438254>
+
+```bibtex
+@article{leslie2026hcdb,
+  author  = {Pat Leslie and Zo\"{e} Robinson and Russell Smyth and Tonja Jacobi},
+  title   = {Supporting Comparative Studies of Judicial Behavior: Introducing the Australian High Court Database},
+  journal = {Journal of Law \& Empirical Analysis},
+  year    = {2026},
+  volume  = {3},
+  number  = {1},
+  pages   = {251--263},
+  doi     = {10.1177/2755323X261438254}
+}
+```

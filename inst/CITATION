@@ -1,0 +1,16 @@
+bibentry(
+  bibtype  = "Article",
+  title    = "Supporting Comparative Studies of Judicial Behavior: Introducing the Australian High Court Database",
+  author   = c(
+    person("Pat", "Leslie"),
+    person("Zoë", "Robinson"),
+    person("Russell", "Smyth"),
+    person("Tonja", "Jacobi")
+  ),
+  journal  = "Journal of Law & Empirical Analysis",
+  year     = "2026",
+  volume   = "3",
+  number   = "1",
+  pages    = "251--263",
+  doi      = "10.1177/2755323X261438254"
+)

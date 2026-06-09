@@ -1,0 +1,235 @@
+---
+title: "Advocate Case Codebook"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Advocate Case Codebook}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+**HCDB Representative, Intervenor, and Amicus Codebook
+(advocate_case)**
+
+**Introduction**
+
+This codebook describes variables for the advocate_case data in the High
+Court Database (HCDB).
+
+**Notes**
+
+Appearances for an amici and interested parties appear as interveners
+(though noted in the Status1 variable
+
+There are sometimes multiple matters being argued with different
+representatives in the one transcript---sometimes only one of the
+matters being argued is related to the HCDBID/Case Number. We identify
+the representatives for the correct case/matter number. An example is
+2018006, where two appeals were heard together but the judgment only
+relates to one of those appeals. In this instance different
+representatives appeared for the respondents in each of the appeals,
+even though they were heard in the one hearing.
+
+Finally, there are sometimes submitting appearances---that is, the party
+submits to the orders of the Court without any representative appearing
+before the Court. If this occurs, we make a note in the notes column
+that there is a submitting appearance along with the specific party for
+whom the submitting appearance relates (e.g. "second respondent").
+
+Note that the representative information appears at the front of the
+opinion, but the information needed for some variables (e.g. gender of
+representative, whether representative was a speaker) can only be
+obtained from the transcript.
+
+Appearances for an amici and interested parties appear as interveners
+(though noted in the Status1 variable
+
+There are sometimes multiple matters being argued with different
+representatives in the one transcript---sometimes only one of the
+matters being argued is related to the HCDBID/Case Number. We identify
+the representatives for the correct case/matter number. An example is
+2018006, where two appeals were heard together but the judgment only
+relates to one of those appeals. In this instance different
+representatives appeared for the respondents in each of the appeals,
+even though they were heard in the one hearing.
+
+Finally, there are sometimes submitting appearances---that is, the party
+submits to the orders of the Court without any representative appearing
+before the Court. If this occurs, we make a note in the notes column
+that there is a submitting appearance along with the specific party for
+whom the submitting appearance relates (e.g. "second respondent").
+
+Note that the representative information appears at the front of the
+opinion, but the information needed for some variables (e.g. gender of
+representative, whether representative was a speaker) can only be
+obtained from the transcript.
+
+**Variable 1**: HCDB ID (HCDBcaseId)
+
+**Variable 2**: Case number (caseNumber)
+
+**Variable 3**: Case name (caseName)
+
+**Variable 4**: Representative Side (representative_side)
+
+-   Options:
+
+    -   Appellant
+
+    -   Respondent
+
+    -   Intervener
+
+**Variable 5**: Representative number (rep_number)
+
+-   Number of representative in the order they appeared in the
+    transcript (stratified by Appellants, Representatives, and
+    Interveners)
+
+**Variable 6**: Representative representation general (RepGeneral)
+
+-   Options:
+
+    -   1 Appellant/applicant/plaintiff/petitioner
+
+    -   2 Respondent/defendant
+
+    -   3 Intervener
+
+    -   4 Amicus
+
+    -   5 Interested party in Section 44 matters \[Note: in s.44
+        matters, the applicant will be the person referring the
+        electoral eligibility to the Court, and the respondent will be
+        the challenged member or senator. Any other party will be coded
+        under the intervener codes.\]
+
+\*Occasionally a representative will represent one side plus an
+intervener. In this instance the representative is duplicated. As an
+example, see 2018004, where the representative appeared for both the
+defendant and the intervener.
+
+**Variable 7**: Representative representation specific (RepSpecific)
+
+-   Enter the parties the representative represents. If more than 1,
+    list them in the same cell. Example: "Appellant 1, 3" or "All
+    respondents" etc
+
+**Variable 8**: Representative name (Name)
+
+-   Hard coded name of representative as it appears in the transcript
+    and opinion, without any punctuation. Example: ZD Robinson
+
+**Variable 9**: Representative title 1 (Title)
+
+-   Options:
+
+    -   1 Mr
+
+    -   2 Dr
+
+    -   3 Ms
+
+    -   4 Mrs
+
+    -   5 Miss
+
+    -   6 Other \[if other is selected, state what the representative's
+        title is in the notes column\]
+
+**Variable 10**: Representative status 1 (Status1)
+
+-   Options:
+
+    -   1 QC
+
+    -   2 SC
+
+    -   3 Barrister or solicitor
+
+    -   4 Self
+
+    -   5 Other \[if other is selected, state what the representative's
+        title is in the notes column\]
+
+**Variable 11**: Representative status 2 (Status2)
+
+-   Options:
+
+    -   1 Yes solicitor general (either Cth of state)
+
+    -   2 No, not solicitor general (either Cth or state)
+
+**Variable 12**: Representative status 2 State (Status2State)
+
+-   Options: \[Code 999 if coded 2 (i.e. No, not solicitor general) in
+    above variable)
+
+    -   1 Australia (federal actor)
+
+    -   2 Australian Capital Territory
+
+    -   3 New South Wales
+
+    -   4 Northern Territory
+
+    -   5 Queensland
+
+    -   6 South Australia
+
+    -   7 Tasmania
+
+    -   8 Victoria
+
+    -   9 Norfolk Island
+
+    -   10 Nauru
+
+    -   11 Western Australia
+
+**Variable 13**: Representative gender (Gender)
+
+-   Options:
+
+    -   1 Male
+
+    -   2 Female
+
+    -   3 Unidentified
+
+**Variable 14**: Representative role (Role)
+
+-   Options:
+
+    -   1 Speaker---Major (presented legal argument; includes any
+        presentation of a legal argument, no matter how brief)
+
+    -   2 Speaker---Minor (introductions, statement of reliance on other
+        party submissions, perfunctory handover)
+
+    -   3 Appearance (non-speaker)
+
+    -   4 No appearance, written submissions only
+
+**Variable 15**: Notes (Notes)
+
+
+## Citation
+
+If you use this data, please cite:
+
+Leslie, P., Robinson, Z., Smyth, R., & Jacobi, T. (2026). Supporting comparative studies of
+judicial behavior: Introducing the Australian High Court Database. *Journal of Law & Empirical
+Analysis*, *3*(1), 251--263. <https://doi.org/10.1177/2755323X261438254>
+
+```bibtex
+@article{leslie2026hcdb,
+  author  = {Pat Leslie and Zo\"{e} Robinson and Russell Smyth and Tonja Jacobi},
+  title   = {Supporting Comparative Studies of Judicial Behavior: Introducing the Australian High Court Database},
+  journal = {Journal of Law \& Empirical Analysis},
+  year    = {2026},
+  volume  = {3},
+  number  = {1},
+  pages   = {251--263},
+  doi     = {10.1177/2755323X261438254}
+}
+```

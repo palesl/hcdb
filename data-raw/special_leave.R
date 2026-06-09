@@ -612,9 +612,10 @@ special_leave$dateLcDecision[special_leave$dateLcDecision==999]<-NA
 special_leave$dateLcDecision|>unique()|>sort()
 special_leave$dateLcDecision<-ymd(special_leave$dateLcDecision)
 
+
+
 special_leave$specialLeaveDate<-special_leave$specialLeaveDate |>as.Date()
-
-
+summary(special_leave$specialLeaveDate)
 #Check to validate:
 
 # Function to check if all values in a variable are within its label set
